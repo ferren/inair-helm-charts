@@ -4,7 +4,7 @@ apiVersion: v2
 appVersion: 13.3.0
 dependencies:
   - name: common
-    repository: https://helm.litral.com/
+    repository: https://ferren.github.io/inair-helm-charts/
     version: 1.x.x
 description: Chart for PostgreSQL, an object-relational database management system (ORDBMS) with an emphasis on extensibility and on standards-compliance.
 engine: gotpl
