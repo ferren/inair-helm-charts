@@ -1,0 +1,27 @@
+annotations:
+  category: Database
+apiVersion: v2
+appVersion: 13.3.0
+dependencies:
+  - name: common
+    repository: https://helm.litral.com/
+    version: 1.x.x
+description: Chart for PostgreSQL, an object-relational database management system (ORDBMS) with an emphasis on extensibility and on standards-compliance.
+engine: gotpl
+home: https://github.com/ferren/inair-helm-charts/tree/master/inair/postgresql
+icon: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-postgres-logo.png
+keywords:
+  - postgresql
+  - postgres
+  - database
+  - sql
+  - replication
+  - cluster
+maintainers:
+  - email: ferrenliu@163.com
+    name: FerrenLiu
+name: postgresql
+sources:
+  - https://github.com/docker-library/postgres.git
+  - https://www.postgresql.org/
+version: 1.0.0
