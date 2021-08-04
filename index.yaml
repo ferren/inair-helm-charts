@@ -5,7 +5,7 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.7.1
-    created: "2021-08-04T17:40:12.227181246+08:00"
+    created: "2021-08-04T17:58:37.467354127+08:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: dd8dadc1c5f02afd5e5e48c9d5bc3579a41b3ca8652b16dfe4c0a44b1f9b4a4a
@@ -31,7 +31,7 @@ entries:
   odoo:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-08-04T17:40:12.227505393+08:00"
+    created: "2021-08-04T17:58:37.467685216+08:00"
     description: A Helm chart for Kubernetes
     digest: 22d77193257810bd9e17fee040e9bdacd3db94fc52d922c48640435f2d2dbcc8
     name: odoo
@@ -39,4 +39,36 @@ entries:
     urls:
     - https://ferren.github.io/inair-helm-charts/packages/odoo-0.1.0.tgz
     version: 0.1.0
-generated: "2021-08-04T17:40:12.226558636+08:00"
+  postgresql:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 13.3.0
+    created: "2021-08-04T17:58:37.470627817+08:00"
+    dependencies:
+    - name: common
+      repository: https://ferren.github.io/inair-helm-charts/
+      version: 1.x.x
+    description: Chart for PostgreSQL, an object-relational database management system
+      (ORDBMS) with an emphasis on extensibility and on standards-compliance.
+    digest: dc4c87069f519013abb8837a70d12d3eb2fdd20db8b78340a6710a809ae38c4f
+    home: https://github.com/ferren/inair-helm-charts/tree/master/inair/postgresql
+    icon: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-postgres-logo.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - email: ferrenliu@163.com
+      name: FerrenLiu
+    name: postgresql
+    sources:
+    - https://github.com/docker-library/postgres.git
+    - https://www.postgresql.org/
+    urls:
+    - https://ferren.github.io/inair-helm-charts/packages/postgresql-1.0.0.tgz
+    version: 1.0.0
+generated: "2021-08-04T17:58:37.466738439+08:00"
