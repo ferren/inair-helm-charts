@@ -1,0 +1,30 @@
+annotations:
+  category: CRM
+apiVersion: v2
+appVersion: 14.0-20210804
+dependencies:
+  - condition: postgresql.enabled
+    name: postgresql
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 1.x.x
+  - name: common
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 1.x.x
+description: A suite of web based open source business apps.
+engine: gotpl
+home: https://github.com/ferren/inair-helm-charts/tree/master/inair/odoo
+icon: https://bitnami.com/assets/stacks/odoo/img/odoo-stack-220x234.png
+keywords:
+  - odoo
+  - crm
+  - www
+  - http
+  - web
+maintainers:
+  - email: ferrenliu@163.com
+    name: FerrenLiu
+name: odoo
+sources:
+  - https://codeup.aliyun.com/inair/odoo-docker.git
+  - https://www.odoo.com/
+version: 1.0.0
