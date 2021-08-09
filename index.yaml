@@ -4,8 +4,35 @@ entries:
   - annotations:
       category: Infrastructure
     apiVersion: v2
+    appVersion: 1.8.0
+    created: "2021-08-09T11:39:35.389904901+08:00"
+    description: A Library Helm Chart for grouping common logic between bitnami charts.
+      This chart is not deployable by itself.
+    digest: 5cd3c271470c5029e7f807abafbd6ea4e907ebef86810b380bc78c5e91b08b47
+    home: https://github.com/bitnami/charts/tree/master/bitnami/common
+    icon: https://bitnami.com/downloads/logos/bitnami-mark.png
+    keywords:
+    - common
+    - helper
+    - template
+    - function
+    - bitnami
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: common
+    sources:
+    - https://github.com/bitnami/charts
+    - http://www.bitnami.com/
+    type: library
+    urls:
+    - https://ferren.github.io/inair-helm-charts/packages/common-1.8.0.tgz
+    version: 1.8.0
+  - annotations:
+      category: Infrastructure
+    apiVersion: v2
     appVersion: 1.7.1
-    created: "2021-08-04T17:58:37.467354127+08:00"
+    created: "2021-08-09T11:39:35.389397862+08:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: dd8dadc1c5f02afd5e5e48c9d5bc3579a41b3ca8652b16dfe4c0a44b1f9b4a4a
@@ -31,7 +58,7 @@ entries:
   odoo:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-08-04T17:58:37.467685216+08:00"
+    created: "2021-08-09T11:39:35.390206922+08:00"
     description: A Helm chart for Kubernetes
     digest: 22d77193257810bd9e17fee040e9bdacd3db94fc52d922c48640435f2d2dbcc8
     name: odoo
@@ -44,7 +71,38 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 13.3.0
-    created: "2021-08-04T17:58:37.470627817+08:00"
+    created: "2021-08-09T11:39:35.395494175+08:00"
+    dependencies:
+    - name: common
+      repository: https://ferren.github.io/inair-helm-charts/
+      version: 1.x.x
+    description: Chart for PostgreSQL, an object-relational database management system
+      (ORDBMS) with an emphasis on extensibility and on standards-compliance.
+    digest: c81a186784acab76e301e8c3ac5f74f267f6ad89f0d2fe20de147d8bda1f6f46
+    home: https://github.com/ferren/inair-helm-charts/tree/master/inair/postgresql
+    icon: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-postgres-logo.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - email: ferrenliu@163.com
+      name: FerrenLiu
+    name: postgresql
+    sources:
+    - https://github.com/docker-library/postgres.git
+    - https://www.postgresql.org/
+    urls:
+    - https://ferren.github.io/inair-helm-charts/packages/postgresql-1.0.1.tgz
+    version: 1.0.1
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 13.3.0
+    created: "2021-08-09T11:39:35.392813645+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -71,4 +129,4 @@ entries:
     urls:
     - https://ferren.github.io/inair-helm-charts/packages/postgresql-1.0.0.tgz
     version: 1.0.0
-generated: "2021-08-04T17:58:37.466738439+08:00"
+generated: "2021-08-09T11:39:35.388362748+08:00"
