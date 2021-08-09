@@ -1,7 +1,7 @@
 annotations:
   category: CRM
 apiVersion: v2
-appVersion: 14.0-20210804
+appVersion: 14.0.20210809
 dependencies:
   - condition: postgresql.enabled
     name: postgresql
