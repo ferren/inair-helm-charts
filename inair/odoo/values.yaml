@@ -62,7 +62,8 @@ image:
   ## pullSecrets:
   ##   - myRegistryKeySecretName
   ##
-  pullSecrets: []
+  pullSecrets:
+    - inair-image-ps
   ## Enable debug mode
   ##
   debug: false
@@ -346,7 +347,7 @@ customStartupProbe: {}
 service:
   ## @param service.type Odoo service type
   ##
-  type: LoadBalancer
+  #type: LoadBalancer
   ## @param service.port Odoo service HTTP port
   ##
   port: 80
