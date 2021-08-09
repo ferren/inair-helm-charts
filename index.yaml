@@ -5,7 +5,7 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.8.0
-    created: "2021-08-09T11:39:35.389904901+08:00"
+    created: "2021-08-09T11:56:03.967458819+08:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: 5cd3c271470c5029e7f807abafbd6ea4e907ebef86810b380bc78c5e91b08b47
@@ -32,7 +32,7 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.7.1
-    created: "2021-08-09T11:39:35.389397862+08:00"
+    created: "2021-08-09T11:56:03.966955595+08:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: dd8dadc1c5f02afd5e5e48c9d5bc3579a41b3ca8652b16dfe4c0a44b1f9b4a4a
@@ -56,22 +56,45 @@ entries:
     - https://ferren.github.io/inair-helm-charts/packages/common-1.7.1.tgz
     version: 1.7.1
   odoo:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2021-08-09T11:39:35.390206922+08:00"
-    description: A Helm chart for Kubernetes
-    digest: 22d77193257810bd9e17fee040e9bdacd3db94fc52d922c48640435f2d2dbcc8
+  - annotations:
+      category: CRM
+    apiVersion: v2
+    appVersion: 14.0.20210809
+    created: "2021-08-09T11:56:03.971822446+08:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://ferren.github.io/inair-helm-charts/
+      version: 1.x.x
+    - name: common
+      repository: https://ferren.github.io/inair-helm-charts/
+      version: 1.x.x
+    description: A suite of web based open source business apps.
+    digest: 1ff4f7f4fb87aec31e21f7144c6081f7639df539de02eac0ab507a0058ffefc2
+    home: https://github.com/ferren/inair-helm-charts/tree/master/inair/odoo
+    icon: https://bitnami.com/assets/stacks/odoo/img/odoo-stack-220x234.png
+    keywords:
+    - odoo
+    - crm
+    - www
+    - http
+    - web
+    maintainers:
+    - email: ferrenliu@163.com
+      name: FerrenLiu
     name: odoo
-    type: application
+    sources:
+    - https://codeup.aliyun.com/inair/odoo-docker.git
+    - https://www.odoo.com/
     urls:
-    - https://ferren.github.io/inair-helm-charts/packages/odoo-0.1.0.tgz
-    version: 0.1.0
+    - https://ferren.github.io/inair-helm-charts/packages/odoo-1.0.0.tgz
+    version: 1.0.0
   postgresql:
   - annotations:
       category: Database
     apiVersion: v2
     appVersion: 13.3.0
-    created: "2021-08-09T11:39:35.395494175+08:00"
+    created: "2021-08-09T11:56:03.977199383+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -102,7 +125,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 13.3.0
-    created: "2021-08-09T11:39:35.392813645+08:00"
+    created: "2021-08-09T11:56:03.974726541+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -129,4 +152,4 @@ entries:
     urls:
     - https://ferren.github.io/inair-helm-charts/packages/postgresql-1.0.0.tgz
     version: 1.0.0
-generated: "2021-08-09T11:39:35.388362748+08:00"
+generated: "2021-08-09T11:56:03.966346692+08:00"
