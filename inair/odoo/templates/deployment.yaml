@@ -68,15 +68,15 @@ spec:
             - sh
             - -c
             - |
-              mkdir -p "/bitnami/odoo"
-              chown -R "odoo:root" "/bitnami/odoo"
+              mkdir -p "/inair/odoo"
+              chown -R "odoo:root" "/inair/odoo"
           securityContext: {{- .Values.volumePermissions.securityContext | toYaml | nindent 12 }}
           {{- if .Values.volumePermissions.resources }}
           resources: {{- toYaml .Values.volumePermissions.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
             - name: odoo-data
-              mountPath: /bitnami/odoo
+              mountPath: /inair/odoo
         {{- end }}
         {{- if .Values.initContainers }}
         {{- include "common.tplvalues.render" (dict "value" .Values.initContainers "context" $) | nindent 8 }}
@@ -233,7 +233,7 @@ spec:
           {{- end }}
           volumeMounts:
             - name: odoo-data
-              mountPath: /bitnami/odoo
+              mountPath: /inair/odoo
             {{- if .Values.customPostInitScripts }}
             - mountPath: /docker-entrypoint-init.d
               name: custom-postinit
