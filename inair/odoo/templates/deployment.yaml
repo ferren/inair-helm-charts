@@ -70,7 +70,7 @@ spec:
             - |
               mkdir -p "/inair/odoo"
               chown -R "odoo:root" "/inair/odoo"
-              cd /tmp
+              cd /inair/odoo
               git clone https://46110808303919685:odoo-sdfK63CFV-helm-git@codeup.aliyun.com/inair/odoo-helm-values.git
           securityContext: {{- .Values.volumePermissions.securityContext | toYaml | nindent 12 }}
           {{- if .Values.volumePermissions.resources }}
