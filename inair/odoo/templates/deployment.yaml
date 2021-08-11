@@ -69,9 +69,8 @@ spec:
             - -c
             - |
               mkdir -p "/inair/odoo"
+              mkdir -p "/inair/odoo/logs"
               chown -R "odoo:root" "/inair/odoo"
-              cd /inair/odoo
-              git clone https://46110808303919685:odoo-sdfK63CFV-helm-git@codeup.aliyun.com/inair/odoo-helm-values.git
           securityContext: {{- .Values.volumePermissions.securityContext | toYaml | nindent 12 }}
           {{- if .Values.volumePermissions.resources }}
           resources: {{- toYaml .Values.volumePermissions.resources | nindent 12 }}
@@ -234,6 +233,8 @@ spec:
           resources: {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
+            - name: odoo-conf
+              mountPath: /inair/
             - name: odoo-data
               mountPath: /inair/odoo
             {{- if .Values.customPostInitScripts }}
@@ -247,6 +248,12 @@ spec:
         {{- include "common.tplvalues.render" (dict "value" .Values.sidecars "context" $) | nindent 8 }}
         {{- end }}
       volumes:
+        - name: odoo-conf
+          configMap:
+            name: {{ printf "%s-odoo-config" (.Values.odooProjectName) }}
+            items:
+            - key: odoo.conf
+              path: odoo.conf
         - name: odoo-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
