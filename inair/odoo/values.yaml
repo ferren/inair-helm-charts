@@ -185,6 +185,7 @@ extraVolumes: []
 ## @param extraVolumeMounts Optionally specify extra list of additional volumeMounts for Odoo container(s)
 ##
 extraVolumeMounts: []
+initContainerVolumeMounts: []
 ## @param sidecars Add additional sidecar containers to the Odoo pod
 ## e.g:
 ## sidecars:
