@@ -71,7 +71,7 @@ spec:
               mkdir -p "/inair/odoo"
               mkdir -p "/inair/odoo/logs"
               chown -R "odoo:root" "/inair/odoo"
-              chown -R odoo:root /var/lib/odoo/.ssh
+              chown -R "odoo:root" "/var/lib/odoo/.ssh"
           securityContext: {{- .Values.volumePermissions.securityContext | toYaml | nindent 12 }}
           {{- if .Values.volumePermissions.resources }}
           resources: {{- toYaml .Values.volumePermissions.resources | nindent 12 }}
@@ -80,7 +80,6 @@ spec:
             - name: odoo-data
               mountPath: /inair/odoo
             - name: ssh-deploy-keys
-              readOnly: true
               mountPath: "/var/lib/odoo/.ssh"
         {{- end }}
         {{- if .Values.initContainers }}
