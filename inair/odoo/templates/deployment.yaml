@@ -60,6 +60,9 @@ spec:
       {{- if or (and .Values.volumePermissions.enabled .Values.persistence.enabled) .Values.initContainers }}
 
       initContainers:
+        {{- if .Values.initContainers }}
+        {{- include "common.tplvalues.render" (dict "value" .Values.initContainers "context" $) | nindent 8 }}
+        {{- end }}
         {{- if and .Values.volumePermissions.enabled .Values.persistence.enabled }}
         - name: volume-permissions
           image: {{ include "odoo.image" . }}
@@ -70,6 +73,8 @@ spec:
             - |
               mkdir -p "/inair/odoo/logs"
               chown -R "odoo:odoo" "/inair/odoo"
+              pip3 install --upgrade pip -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
+              pip3 install -r /inair/requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
           securityContext: {{- .Values.volumePermissions.securityContext | toYaml | nindent 12 }}
           {{- if .Values.volumePermissions.resources }}
           resources: {{- toYaml .Values.volumePermissions.resources | nindent 12 }}
@@ -77,9 +82,8 @@ spec:
           volumeMounts:
             - name: odoo-data
               mountPath: /inair/odoo
-        {{- end }}
-        {{- if .Values.initContainers }}
-        {{- include "common.tplvalues.render" (dict "value" .Values.initContainers "context" $) | nindent 8 }}
+            - name: odoo-conf
+              mountPath: /inair/
         {{- end }}
       {{- end }}
       containers:
@@ -136,21 +140,8 @@ spec:
                   name: {{ include "odoo.databaseSecretName" . }}
                   key: "postgresql-password"
             {{- end }}
-            - name: ODOO_EMAIL
-              value: {{ .Values.odooEmail | quote }}
-            - name: ODOO_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ template "odoo.secretName" . }}
-                  key: odoo-password
             - name: ODOO_SKIP_BOOTSTRAP
               value: {{ .Values.skipInstall | quote }}
-            - name: ODOO_LOAD_DEMO_DATA
-              value: {{ ternary "yes" "no" .Values.loadDemoData | quote }}
-            {{- if .Values.withoutDemo }}
-            - name: WITHOUT_DEMO
-              value: {{ .Values.withoutDemo | quote }}
-            {{- end }}
             {{- if .Values.smtpHost }}
             - name: ODOO_SMTP_HOST
               value: {{ .Values.smtpHost | quote }}
@@ -253,6 +244,8 @@ spec:
             items:
             - key: odoo.conf
               path: odoo.conf
+            - key: requirements.txt
+              path: requirements.txt
         - name: odoo-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
