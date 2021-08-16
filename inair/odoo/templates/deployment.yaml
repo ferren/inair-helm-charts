@@ -81,20 +81,6 @@ spec:
             - name: odoo-data
               mountPath: /inair/odoo
         {{- end }}
-        - name: pip-dep
-          image: {{ include "odoo.image" . }}
-          imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
-          command:
-            - sh
-            - -c
-            - |
-              pip3 install --upgrade pip -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
-              pip3 install -r /inair/requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
-          volumeMounts:
-            - name: odoo-data
-              mountPath: /inair/odoo
-            - name: odoo-conf
-              mountPath: /inair/
       {{- end }}
       containers:
         - name: {{ template "odoo.fullname" . }}
