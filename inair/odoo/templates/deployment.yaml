@@ -240,8 +240,6 @@ spec:
             items:
             - key: odoo.conf
               path: odoo.conf
-            - key: requirements.txt
-              path: requirements.txt
         - name: odoo-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
