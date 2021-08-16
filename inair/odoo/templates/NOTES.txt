@@ -51,11 +51,6 @@
 {{- include "common.warnings.rollingTag" .Values.image }}
 
 {{- $passwordValidationErrors := list -}}
-{{- if not .Values.existingSecret -}}
-    {{- $requiredOdooPassword := dict "valueKey" "odooPassword" "secret" $secretName "field" "odoo-password" "context" $ -}}
-    {{- $requiredOdooPasswordError := include "common.validations.values.single.empty" $requiredOdooPassword -}}
-    {{- $passwordValidationErrors = append $passwordValidationErrors $requiredOdooPasswordError -}}
-{{- end -}}
 
 {{- $postgresqlSecretName := include "odoo.databaseSecretName" . -}}
 {{- $postgresqlPasswordValidationErrors := include "common.validations.values.postgresql.passwords" (dict "secret" $postgresqlSecretName "subchart" true "context" $) -}}
