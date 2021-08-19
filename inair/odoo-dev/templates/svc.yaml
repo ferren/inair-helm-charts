@@ -31,6 +31,11 @@ spec:
   loadBalancerIP: {{ .Values.service.loadBalancerIP }}
   {{- end }}
   ports:
+    - name: ssh
+      port: 22
+      protocol: TCP
+      targetPort: ssh
+      nodePort: null
     - name: http
       port: {{ .Values.service.port }}
       protocol: TCP

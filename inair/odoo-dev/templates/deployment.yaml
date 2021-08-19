@@ -190,7 +190,7 @@ spec:
       volumes:
         - name: odoo-conf
           configMap:
-            name: {{ printf "%s-odoo-dev-config" (.Values.odooProjectName) }}
+            name: {{ printf "%s-odoo-config" (.Values.odooProjectName) }}
             items:
             - key: odoo.conf
               path: odoo.conf
