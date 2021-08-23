@@ -5,7 +5,7 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.8.0
-    created: "2021-08-19T16:27:30.152314053+08:00"
+    created: "2021-08-23T09:54:39.043596039+08:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: 5cd3c271470c5029e7f807abafbd6ea4e907ebef86810b380bc78c5e91b08b47
@@ -32,7 +32,7 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.7.1
-    created: "2021-08-19T16:27:30.151756338+08:00"
+    created: "2021-08-23T09:54:39.043102838+08:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: dd8dadc1c5f02afd5e5e48c9d5bc3579a41b3ca8652b16dfe4c0a44b1f9b4a4a
@@ -60,7 +60,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210816
-    created: "2021-08-19T16:27:30.217643424+08:00"
+    created: "2021-08-23T09:54:39.109263101+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -70,7 +70,7 @@ entries:
       repository: https://ferren.github.io/inair-helm-charts/
       version: 1.x.x
     description: A suite of web based open source business apps.
-    digest: e2a9e5158884364e81af06e5e5b312447472d5b9a37a64e88a4171fbcf8fa083
+    digest: c4f497a2a5899310f5a21685c6557245f34ced901da5218985124aa67515d06e
     home: https://github.com/ferren/inair-helm-charts/tree/master/inair/odoo
     icon: https://bitnami.com/assets/stacks/odoo/img/odoo-stack-220x234.png
     keywords:
@@ -93,7 +93,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210816
-    created: "2021-08-19T16:27:30.213610412+08:00"
+    created: "2021-08-23T09:54:39.104818631+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -126,7 +126,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210816
-    created: "2021-08-19T16:27:30.209096829+08:00"
+    created: "2021-08-23T09:54:39.100806788+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -159,7 +159,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210812
-    created: "2021-08-19T16:27:30.204824296+08:00"
+    created: "2021-08-23T09:54:39.096291894+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -192,7 +192,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210812
-    created: "2021-08-19T16:27:30.20022213+08:00"
+    created: "2021-08-23T09:54:39.092217764+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -225,7 +225,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2021-08-19T16:27:30.196193707+08:00"
+    created: "2021-08-23T09:54:39.087779263+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -258,7 +258,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2021-08-19T16:27:30.191657799+08:00"
+    created: "2021-08-23T09:54:39.083615962+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -291,7 +291,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2021-08-19T16:27:30.187365747+08:00"
+    created: "2021-08-23T09:54:39.078888512+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -324,7 +324,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2021-08-19T16:27:30.183001922+08:00"
+    created: "2021-08-23T09:54:39.074625654+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -357,7 +357,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2021-08-19T16:27:30.178531993+08:00"
+    created: "2021-08-23T09:54:39.069941982+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -390,7 +390,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2021-08-19T16:27:30.174366434+08:00"
+    created: "2021-08-23T09:54:39.06586535+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -423,7 +423,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210810
-    created: "2021-08-19T16:27:30.17002729+08:00"
+    created: "2021-08-23T09:54:39.061126678+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -456,7 +456,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210810
-    created: "2021-08-19T16:27:30.165605668+08:00"
+    created: "2021-08-23T09:54:39.05708047+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -489,7 +489,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210809
-    created: "2021-08-19T16:27:30.161146372+08:00"
+    created: "2021-08-23T09:54:39.052438135+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -521,41 +521,8 @@ entries:
   - annotations:
       category: CRM
     apiVersion: v2
-    appVersion: "20210819"
-    created: "2021-08-19T16:27:30.15119707+08:00"
-    dependencies:
-    - condition: postgresql.enabled
-      name: postgresql
-      repository: https://ferren.github.io/inair-helm-charts/
-      version: 1.x.x
-    - name: common
-      repository: https://ferren.github.io/inair-helm-charts/
-      version: 1.x.x
-    description: A suite of web based open source business apps.
-    digest: 37d2e46e697343265d42ee578e08a2ddf1ef9eb764fa018bf592845c8966f912
-    home: https://github.com/ferren/inair-helm-charts/tree/master/inair/odoo
-    icon: https://bitnami.com/assets/stacks/odoo/img/odoo-stack-220x234.png
-    keywords:
-    - odoo
-    - crm
-    - www
-    - http
-    - web
-    maintainers:
-    - email: ferrenliu@163.com
-      name: FerrenLiu
-    name: odoo
-    sources:
-    - https://codeup.aliyun.com/inair/odoo-docker.git
-    - https://www.odoo.com/
-    urls:
-    - https://ferren.github.io/inair-helm-charts/-u/odoo-1.0.1.tgz
-    version: 1.0.1
-  - annotations:
-      category: CRM
-    apiVersion: v2
     appVersion: 14.0.20210809
-    created: "2021-08-19T16:27:30.156933603+08:00"
+    created: "2021-08-23T09:54:39.047967026+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -589,7 +556,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2021-08-19T16:27:30.225719918+08:00"
+    created: "2021-08-23T09:54:39.117437456+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -599,7 +566,7 @@ entries:
       repository: https://ferren.github.io/inair-helm-charts/
       version: 1.x.x
     description: A suite of web based open source business apps.
-    digest: 0cef15ff96a6036782bb27ae238e6cec7155256ea1abce7e84e9e7244e57b6dc
+    digest: 7e7f56cb247613f116ce64f34f751e053ee218d0817a450e0bbf4765fc086069
     home: https://github.com/ferren/inair-helm-charts/tree/master/inair/odoo
     icon: https://bitnami.com/assets/stacks/odoo/img/odoo-stack-220x234.png
     keywords:
@@ -622,7 +589,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2021-08-19T16:27:30.22151022+08:00"
+    created: "2021-08-23T09:54:39.113200221+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -656,14 +623,14 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 13.3.0
-    created: "2021-08-19T16:27:30.230752441+08:00"
+    created: "2021-08-23T09:54:39.122249571+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
       version: 1.x.x
     description: Chart for PostgreSQL, an object-relational database management system
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
-    digest: c81a186784acab76e301e8c3ac5f74f267f6ad89f0d2fe20de147d8bda1f6f46
+    digest: 2313f7923ee244e56d624764e5284909177adbdbb2ed41264922c3676a427770
     home: https://github.com/ferren/inair-helm-charts/tree/master/inair/postgresql
     icon: https://d1q6f0aelx0por.cloudfront.net/product-logos/library-postgres-logo.png
     keywords:
@@ -687,7 +654,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 13.3.0
-    created: "2021-08-19T16:27:30.228117762+08:00"
+    created: "2021-08-23T09:54:39.119845808+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -714,4 +681,4 @@ entries:
     urls:
     - https://ferren.github.io/inair-helm-charts/packages/postgresql-1.0.0.tgz
     version: 1.0.0
-generated: "2021-08-19T16:27:30.146878776+08:00"
+generated: "2021-08-23T09:54:39.042500483+08:00"

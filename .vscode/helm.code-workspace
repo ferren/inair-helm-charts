@@ -1,0 +1,63 @@
+{
+  "folders": [{
+      "path": ".."
+    },
+    {
+      "path": "../../odoo-helm-values"
+    }
+  ],
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "charts-index",
+        "type": "shell",
+        "command": "helm",
+        "args": [
+          "repo",
+          "index",
+          "./",
+          "--url",
+          "https://ferren.github.io/inair-helm-charts/"
+        ],
+        "problemMatcher": []
+      },
+      {
+        "label": "odoo-chart-package",
+        "type": "shell",
+        "command": "helm",
+        "args": [
+          "package",
+          "inair/odoo",
+          "-d",
+          "packages"
+        ],
+        "problemMatcher": []
+      },
+      {
+        "label": "odoo-dev-chart-package",
+        "type": "shell",
+        "command": "helm",
+        "args": [
+          "package",
+          "inair/odoo-dev",
+          "-d",
+          "packages"
+        ],
+        "problemMatcher": []
+      },
+      {
+        "label": "postgresql-chart-package",
+        "type": "shell",
+        "command": "helm",
+        "args": [
+          "package",
+          "inair/postgresql",
+          "-d",
+          "packages"
+        ],
+        "problemMatcher": []
+      }
+    ]
+  }
+}
