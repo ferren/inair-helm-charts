@@ -138,6 +138,17 @@ spec:
       {{- if .Values.primary.priorityClassName }}
       priorityClassName: {{ .Values.primary.priorityClassName }}
       {{- end }}
+      initContainers:
+        - name: wait-longhorn-manager
+          image: busybox
+          command:
+            - sh
+            - -c
+            - |
+              chown -R 1001:1001 {{ .Values.persistence.mountPath }}
+          volumeMounts:
+            - name: data
+              mountPath: {{ .Values.persistence.mountPath }}
       containers:
         - name: {{ template "common.names.fullname" . }}
           image: {{ template "postgresql.image" . }}

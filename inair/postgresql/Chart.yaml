@@ -1,7 +1,7 @@
 annotations:
   category: Database
 apiVersion: v2
-appVersion: 13.3.0
+appVersion: 13.3
 dependencies:
   - name: common
     repository: https://ferren.github.io/inair-helm-charts/
@@ -24,4 +24,4 @@ name: postgresql
 sources:
   - https://github.com/docker-library/postgres.git
   - https://www.postgresql.org/
-version: 1.0.1
+version: 1.0.2
