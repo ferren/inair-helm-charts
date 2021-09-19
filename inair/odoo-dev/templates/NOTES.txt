@@ -1,7 +1,7 @@
 {{- $secretName := include "odoo.secretName" . -}}
 
 *******************************************************************
-*** PLEASE BE PATIENT: Odoo may take a few minutes to install   ***
+*** PLEASE BE PATIENT: Odoo dev may take a few minutes to install   ***
 *******************************************************************
 
 {{- if .Values.ingress.enabled }}
@@ -41,12 +41,6 @@
 {{- end }}
 
 2. Obtain the login credentials
-
-  export ODOO_EMAIL={{ .Values.odooEmail }}
-  {{ include "common.utils.secret.getvalue" (dict "secret" $secretName "field" "odoo-password" "context" $) }}
-
-  echo Email   : $ODOO_EMAIL
-  echo Password: $ODOO_PASSWORD
 
 {{- include "common.warnings.rollingTag" .Values.image }}
 

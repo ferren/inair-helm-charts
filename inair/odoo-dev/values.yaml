@@ -68,7 +68,11 @@ image:
   ##
   debug: false
 
-odooProjectName: ""
+## @param odooConfiguration Odoo configuration
+## Specify runtime configuration parameters as a dict, e.g.
+## {"addons_path": "/home/odoo/projects/odoo/odoo/addons,"}
+##
+odooConfiguration: {}
 
 ## SMTP mail delivery configuration
 ## ref: https://github.com/bitnami/bitnami-docker-odoo/#smtp-configuration
