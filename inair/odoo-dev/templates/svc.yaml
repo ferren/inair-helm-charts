@@ -32,10 +32,10 @@ spec:
   {{- end }}
   ports:
     - name: ssh
-      port: 22
+      port: {{ .Values.service.sshPort }}
       protocol: TCP
       targetPort: ssh
-      nodePort: null
+      nodePort: {{ .Values.service.sshNodePort }}
     - name: http
       port: {{ .Values.service.port }}
       protocol: TCP

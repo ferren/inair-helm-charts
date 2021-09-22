@@ -5,7 +5,7 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.8.0
-    created: "2021-09-22T15:00:05.3013244+08:00"
+    created: "2021-09-22T16:03:47.6373778+08:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: d161f595c8c8b179ce593ec236441502e5c25b35b7d1ca5a0a0184dd71aca2fd
@@ -32,7 +32,7 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.7.1
-    created: "2021-09-22T15:00:05.2989724+08:00"
+    created: "2021-09-22T16:03:47.6282347+08:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: dd8dadc1c5f02afd5e5e48c9d5bc3579a41b3ca8652b16dfe4c0a44b1f9b4a4a
@@ -60,7 +60,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210816
-    created: "2021-09-22T15:00:05.4856718+08:00"
+    created: "2021-09-22T16:03:48.0019336+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -93,7 +93,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210816
-    created: "2021-09-22T15:00:05.4746781+08:00"
+    created: "2021-09-22T16:03:47.9889365+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -126,7 +126,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210816
-    created: "2021-09-22T15:00:05.4616752+08:00"
+    created: "2021-09-22T16:03:47.9729387+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -159,7 +159,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210812
-    created: "2021-09-22T15:00:05.4486729+08:00"
+    created: "2021-09-22T16:03:47.957421+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -192,7 +192,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210812
-    created: "2021-09-22T15:00:05.4354416+08:00"
+    created: "2021-09-22T16:03:47.9413688+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -225,7 +225,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2021-09-22T15:00:05.4275167+08:00"
+    created: "2021-09-22T16:03:47.9271709+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -258,7 +258,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2021-09-22T15:00:05.4165757+08:00"
+    created: "2021-09-22T16:03:47.8991315+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -291,7 +291,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2021-09-22T15:00:05.4075783+08:00"
+    created: "2021-09-22T16:03:47.8846582+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -324,7 +324,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2021-09-22T15:00:05.3955752+08:00"
+    created: "2021-09-22T16:03:47.8678184+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -357,7 +357,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2021-09-22T15:00:05.3865767+08:00"
+    created: "2021-09-22T16:03:47.8538189+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -390,7 +390,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2021-09-22T15:00:05.3765734+08:00"
+    created: "2021-09-22T16:03:47.8388224+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -423,7 +423,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210810
-    created: "2021-09-22T15:00:05.3665733+08:00"
+    created: "2021-09-22T16:03:47.8242025+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -456,7 +456,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210810
-    created: "2021-09-22T15:00:05.3545799+08:00"
+    created: "2021-09-22T16:03:47.8038192+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -489,7 +489,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210809
-    created: "2021-09-22T15:00:05.3405738+08:00"
+    created: "2021-09-22T16:03:47.7906094+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -522,7 +522,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210809
-    created: "2021-09-22T15:00:05.3325741+08:00"
+    created: "2021-09-22T16:03:47.7573476+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -556,7 +556,40 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2021-09-22T15:00:05.5618149+08:00"
+    created: "2021-09-22T16:03:48.1213477+08:00"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://ferren.github.io/inair-helm-charts/
+      version: 1.x.x
+    - name: common
+      repository: https://ferren.github.io/inair-helm-charts/
+      version: 1.x.x
+    description: A suite of web based open source business apps.
+    digest: 8f1d63bd1de1d42a396425b6c87f9d1fc68c027b0b7796340d07c02e889ce87f
+    home: https://github.com/ferren/inair-helm-charts/tree/master/inair/odoo
+    icon: https://bitnami.com/assets/stacks/odoo/img/odoo-stack-220x234.png
+    keywords:
+    - odoo
+    - crm
+    - www
+    - http
+    - web
+    maintainers:
+    - email: ferrenliu@163.com
+      name: FerrenLiu
+    name: odoo-dev
+    sources:
+    - https://codeup.aliyun.com/inair/odoo-docker.git
+    - https://www.odoo.com/
+    urls:
+    - https://ferren.github.io/inair-helm-charts/packages/odoo-dev-1.0.8.tgz
+    version: 1.0.8
+  - annotations:
+      category: CRM
+    apiVersion: v2
+    appVersion: "20210819"
+    created: "2021-09-22T16:03:48.1053565+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -589,7 +622,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2021-09-22T15:00:05.5518169+08:00"
+    created: "2021-09-22T16:03:48.0930613+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -622,7 +655,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2021-09-22T15:00:05.5448147+08:00"
+    created: "2021-09-22T16:03:48.0783479+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -655,7 +688,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2021-09-22T15:00:05.5298161+08:00"
+    created: "2021-09-22T16:03:48.0633477+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -688,7 +721,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2021-09-22T15:00:05.5232944+08:00"
+    created: "2021-09-22T16:03:48.0483463+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -721,7 +754,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2021-09-22T15:00:05.5101581+08:00"
+    created: "2021-09-22T16:03:48.0326626+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -754,7 +787,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2021-09-22T15:00:05.498281+08:00"
+    created: "2021-09-22T16:03:48.0186151+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -788,7 +821,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: "13.3"
-    created: "2021-09-22T15:00:05.5975671+08:00"
+    created: "2021-09-22T16:03:48.15835+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -819,7 +852,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: "13.3"
-    created: "2021-09-22T15:00:05.5835674+08:00"
+    created: "2021-09-22T16:03:48.1493468+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -850,7 +883,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 13.3.0
-    created: "2021-09-22T15:00:05.5750469+08:00"
+    created: "2021-09-22T16:03:48.1393524+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -881,7 +914,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 13.3.0
-    created: "2021-09-22T15:00:05.5668154+08:00"
+    created: "2021-09-22T16:03:48.1283472+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -908,4 +941,4 @@ entries:
     urls:
     - https://ferren.github.io/inair-helm-charts/packages/postgresql-1.0.0.tgz
     version: 1.0.0
-generated: "2021-09-22T15:00:05.2970437+08:00"
+generated: "2021-09-22T16:03:47.6158237+08:00"

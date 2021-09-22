@@ -259,11 +259,13 @@ service:
   ## @param service.port Odoo service HTTP port
   ##
   port: 80
+  sshPort: 22
   ## Node ports to expose
   ## @param service.nodePort Node port for HTTP
   ## NOTE: choose port between <30000-32767>
   ##
   nodePort: ""
+  sshNodePort: ""
   ## @param service.clusterIP Odoo service Cluster IP
   ## e.g.:
   ## clusterIP: None
