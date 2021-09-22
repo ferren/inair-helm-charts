@@ -69,6 +69,7 @@ spec:
             - sh
             - -c
             - |
+              cp -a /root/.ssh /home/odoo/projects/
               chown -R "odoo:odoo" "/home/odoo"
           securityContext: {{- .Values.volumePermissions.securityContext | toYaml | nindent 12 }}
           {{- if .Values.volumePermissions.resources }}
@@ -77,6 +78,8 @@ spec:
           volumeMounts:
             - name: odoo-data
               mountPath: /home/odoo/projects
+            - name: ssh-keys
+              mountPath: /root/.ssh
         {{- end }}
       {{- end }}
       containers:
