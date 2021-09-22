@@ -11,12 +11,12 @@ metadata:
   annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
   {{- end }}
 data:
-  {{- if (.Files.Glob "files/odoo.conf") }}
-  {{ (.Files.Glob "files/odoo.conf").AsConfig | indent 2 }}
-  {{- else if .Values.odooConfiguration }}
+  {{- if .Values.odooConfiguration }}
     odoo.conf: |
       [options]
   {{- range $key, $value := default dict .Values.odooConfiguration }}
       {{ $key }} = {{ $value }}
   {{- end }}
+  {{- else if (.Files.Glob "files/odoo.conf") }}
+  {{ (.Files.Glob "files/odoo.conf").AsConfig | indent 2 }}
   {{- end }}
