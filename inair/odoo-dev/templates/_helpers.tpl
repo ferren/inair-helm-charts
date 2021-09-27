@@ -66,9 +66,9 @@ Return the Postgresql port
 */}}
 {{- define "odoo.databasePort" -}}
 {{- if .Values.postgresql.enabled }}
-    {{- printf "5432" | quote -}}
+    {{- printf "5432" -}}
 {{- else -}}
-    {{- .Values.externalDatabase.port | quote -}}
+    {{- .Values.externalDatabase.port -}}
 {{- end -}}
 {{- end -}}
 
@@ -95,6 +95,17 @@ Return the Postgresql user
 {{- end -}}
 
 {{/*
+Return the Postgresql user password
+*/}}
+{{- define "odoo.databasePassword" -}}
+{{- if .Values.postgresql.enabled }}
+    {{- printf "%s" .Values.postgresql.postgresqlPassword -}}
+{{- else -}}
+    {{- printf "%s" .Values.externalDatabase.password -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
 Return the PostgreSQL Secret Name
 */}}
 {{- define "odoo.databaseSecretName" -}}
@@ -108,6 +119,39 @@ Return the PostgreSQL Secret Name
     {{- printf "%s" .Values.externalDatabase.existingSecret -}}
 {{- else -}}
     {{- printf "%s-%s" .Release.Name "externaldb" -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the Redis hostname
+*/}}
+{{- define "odoo.redisHost" -}}
+{{- if .Values.redis.enabled }}
+    {{- printf "%s" (include "odoo.redis.fullname" .) -}}
+{{- else -}}
+    {{- printf "None" -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the Redis port
+*/}}
+{{- define "odoo.redisPort" -}}
+{{- if .Values.redis.enabled }}
+    {{- printf "6379" -}}
+{{- else -}}
+    {{- printf "6379" -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the Redis user password
+*/}}
+{{- define "odoo.redisPassword" -}}
+{{- if .Values.redis.enabled }}
+    {{- printf "%s" .Values.redis.auth.password -}}
+{{- else -}}
+    {{- printf "123" -}}
 {{- end -}}
 {{- end -}}
 
