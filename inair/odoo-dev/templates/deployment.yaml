@@ -99,19 +99,6 @@ spec:
           env:
             - name: ALLOW_EMPTY_PASSWORD
               value: {{ ternary "yes" "no" .Values.allowEmptyPassword | quote }}
-            - name: ODOO_DATABASE_HOST
-              value: {{ template "odoo.databaseHost" . }}
-            - name: ODOO_DATABASE_PORT_NUMBER
-              value: {{ template "odoo.databasePort" . }}
-            - name: ODOO_DATABASE_NAME
-              value: {{ template "odoo.databaseName" . }}
-            - name: ODOO_DATABASE_USER
-              value: {{ template "odoo.databaseUser" . }}
-            - name: ODOO_DATABASE_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "odoo.databaseSecretName" . | quote }}
-                  key: "postgresql-password"
             {{- if and (not .Values.postgresql.enabled) .Values.externalDatabase.create }}
             - name: POSTGRESQL_CLIENT_DATABASE_HOST
               value: {{ template "odoo.databaseHost" . }}
