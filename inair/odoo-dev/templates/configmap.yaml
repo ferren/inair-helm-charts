@@ -17,14 +17,14 @@ data:
   {{- range $key, $value := default dict .Values.odooConfiguration }}
       {{ $key }} = {{ $value }}
   {{- end }}
-      db_host: {{ template "odoo.databaseHost" . }}
-      db_port: {{ template "odoo.databasePort" . }}
-      db_user: {{ template "odoo.databaseUser" . }}
-      db_password: {{ template "odoo.databasePassword" . }}
+      db_host = {{ template "odoo.databaseHost" . }}
+      db_port = {{ template "odoo.databasePort" . }}
+      db_user = {{ template "odoo.databaseUser" . }}
+      db_password = {{ template "odoo.databasePassword" . }}
   {{- if .Values.redis.enabled }}
-      redis_host: {{ template "odoo.redisHost" . }}
-      redis_port: {{ template "odoo.redisPort" . }}
-      redis_password: {{ template "odoo.redisPassword" . }}
+      redis_host = {{ template "odoo.redisHost" . }}
+      redis_port = {{ template "odoo.redisPort" . }}
+      redis_password = {{ template "odoo.redisPassword" . }}
   {{- end }}
   {{- else if (.Files.Glob "files/odoo.conf") }}
   {{ (.Files.Glob "files/odoo.conf").AsConfig | indent 2 }}
