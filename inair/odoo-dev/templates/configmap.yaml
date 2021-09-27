@@ -17,6 +17,15 @@ data:
   {{- range $key, $value := default dict .Values.odooConfiguration }}
       {{ $key }} = {{ $value }}
   {{- end }}
+  {{- if .Values.postgresql.enabled }}
+      db_host: {{ template "odoo.databaseHost" . }}
+      db_port: {{ template "odoo.databasePort" . }}
+      db_user: {{ template "odoo.databaseUser" . }}
+      db_password: 
+        secretKeyRef:
+          name: {{ include "odoo.databaseSecretName" . | quote }}
+          key: "postgresql-password"
+  {{- end }}
   {{- else if (.Files.Glob "files/odoo.conf") }}
   {{ (.Files.Glob "files/odoo.conf").AsConfig | indent 2 }}
   {{- end }}
