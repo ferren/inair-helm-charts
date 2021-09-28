@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "odoo.fullname" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels: {{- include "common.labels.standard" . | nindent 4 }}
+    {{- if .Values.commonLabels }}
+    {{- include "common.tplvalues.render" ( dict "value" .Values.commonLabels "context" $ ) | nindent 4 }}
+    {{- end }}
+  {{- if .Values.commonAnnotations }}
+  annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
+  {{- end }}
+data:
+  {{- if .Values.odooConfiguration }}
+    odoo.conf: |
+      [options]
+  {{- range $key, $value := default dict .Values.odooConfiguration }}
+      {{ $key }} = {{ $value }}
+  {{- end }}
+  {{- else if (.Files.Glob "files/odoo.conf") }}
+  {{ (.Files.Glob "files/odoo.conf").AsConfig | indent 2 }}
+  {{- end }}

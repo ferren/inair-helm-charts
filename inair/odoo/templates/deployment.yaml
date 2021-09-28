@@ -114,6 +114,21 @@ spec:
                 secretKeyRef:
                   name: {{ include "odoo.databaseSecretName" . | quote }}
                   key: "postgresql-password"
+            {{- if .Values.redis.enabled }}
+            - name: ODOO_REDIS_HOST
+              value: {{ template "odoo.redisHost" . }}
+            - name: ODOO_REDIS_PORT_NUMBER
+              value: {{ template "odoo.redisPort" . }}
+            - name: ODOO_REDIS_DB
+              value: "1"
+            - name: ODOO_DISABLE_SESSION_GC
+              value: "true"
+            - name: ODOO_REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "odoo.redisSecretName" . | quote }}
+                  key: "redis-password"
+            {{- end }}
             {{- if and (not .Values.postgresql.enabled) .Values.externalDatabase.create }}
             - name: POSTGRESQL_CLIENT_DATABASE_HOST
               value: {{ template "odoo.databaseHost" . }}
@@ -236,7 +251,7 @@ spec:
       volumes:
         - name: odoo-conf
           configMap:
-            name: {{ printf "%s-odoo-config" (.Values.odooProjectName) }}
+            name: {{ template "odoo.fullname" . }}
             items:
             - key: odoo.conf
               path: odoo.conf

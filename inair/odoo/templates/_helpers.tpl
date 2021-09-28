@@ -23,6 +23,14 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- end -}}
 
 {{/*
+Create a default fully qualified app name.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+*/}}
+{{- define "odoo.redis.fullname" -}}
+{{- printf "%s-%s" .Release.Name "redis" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{/*
 Create chart name and version as used by the chart label.
 */}}
 {{- define "odoo.chart" -}}
@@ -108,6 +116,39 @@ Return the PostgreSQL Secret Name
     {{- printf "%s" .Values.externalDatabase.existingSecret -}}
 {{- else -}}
     {{- printf "%s-%s" .Release.Name "externaldb" -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the Redis hostname
+*/}}
+{{- define "odoo.redisHost" -}}
+{{- if .Values.redis.enabled }}
+    {{- printf "%s-%s" (include "odoo.redis.fullname" .) "master" -}}
+{{- else -}}
+    {{- printf "None" -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the Redis port
+*/}}
+{{- define "odoo.redisPort" -}}
+{{- if .Values.redis.enabled }}
+    {{- printf "6379" | quote -}}
+{{- else -}}
+    {{- printf "6379" | quote -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the Redis Secret Name
+*/}}
+{{- define "odoo.redisSecretName" -}}
+{{- if .Values.redis.enabled }}
+    {{- printf "%s" (include "odoo.redis.fullname" .) -}}
+{{- else -}}
+    {{- printf "%s-%s" .Release.Name "redis" -}}
 {{- end -}}
 {{- end -}}
 

@@ -49,7 +49,7 @@ extraDeploy: []
 image:
   registry: registry.cn-shenzhen.aliyuncs.com
   repository: inair/inair-odoo
-  tag: 14.0.20210816
+  tag: 14.0.20210928
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -68,7 +68,11 @@ image:
   ##
   debug: false
 
-odooProjectName: ""
+## @param odooConfiguration Odoo configuration
+## Specify runtime configuration parameters as a dict, e.g.
+## {"addons_path": "/home/odoo/projects/odoo/odoo/addons,"}
+##
+odooConfiguration: {}
 
 ## @section Odoo Configuration parameters
 ## Odoo settings based on environment variables
@@ -476,7 +480,7 @@ persistence:
   accessMode: ReadWriteOnce
   ## @param persistence.size Persistent Volume size
   ##
-  size: 10Gi
+  size: 5Gi
   ## @param persistence.dataSource Custom PVC data source
   ##
   dataSource: {}
@@ -627,3 +631,53 @@ externalDatabase:
   ##
   # existingSecret: my-secret
   existingSecret: ""
+
+## Redis chart configuration
+## ref: https://github.com/bitnami/charts/blob/master/bitnami/redis/values.yaml
+##
+redis:
+  ## @param postgresql.enabled Deploy PostgreSQL container(s)
+  ##
+  enabled: true
+  ## @param architecture Redis&trade; architecture. Allowed values: `standalone` or `replication`
+  ##
+  architecture: standalone
+  ## Redis&trade; Authentication parameters
+  ## ref: https://github.com/bitnami/bitnami-docker-redis#setting-the-server-password-on-first-run
+  ##
+  auth:
+    ## @param auth.enabled Enable password authentication
+    ##
+    enabled: true
+    ## @param auth.sentinel Enable password authentication on sentinels too
+    ##
+    sentinel: true
+    ## @param auth.password Redis&trade; password
+    ## Defaults to a random 10-character alphanumeric string if not set
+    ##
+    password: ""
+    ## @param auth.existingSecret The name of an existing secret with Redis&trade; credentials
+    ## NOTE: When it's set, the previous `auth.password` parameter is ignored
+    ##
+    existingSecret: ""
+    ## @param auth.existingSecretPasswordKey Password key to be retrieved from existing secret
+    ## NOTE: ignored unless `auth.existingSecret` parameter is set
+    ##
+    existingSecretPasswordKey: ""
+    ## @param auth.usePasswordFiles Mount credentials as files instead of using an environment variable
+    ##
+    usePasswordFiles: false
+
+  master:
+    persistence:
+      enabled: true
+      size: 3Gi
+
+  ## 'volumePermissions' init container parameters
+  ## Changes the owner and group of the persistent volume mount point to runAsUser:fsGroup values
+  ##   based on the *podSecurityContext/*containerSecurityContext parameters
+  ##
+  volumePermissions:
+    ## @param volumePermissions.enabled Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`
+    ##
+    enabled: true
