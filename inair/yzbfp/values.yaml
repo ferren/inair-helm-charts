@@ -623,13 +623,13 @@ nacos:
     storage:
       type: embedded
       #type: mysql
-    db:
-      host: ""
-      name: ""
-      port: ""
-      username: ""
-      password: ""
-      param: "characterEncoding=utf8&connectTimeout=10000&socketTimeout=30000&autoReconnect=true&useSSL=false&serverTimezone=UTC"
+      db:
+        host: ""
+        name: ""
+        port: ""
+        username: ""
+        password: ""
+        param: "characterEncoding=utf8&connectTimeout=10000&socketTimeout=30000&autoReconnect=true&useSSL=false&serverTimezone=UTC"
 
   persistence:
     enabled: true
@@ -847,3 +847,6 @@ mongodb:
     ## and one PV for multiple services.
     ##
     subPath: ""
+
+rabbitmq:
+  enabled: true
