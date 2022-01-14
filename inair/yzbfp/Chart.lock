@@ -1,0 +1,15 @@
+dependencies:
+- name: common
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 1.8.0
+- name: nacos
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 0.1.5
+- name: redis
+  repository: https://charts.bitnami.com/bitnami
+  version: 15.7.5
+- name: mongodb
+  repository: https://charts.bitnami.com/bitnami
+  version: 10.31.3
+digest: sha256:2a965c9eabc3d9adb52967e4a43da02db45a5462a73525987435c9cf7dc4d8ca
+generated: "2022-01-14T12:21:17.849399595+08:00"
