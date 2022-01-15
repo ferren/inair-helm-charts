@@ -523,3 +523,6 @@ nacos:
   address: nacos://nacos-cs:8848
   application:
     name: service-bfp-base
+
+redis:
+  enable: true
