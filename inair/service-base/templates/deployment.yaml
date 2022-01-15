@@ -77,7 +77,7 @@ spec:
           resources: {{- toYaml .Values.volumePermissions.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
-            - name: yzbfp-data
+            - name: yzbfp-service-base-data
               mountPath: /app
         {{- end }}
       {{- end }}
@@ -157,7 +157,7 @@ spec:
           resources: {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
-            - name: yzbfp-data
+            - name: yzbfp-service-base-data
               mountPath: /app
             {{- if .Values.customPostInitScripts }}
             - mountPath: /docker-entrypoint-init.d
@@ -170,7 +170,7 @@ spec:
         {{- include "common.tplvalues.render" (dict "value" .Values.sidecars "context" $) | nindent 8 }}
         {{- end }}
       volumes:
-        - name: yzbfp-data
+        - name: yzbfp-service-base-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
             claimName: {{ .Values.persistence.existingClaim | default (include "yzbfp.fullname" .) }}
