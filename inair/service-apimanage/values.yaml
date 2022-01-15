@@ -89,7 +89,7 @@ args: [
   "--spring.database.username=$(MYSQL_USERNAME)",
   "--spring.database.password=$(MYSQL_PASSWORD)",
   "--dubbo.registry.address=nacos://nacos-cs:8848",
-  "--dubbo.application.name=service-bfp-base",
+  "--dubbo.application.name=service-bfp-apimanage",
   "--spring.redis.host=$(REDIS_HOST)",
   "--spring.redis.password=$(REDIS_PASSWORD)",
 ]
@@ -522,7 +522,7 @@ externalDatabase:
 nacos:
   address: nacos://nacos-cs:8848
   application:
-    name: service-bfp-base
+    name: service-bfp-apimanage
 
 redis:
   enable: true

@@ -1,11 +1,10 @@
 spring:
   application:
-    name: service-bfp-base
+    name: service-bfp-apimanage
   datasource:
     url: 
     username: 
     password: 
-    type: com.zaxxer.hikari.HikariDataSource
     hikari:
       connection-timeout: 50000
       min-idle: 10
@@ -13,8 +12,7 @@ spring:
       connection-test-query: SELECT 1
       validation-timeout: 250
   redis:
-    database: 0
-    host: 
+    host: bfp-redis-master
     port: 6379  #单实例redis用这个配置
     password: 
     timeout: 5000ms
@@ -25,19 +23,19 @@ spring:
         min-idle: 5
 dubbo:
   registry:
-    address: 
+    address: nacos://nacos-cs:8848
   protocol:
-    port: 20881
+    port: 20890
     name: dubbo
   application:
-    name: 
+    name: service-bfp-apimanage
     qos:
       enable: false
       accept:
         foreign:
           ip: false
   scan:
-    basePackages: com.yzbfp.admin.base.service
+    basePackages: com.yzbfp.admin.apimanage.service
   provider:
     timeout: 30000
 service:
