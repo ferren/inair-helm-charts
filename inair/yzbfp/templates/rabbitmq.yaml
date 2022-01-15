@@ -2,7 +2,7 @@
 kind: RabbitmqCluster
 apiVersion: rabbitmq.com/v1beta1
 metadata:
-  name: {{ printf "%s-mq" (include "common.names.fullname" .) }}
+  name: {{- include "yzbfp.rabbitmq.fullname" }}
   namespace: {{ .Release.Namespace | quote }}
   labels: {{- include "common.labels.standard" . | nindent 4 }}
     {{- if .Values.commonLabels }}

@@ -95,6 +95,22 @@ spec:
           {{- if .Values.args }}
           args: {{- include "common.tplvalues.render" (dict "value" .Values.args "context" $) | nindent 12 }}
           {{- end }}
+          env:
+            - name: MYSQL_URL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "yzbfp.databaseSecretName" . | quote }}
+                  key: "mysql-url"
+            - name: MYSQL_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "yzbfp.databaseSecretName" . | quote }}
+                  key: "mysql-username"
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "yzbfp.databaseSecretName" . | quote }}
+                  key: "mysql-password"
           ports:
             - name: http
               containerPort: {{ .Values.containerPort }}
