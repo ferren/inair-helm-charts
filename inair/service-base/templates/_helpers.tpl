@@ -131,11 +131,7 @@ Return the MySql Secret Name
 Return the Redis hostname
 */}}
 {{- define "yzbfp.redisHost" -}}
-{{- if .Values.redis.enabled }}
-    {{- printf "%s-%s" (include "yzbfp.redis.fullname" .) "master" -}}
-{{- else -}}
     {{- printf "%s-%s" .Release.Name "master" -}}
-{{- end -}}
 {{- end -}}
 
 {{/*
