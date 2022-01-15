@@ -142,7 +142,7 @@ Return the Redis hostname
 {{- if .Values.redis.enabled }}
     {{- printf "%s-%s" (include "yzbfp.redis.fullname" .) "master" -}}
 {{- else -}}
-    {{- printf "%s-%s" .Release.Name "master" -}}
+    {{- printf "%s-redis-%s" .Release.Name "master" -}}
 {{- end -}}
 {{- end -}}
 
