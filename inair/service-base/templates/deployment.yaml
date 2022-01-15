@@ -112,7 +112,7 @@ spec:
                   name: {{ include "yzbfp.databaseSecretName" . | quote }}
                   key: "mysql-password"
             - name: REDIS_HOST
-              value: {{ template "yzbfp.redisHost" . }}
+              value: {{ include "yzbfp.redisHost" . | quote }}
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
