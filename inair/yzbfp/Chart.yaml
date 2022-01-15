@@ -18,8 +18,12 @@ dependencies:
     name: mongodb
     repository: https://charts.bitnami.com/bitnami
     version: 10.x.x
-  - condition: mongodb.enabled
+  - condition: service-base.enabled
     name: service-base
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 0.x.x
+  - condition: service-apimanage.enabled
+    name: service-apimanage
     repository: https://ferren.github.io/inair-helm-charts/
     version: 0.x.x
 description: YZ bfp system.
