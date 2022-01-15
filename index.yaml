@@ -5,7 +5,7 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.8.0
-    created: "2022-01-15T17:29:01.4388606+08:00"
+    created: "2022-01-15T17:35:38.4924949+08:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: d161f595c8c8b179ce593ec236441502e5c25b35b7d1ca5a0a0184dd71aca2fd
@@ -32,7 +32,7 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.7.1
-    created: "2022-01-15T17:29:01.434816+08:00"
+    created: "2022-01-15T17:35:38.4914209+08:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: dd8dadc1c5f02afd5e5e48c9d5bc3579a41b3ca8652b16dfe4c0a44b1f9b4a4a
@@ -58,7 +58,7 @@ entries:
   nacos:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-01-15T17:29:01.4388606+08:00"
+    created: "2022-01-15T17:35:38.493447+08:00"
     description: A Helm chart for Kubernetes
     digest: 7e4fb3e6446c58872039d9b2136c7ba5be48572493a81b4cde6d804245e6d616
     maintainers:
@@ -73,7 +73,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20211011
-    created: "2022-01-15T17:29:01.6051638+08:00"
+    created: "2022-01-15T17:35:38.6227485+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -110,7 +110,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210928
-    created: "2022-01-15T17:29:01.5908225+08:00"
+    created: "2022-01-15T17:35:38.6125242+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -147,7 +147,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210816
-    created: "2022-01-15T17:29:01.566196+08:00"
+    created: "2022-01-15T17:35:38.5974449+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -180,7 +180,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210816
-    created: "2022-01-15T17:29:01.5546604+08:00"
+    created: "2022-01-15T17:35:38.5927057+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -213,7 +213,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210816
-    created: "2022-01-15T17:29:01.5476265+08:00"
+    created: "2022-01-15T17:35:38.5876506+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -246,7 +246,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210812
-    created: "2022-01-15T17:29:01.5375789+08:00"
+    created: "2022-01-15T17:35:38.5826099+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -279,7 +279,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210812
-    created: "2022-01-15T17:29:01.532515+08:00"
+    created: "2022-01-15T17:35:38.5723993+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -312,7 +312,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2022-01-15T17:29:01.5174375+08:00"
+    created: "2022-01-15T17:35:38.5668393+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -345,7 +345,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2022-01-15T17:29:01.5118869+08:00"
+    created: "2022-01-15T17:35:38.5625161+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -378,7 +378,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2022-01-15T17:29:01.5013288+08:00"
+    created: "2022-01-15T17:35:38.5528436+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -411,7 +411,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2022-01-15T17:29:01.4925963+08:00"
+    created: "2022-01-15T17:35:38.5501944+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -444,7 +444,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2022-01-15T17:29:01.4874577+08:00"
+    created: "2022-01-15T17:35:38.5426401+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -477,7 +477,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2022-01-15T17:29:01.4818831+08:00"
+    created: "2022-01-15T17:35:38.537507+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -510,7 +510,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210810
-    created: "2022-01-15T17:29:01.4738531+08:00"
+    created: "2022-01-15T17:35:38.5299218+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -543,7 +543,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210810
-    created: "2022-01-15T17:29:01.4668543+08:00"
+    created: "2022-01-15T17:35:38.5228697+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -576,7 +576,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210809
-    created: "2022-01-15T17:29:01.4592653+08:00"
+    created: "2022-01-15T17:35:38.516777+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -609,7 +609,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210809
-    created: "2022-01-15T17:29:01.4527194+08:00"
+    created: "2022-01-15T17:35:38.5089353+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -643,7 +643,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20211011"
-    created: "2022-01-15T17:29:01.731748+08:00"
+    created: "2022-01-15T17:35:38.7225182+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -680,7 +680,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210922"
-    created: "2022-01-15T17:29:01.7172839+08:00"
+    created: "2022-01-15T17:35:38.7148684+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -717,7 +717,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210922"
-    created: "2022-01-15T17:29:01.6986614+08:00"
+    created: "2022-01-15T17:35:38.7028687+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -754,7 +754,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210922"
-    created: "2022-01-15T17:29:01.6780714+08:00"
+    created: "2022-01-15T17:35:38.6925149+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -791,7 +791,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210922"
-    created: "2022-01-15T17:29:01.6666526+08:00"
+    created: "2022-01-15T17:35:38.6749704+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -824,7 +824,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2022-01-15T17:29:01.6556093+08:00"
+    created: "2022-01-15T17:35:38.6749704+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -857,7 +857,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2022-01-15T17:29:01.6523154+08:00"
+    created: "2022-01-15T17:35:38.6643322+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -890,7 +890,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2022-01-15T17:29:01.6453006+08:00"
+    created: "2022-01-15T17:35:38.6623058+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -923,7 +923,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2022-01-15T17:29:01.6392967+08:00"
+    created: "2022-01-15T17:35:38.6552472+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -956,7 +956,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2022-01-15T17:29:01.6242693+08:00"
+    created: "2022-01-15T17:35:38.6497392+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -989,7 +989,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2022-01-15T17:29:01.6242693+08:00"
+    created: "2022-01-15T17:35:38.6429626+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -1022,7 +1022,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2022-01-15T17:29:01.6191925+08:00"
+    created: "2022-01-15T17:35:38.63593+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -1055,7 +1055,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2022-01-15T17:29:01.6106797+08:00"
+    created: "2022-01-15T17:35:38.6227485+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -1089,7 +1089,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: "13.3"
-    created: "2022-01-15T17:29:01.7639509+08:00"
+    created: "2022-01-15T17:35:38.7374162+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1120,7 +1120,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: "13.3"
-    created: "2022-01-15T17:29:01.7579513+08:00"
+    created: "2022-01-15T17:35:38.7343932+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1151,7 +1151,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 13.3.0
-    created: "2022-01-15T17:29:01.7528497+08:00"
+    created: "2022-01-15T17:35:38.7325509+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1182,7 +1182,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 13.3.0
-    created: "2022-01-15T17:29:01.746322+08:00"
+    created: "2022-01-15T17:35:38.7270339+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1214,7 +1214,36 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.8027676+08:00"
+    created: "2022-01-15T17:35:38.7525814+08:00"
+    dependencies:
+    - name: common
+      repository: https://ferren.github.io/inair-helm-charts/
+      version: 1.x.x
+    description: YZ bfp service base.
+    digest: bdc0a83d0e7664b68e1540e39e8227393fd73d9e5d6f6950098dfda62b1f54d8
+    home: https://www.incosten.com/
+    icon: https://www.incosten.com/_nuxt/img/logo.a9cdf55.svg
+    keywords:
+    - bfp
+    - crm
+    - www
+    - http
+    - web
+    maintainers:
+    - email: ferrenliu@163.com
+      name: FerrenLiu
+    name: service-base
+    sources:
+    - https://codeup.aliyun.com/61bd3e98fa282c88e103b306/java/bfp-admin2.0-dev
+    - https://www.incosten.com/
+    urls:
+    - https://ferren.github.io/inair-helm-charts/packages/service-base-0.1.0.tgz
+    version: 0.1.0
+  - annotations:
+      category: BFP
+    apiVersion: v2
+    appVersion: 2.0.20220114
+    created: "2022-01-15T17:35:38.7485096+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1243,7 +1272,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.7937567+08:00"
+    created: "2022-01-15T17:35:38.7485096+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1272,7 +1301,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.788546+08:00"
+    created: "2022-01-15T17:35:38.7424991+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1301,7 +1330,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.7825086+08:00"
+    created: "2022-01-15T17:35:38.7424991+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1330,7 +1359,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.7689504+08:00"
+    created: "2022-01-15T17:35:38.7424991+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1360,7 +1389,52 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.9452645+08:00"
+    created: "2022-01-15T17:35:38.8776043+08:00"
+    dependencies:
+    - name: common
+      repository: https://ferren.github.io/inair-helm-charts/
+      version: 1.x.x
+    - condition: nacos.enabled
+      name: nacos
+      repository: https://ferren.github.io/inair-helm-charts/
+      version: 0.1.x
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 15.x.x
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.x.x
+    - condition: mongodb.enabled
+      name: service-base
+      repository: https://ferren.github.io/inair-helm-charts/
+      version: 0.x.x
+    description: YZ bfp system.
+    digest: 14f80b87f68e35a6ef64c16c3b6a32f03b26927114c5181376478cd83303ddf9
+    home: https://www.incosten.com/
+    icon: https://www.incosten.com/_nuxt/img/logo.a9cdf55.svg
+    keywords:
+    - bfp
+    - crm
+    - www
+    - http
+    - web
+    maintainers:
+    - email: ferrenliu@163.com
+      name: FerrenLiu
+    name: yzbfp
+    sources:
+    - https://codeup.aliyun.com/61bd3e98fa282c88e103b306/java/bfp-admin2.0-dev
+    - https://www.incosten.com/
+    urls:
+    - https://ferren.github.io/inair-helm-charts/packages/yzbfp-0.1.0.tgz
+    version: 0.1.0
+  - annotations:
+      category: BFP
+    apiVersion: v2
+    appVersion: 2.0.20220114
+    created: "2022-01-15T17:35:38.8624999+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1405,7 +1479,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.9296997+08:00"
+    created: "2022-01-15T17:35:38.8427097+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1450,7 +1524,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.9163875+08:00"
+    created: "2022-01-15T17:35:38.8360545+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1495,7 +1569,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.8964153+08:00"
+    created: "2022-01-15T17:35:38.8205919+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1540,7 +1614,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.8870657+08:00"
+    created: "2022-01-15T17:35:38.8024533+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1585,7 +1659,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.8684506+08:00"
+    created: "2022-01-15T17:35:38.7911679+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1626,7 +1700,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.8563815+08:00"
+    created: "2022-01-15T17:35:38.7790232+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1667,7 +1741,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2022-01-15T17:29:01.8338851+08:00"
+    created: "2022-01-15T17:35:38.7626111+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1704,4 +1778,4 @@ entries:
     urls:
     - https://ferren.github.io/inair-helm-charts/packages/yzbfp-0.0.1.tgz
     version: 0.0.1
-generated: "2022-01-15T17:29:01.434816+08:00"
+generated: "2022-01-15T17:35:38.4902946+08:00"
