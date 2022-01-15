@@ -566,38 +566,9 @@ mysql:
 ## External Database Configuration
 ## All of these values are only used when postgresql.enabled is set to false
 externalDatabase:
-  ## @param externalDatabase.host External Database server host
-  ##
-  host: ""
-  ## @param externalDatabase.port External Database server port
-  ##
-  port: 5432
-  ## @param externalDatabase.user External Database username
-  ##
-  user: yzbfp
-  ## @param externalDatabase.password External Database user password
-  ##
+  url: ""
+  username: yzbfp
   password: ""
-  ## @param externalDatabase.database External Database database name
-  ##
-  database: yzbfp_db
-  ## @param externalDatabase.create Enable PostgreSQL user and database creation (when using an external db)
-  ## If true it will add POSTGRESQL_CLIENT_* env vars to the deployment which will create the PostgreSQL user & database using the provided admin credentials
-  ##
-  create: true
-  ## @param externalDatabase.postgresqlPostgresUser External Database admin username
-  ##
-  mysqlMysqlUser: "postgres"
-  ## @param externalDatabase.postgresqlPostgresPassword External Database admin password
-  ##
-  mysqlMysqlPassword: ""
-  ## @param externalDatabase.existingSecret Name of existing secret object
-  ## The secret should contain the following keys:
-  ## postgresql-postgres-password (for root user)
-  ## postgresql-password (for the unprivileged user)
-  ##
-  # existingSecret: my-secret
-  existingSecret: ""
 
 nacos:
   global:
