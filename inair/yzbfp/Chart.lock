@@ -11,5 +11,8 @@ dependencies:
 - name: mongodb
   repository: https://charts.bitnami.com/bitnami
   version: 10.31.3
-digest: sha256:2a965c9eabc3d9adb52967e4a43da02db45a5462a73525987435c9cf7dc4d8ca
-generated: "2022-01-14T12:21:17.849399595+08:00"
+- name: yzbfp-service-base
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 0.0.4
+digest: sha256:41a3a041f0e9d2c16f56c091b870370949a2e3a9486af710935ad6f60eeee287
+generated: "2022-01-15T15:58:58.0723575+08:00"
