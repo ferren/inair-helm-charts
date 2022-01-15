@@ -88,8 +88,8 @@ args: [
   "--spring.database.url=$(MYSQL_URL)",
   "--spring.database.username=$(MYSQL_USERNAME)",
   "--spring.database.password=$(MYSQL_PASSWORD)",
-  "--dubbo.registry.address=$(NACOS_ADDRESS)",
-  "--dubbo.application.name=$(NACOS_APP_NAME)",
+  "--dubbo.registry.address=nacos://nacos-cs:8848",
+  "--dubbo.application.name=service-bfp-base",
   "--spring.redis.host=$(REDIS_HOST)",
   "--spring.redis.password=$(REDIS_PASSWORD)",
 ]

@@ -111,25 +111,12 @@ spec:
                 secretKeyRef:
                   name: {{ include "yzbfp.databaseSecretName" . | quote }}
                   key: "mysql-password"
-            - name: NACOS_APP_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "yzbfp.databaseSecretName" . | quote }}
-                  key: "nacos-name"
-            - name: NACOS_ADDRESS
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "yzbfp.databaseSecretName" . | quote }}
-                  key: "nacos-address"
             - name: REDIS_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "yzbfp.databaseSecretName" . | quote }}
-                  key: "redis-host"
+              value: {{ template "yzbfp.redisHost" . }}
             - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "yzbfp.databaseSecretName" . | quote }}
+                  name: {{ include "yzbfp.redisSecretName" . | quote }}
                   key: "redis-password"
           ports:
             - name: http
