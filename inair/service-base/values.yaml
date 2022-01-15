@@ -88,6 +88,10 @@ args: [
   "--spring.database.url=$(MYSQL_URL)",
   "--spring.database.username=$(MYSQL_USERNAME)",
   "--spring.database.password=$(MYSQL_PASSWORD)",
+  "--dubbo.registry.address=$(NACOS_ADDRESS)",
+  "--dubbo.application.name=$(NACOS_APP_NAME)",
+  "--spring.redis.host=$(REDIS_HOST)",
+  "--spring.redis.password=$(REDIS_PASSWORD)",
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
 ## e.g:
@@ -576,11 +580,9 @@ externalDatabase:
 
 nacos:
   address: nacos://nacos-cs:8848
-  port: 20890
   application:
     name: service-bfp-base
 
 redis:
   host: bfp-redis-master
-  port: 6379  #单实例redis用这个配置
   password: 1qazXSW3edcVFR
