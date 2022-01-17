@@ -57,9 +57,18 @@ spec:
       {{- if .Values.podSecurityContext.enabled }}
       securityContext: {{- omit .Values.podSecurityContext "enabled" | toYaml | nindent 8 }}
       {{- end }}
-      {{- if or (and .Values.volumePermissions.enabled .Values.persistence.enabled) .Values.initContainers }}
-
       initContainers:
+        - name: jar-retrieve
+          image: registry.cn-hangzhou.aliyuncs.com/yzbfp/utils:scp-shell-20220115
+          imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+          command: {{- include "common.tplvalues.render" (dict "value" .Values.retrieveJarCommand "context" $) | nindent 12 }}
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+            - name: yzbfp-service-base-data
+              mountPath: /app
+            - name: ssh-deploy-keys
+              mountPath: /root/.ssh
         {{- if .Values.initContainers }}
         {{- include "common.tplvalues.render" (dict "value" .Values.initContainers "context" $) | nindent 8 }}
         {{- end }}
@@ -80,7 +89,6 @@ spec:
             - name: yzbfp-service-base-data
               mountPath: /app
         {{- end }}
-      {{- end }}
       containers:
         - name: {{ template "yzbfp.fullname" . }}
           {{- if .Values.containerSecurityContext.enabled }}
@@ -138,6 +146,16 @@ spec:
         {{- include "common.tplvalues.render" (dict "value" .Values.sidecars "context" $) | nindent 8 }}
         {{- end }}
       volumes:
+        - name: ssh-deploy-keys
+          secret:
+            secretName: ssh-keys
+            items:
+            - key: id_rsa
+              path: id_rsa
+              mode: 384
+            - key: known_hosts
+              path: known_hosts
+              mode: 438
         - name: yzbfp-service-base-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:

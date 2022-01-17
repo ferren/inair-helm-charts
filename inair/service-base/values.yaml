@@ -168,6 +168,13 @@ sidecars: []
 ##    command: ['sh', '-c', 'copy addons from git and push to /bitnami/odoo/addons. Should work with extraVolumeMounts and extraVolumes']
 ##
 initContainers: []
+
+retrieveJarCommand:
+  - sh
+  - -c
+  - |
+    cd "/app"
+    scp ferren@121.40.155.23:/home/ferren/jar/service-base.jar app.jar
 ## @param podLabels Extra labels for Odoo pods
 ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 ##
