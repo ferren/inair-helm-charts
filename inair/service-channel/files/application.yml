@@ -1,18 +1,24 @@
 spring:
   application:
-    name: service-bfp-apimanage
+    name: service-bfp-channel
   datasource:
     url: 
     username: 
     password: 
+    type: com.zaxxer.hikari.HikariDataSource
     hikari:
-      connection-timeout: 50000
-      min-idle: 10
-      max-pool-size: 20
       connection-test-query: SELECT 1
       validation-timeout: 250
+      minimum-idle: 5
+      auto-commit: true
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 500000 #不小于30s 否则会回到默认的1800秒
+      maximum-pool-size: 15
+      pool-name: DatebookHikariCP
   redis:
-    host: bfp-redis-master
+    database: 0
+    host: 
     port: 6379  #单实例redis用这个配置
     password: 
     timeout: 5000ms
@@ -23,25 +29,25 @@ spring:
         min-idle: 5
 dubbo:
   registry:
-    address: nacos://nacos-cs:8848
+    address: 
   protocol:
-    port: 20890
+    port: 20891
     name: dubbo
   application:
-    name: service-bfp-apimanage
+    name: service-bfp-channel
     qos:
       enable: false
       accept:
         foreign:
           ip: false
   scan:
-    basePackages: com.yzbfp.admin.apimanage.service
+    basePackages: com.yzbfp.admin.channel.service
   provider:
     timeout: 30000
 service:
   version: 2.0
 server:
-  port: 9001
+  port: 9011
 mybatis-plus:
   #如果是放在java下 classpath:/yourpackage/mapper/*Mapper.xml  如果是resource classpath:/mapper/*Mapper.xml
   mapper-locations: classpath:/com/yzbfp/admin/common/mapper/*Mapper.xml
@@ -58,3 +64,35 @@ mybatis-plus:
       db-type: mysql
       logic-delete-value: 0
       logic-not-delete-value: 1
+
+helipay:
+#合利宝异步返回接口地址
+  callback:
+    url:
+      register: 
+      product: 
+# 合利宝接口地址
+  register:
+    entry: 
+    upload: 
+    sign: 
+#对外提供异步返回接口地址
+open:
+  callback:
+    url:
+      register: 
+      product: 
+
+# 江苏农商行接口路径
+bank:
+  jiangSu:
+    path: 
+#人脸比对接口路径
+    faseMatchPath: 
+  baoSheng:
+    #授信回调接口
+    cerditCallBackUrl: 
+    #电子签章回调接口
+    electronicCallBackUrl: 
+    #放款回调
+    applyLoanCBackUrl: 
