@@ -89,9 +89,9 @@ args: [
   "--spring.database.username=$(MYSQL_USERNAME)",
   "--spring.database.password=$(MYSQL_PASSWORD)",
   "--dubbo.registry.address=nacos://nacos-cs:8848",
-  "--dubbo.application.name=service-bfp-apimanage",
   "--spring.redis.host=$(REDIS_HOST)",
   "--spring.redis.password=$(REDIS_PASSWORD)",
+  "--server.port=9001"
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
 ## e.g:
