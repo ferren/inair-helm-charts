@@ -530,7 +530,7 @@ externalDatabase:
 nacos:
   address: nacos://nacos-cs:8848
   application:
-    name: service-bfp-customer
+    name: service-bfp-repay
 
 redis:
   enable: true
