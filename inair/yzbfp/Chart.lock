@@ -26,5 +26,8 @@ dependencies:
 - name: service-risk
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.1.7
-digest: sha256:05b74ef3d35f49bb727f0687f8c181482f9186ff2eaf98f7c6a81e76fcec84e3
-generated: "2022-01-17T17:51:15.2854311+08:00"
+- name: service-channel
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 0.1.7
+digest: sha256:47f4746b347ec0282f49261acdbd4c25bce552c61c2e533297f47ed7395eaf8e
+generated: "2022-01-17T19:23:21.8152958+08:00"
