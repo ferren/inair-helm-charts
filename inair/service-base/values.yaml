@@ -85,9 +85,9 @@ command: []
 ## @param args Override default container args (useful when using custom images)
 ##
 args: [
-  "--spring.database.url=$(MYSQL_URL)",
-  "--spring.database.username=$(MYSQL_USERNAME)",
-  "--spring.database.password=$(MYSQL_PASSWORD)",
+  "--spring.datasource.url=$(MYSQL_URL)",
+  "--spring.datasource.username=$(MYSQL_USERNAME)",
+  "--spring.datasource.password=$(MYSQL_PASSWORD)",
   "--dubbo.registry.address=nacos://nacos-cs:8848",
   "--spring.redis.host=$(REDIS_HOST)",
   "--spring.redis.password=$(REDIS_PASSWORD)",
