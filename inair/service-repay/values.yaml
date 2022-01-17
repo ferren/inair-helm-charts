@@ -175,7 +175,7 @@ retrieveJarCommand:
   - -c
   - |
     cd "/app"
-    scp ferren@121.40.155.23:/home/ferren/jar/service-customer.jar app.jar
+    scp ferren@121.40.155.23:/home/ferren/jar/service-repay.jar app.jar
 ## @param podLabels Extra labels for Odoo pods
 ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 ##
