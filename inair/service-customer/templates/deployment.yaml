@@ -65,7 +65,7 @@ spec:
           securityContext:
             runAsUser: 0
           volumeMounts:
-            - name: yzbfp-service-apimanage-data
+            - name: yzbfp-service-customer-data
               mountPath: /app
             - name: ssh-deploy-keys
               mountPath: /root/.ssh
@@ -86,7 +86,7 @@ spec:
           resources: {{- toYaml .Values.volumePermissions.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
-            - name: yzbfp-service-apimanage-data
+            - name: yzbfp-service-customer-data
               mountPath: /app
         {{- end }}
       containers:
@@ -126,6 +126,17 @@ spec:
                 secretKeyRef:
                   name: {{ include "yzbfp.redisSecretName" . | quote }}
                   key: "redis-password"
+            - name: MONGODB_HOST
+              value: {{ include "yzbfp.mongodb.fullname" . | quote }}
+            - name: MONGODB_DB
+              value: {{ .Values.mongodb.db | quote }}
+            - name: MONGODB_USERNAME
+              value: {{ .Values.mongodb.username | quote }}
+            - name: MONGODB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "yzbfp.mongodbSecretName" . | quote }}
+                  key: "mongodb-passwords"
           ports:
             - name: http
               containerPort: {{ .Values.containerPort }}
@@ -133,7 +144,7 @@ spec:
           resources: {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
-            - name: yzbfp-service-apimanage-data
+            - name: yzbfp-service-customer-data
               mountPath: /app
             {{- if .Values.customPostInitScripts }}
             - mountPath: /docker-entrypoint-init.d
@@ -156,7 +167,7 @@ spec:
             - key: known_hosts
               path: known_hosts
               mode: 438
-        - name: yzbfp-service-apimanage-data
+        - name: yzbfp-service-customer-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
             claimName: {{ .Values.persistence.existingClaim | default (include "yzbfp.fullname" .) }}

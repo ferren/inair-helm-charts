@@ -1,47 +1,45 @@
 spring:
   application:
-    name: service-bfp-apimanage
+    name: service-bfp-customer
   datasource:
     url: 
     username: 
     password: 
+    type: com.zaxxer.hikari.HikariDataSource
     hikari:
-      connection-timeout: 50000
-      min-idle: 10
-      max-pool-size: 20
       connection-test-query: SELECT 1
       validation-timeout: 250
-  redis:
-    host: bfp-redis-master
-    port: 6379  #单实例redis用这个配置
-    password: 
-    timeout: 5000ms
-    lettuce:
-      pool:
-        max-active: 100
-        max-wait: 15000ms
-        min-idle: 5
+      minimum-idle: 5
+      auto-commit: true
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 500000 #不小于30s 否则会回到默认的1800秒
+      maximum-pool-size: 15
+      pool-name: DatebookHikariCP
+  data:
+    mongodb:
+      uri: 
 dubbo:
   registry:
-    address: nacos://nacos-cs:8848
+    address: 
   protocol:
-    port: 20890
+    port: 20882
     name: dubbo
   application:
-    name: service-bfp-apimanage
+    name: service-bfp-customer
     qos:
       enable: false
       accept:
         foreign:
           ip: false
   scan:
-    basePackages: com.yzbfp.admin.apimanage.service
+    basePackages: com.yzbfp.admin.customer.service
   provider:
     timeout: 30000
 service:
   version: 2.0
 server:
-  port: 9001
+  port: 9002
 mybatis-plus:
   #如果是放在java下 classpath:/yourpackage/mapper/*Mapper.xml  如果是resource classpath:/mapper/*Mapper.xml
   mapper-locations: classpath:/com/yzbfp/admin/common/mapper/*Mapper.xml
@@ -52,7 +50,6 @@ mybatis-plus:
     call-setters-on-nulls: true
     cache-enabled: false
   global-config:
-    enable-sql-runner: true
     banner: false
     db-config:
       db-type: mysql

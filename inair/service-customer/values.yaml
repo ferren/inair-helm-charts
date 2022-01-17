@@ -91,6 +91,7 @@ args: [
   "--dubbo.registry.address=nacos://nacos-cs:8848",
   "--spring.redis.host=$(REDIS_HOST)",
   "--spring.redis.password=$(REDIS_PASSWORD)",
+  "--spring.data.mongodb.uri=mongodb://$(MONGODB_USERNAME):$(MONGODB_PASSWORD)@$(MONGODB_HOST)/$(MONGODB_DB)",
   "--server.port=9001"
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
@@ -174,7 +175,7 @@ retrieveJarCommand:
   - -c
   - |
     cd "/app"
-    scp ferren@121.40.155.23:/home/ferren/jar/service-apimanage.jar app.jar
+    scp ferren@121.40.155.23:/home/ferren/jar/service-customer.jar app.jar
 ## @param podLabels Extra labels for Odoo pods
 ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 ##
@@ -529,7 +530,12 @@ externalDatabase:
 nacos:
   address: nacos://nacos-cs:8848
   application:
-    name: service-bfp-apimanage
+    name: service-bfp-customer
 
 redis:
   enable: true
+
+mongodb:
+  enable: true
+  username: user-bfp
+  db: bfp-app

@@ -157,6 +157,17 @@ Return the Redis Secret Name
 {{- end -}}
 
 {{/*
+Return the Redis Secret Name
+*/}}
+{{- define "yzbfp.mongodbSecretName" -}}
+{{- if .Values.mongodb.enabled }}
+    {{- printf "%s" (include "yzbfp.mongodb.fullname" .) -}}
+{{- else -}}
+    {{- printf "%s-%s" .Release.Name "mongodb" -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
 YZBfp credential secret name
 */}}
 {{- define "yzbfp.secretName" -}}
