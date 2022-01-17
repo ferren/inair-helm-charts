@@ -1,0 +1,60 @@
+spring:
+  application:
+    name: service-bfp-apimanage
+  datasource:
+    url: 
+    username: 
+    password: 
+    hikari:
+      connection-timeout: 50000
+      min-idle: 10
+      max-pool-size: 20
+      connection-test-query: SELECT 1
+      validation-timeout: 250
+  redis:
+    host: bfp-redis-master
+    port: 6379  #单实例redis用这个配置
+    password: 
+    timeout: 5000ms
+    lettuce:
+      pool:
+        max-active: 100
+        max-wait: 15000ms
+        min-idle: 5
+dubbo:
+  registry:
+    address: nacos://nacos-cs:8848
+  protocol:
+    port: 20890
+    name: dubbo
+  application:
+    name: service-bfp-apimanage
+    qos:
+      enable: false
+      accept:
+        foreign:
+          ip: false
+  scan:
+    basePackages: com.yzbfp.admin.apimanage.service
+  provider:
+    timeout: 30000
+service:
+  version: 2.0
+server:
+  port: 9001
+mybatis-plus:
+  #如果是放在java下 classpath:/yourpackage/mapper/*Mapper.xml  如果是resource classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:/com/yzbfp/admin/common/mapper/*Mapper.xml
+  #多个package用逗号或者分号分隔
+  typeAliasesPackage: com.yzbfp.admin.common.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    cache-enabled: false
+  global-config:
+    enable-sql-runner: true
+    banner: false
+    db-config:
+      db-type: mysql
+      logic-delete-value: 0
+      logic-not-delete-value: 1
