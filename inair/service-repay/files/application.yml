@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: service-bfp-customer
+  datasource:
+    url: 
+    username: 
+    password: 
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-test-query: SELECT 1
+      validation-timeout: 250
+      minimum-idle: 5
+      auto-commit: true
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 500000 #不小于30s 否则会回到默认的1800秒
+      maximum-pool-size: 15
+      pool-name: DatebookHikariCP
+  data:
+    mongodb:
+      uri: 
+dubbo:
+  registry:
+    address: 
+  protocol:
+    port: 20882
+    name: dubbo
+  application:
+    name: service-bfp-customer
+    qos:
+      enable: false
+      accept:
+        foreign:
+          ip: false
+  scan:
+    basePackages: com.yzbfp.admin.customer.service
+  provider:
+    timeout: 30000
+service:
+  version: 2.0
+server:
+  port: 9002
+mybatis-plus:
+  #如果是放在java下 classpath:/yourpackage/mapper/*Mapper.xml  如果是resource classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:/com/yzbfp/admin/common/mapper/*Mapper.xml
+  #多个package用逗号或者分号分隔
+  typeAliasesPackage: com.yzbfp.admin.common.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    cache-enabled: false
+  global-config:
+    banner: false
+    db-config:
+      db-type: mysql
+      logic-delete-value: 0
+      logic-not-delete-value: 1
