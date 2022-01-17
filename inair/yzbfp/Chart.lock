@@ -20,5 +20,11 @@ dependencies:
 - name: service-customer
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.1.7
-digest: sha256:d76d9c0db6d28aea46034dc57f77275e7822f54ffdbbb40e78e3cc26ecfdb2d1
-generated: "2022-01-17T16:06:46.4011114+08:00"
+- name: service-repay
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 0.1.7
+- name: service-risk
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 0.1.7
+digest: sha256:05b74ef3d35f49bb727f0687f8c181482f9186ff2eaf98f7c6a81e76fcec84e3
+generated: "2022-01-17T17:51:15.2854311+08:00"
