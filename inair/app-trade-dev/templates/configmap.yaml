@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "yzbfp.fullname" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels: {{- include "common.labels.standard" . | nindent 4 }}
+    {{- if .Values.commonLabels }}
+    {{- include "common.tplvalues.render" ( dict "value" .Values.commonLabels "context" $ ) | nindent 4 }}
+    {{- end }}
+  {{- if .Values.commonAnnotations }}
+  annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
+  {{- end }}
+data:
+  {{- if .Values.serviceBaseConfiguration }}
+    application.yml: |
+      [options]
+  {{- range $key, $value := default dict .Values.serviceBaseConfiguration }}
+      {{ $key }} = {{ $value }}
+  {{- end }}
+  {{- else if (.Files.Glob "files/application.yml") }}
+  {{ (.Files.Glob "files/application.yml").AsConfig | indent 2 }}
+  {{- end }}
