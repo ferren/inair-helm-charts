@@ -825,6 +825,18 @@ rabbitmq:
 nginx:
   enable: false
 
+  extraVolumes:
+    - name: ssh-deploy-keys
+      secret:
+        secretName: ssh-keys
+        items:
+        - key: id_rsa
+          path: id_rsa
+          mode: 384
+        - key: known_hosts
+          path: known_hosts
+          mode: 438
+
   command: []
   args: []
   replicaCount: 1
@@ -897,6 +909,10 @@ nginx:
       ## @param cloneStaticSiteFromGit.gitSync.args Override default container args for git-repo-syncer
       ##
       args: []
+
+    extraVolumeMounts:
+      - name: ssh-deploy-keys
+        mountPath: /root/.ssh
 
   ## NGINX Service properties
   ##
