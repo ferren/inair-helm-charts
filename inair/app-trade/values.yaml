@@ -542,3 +542,6 @@ mongodb:
   enable: true
   username: user-bfp
   db: bfp-app
+
+rabbitmq:
+  enable: true
