@@ -65,7 +65,7 @@ spec:
           securityContext:
             runAsUser: 0
           volumeMounts:
-            - name: yzbfp-service-base-data
+            - name: yzbfp-web-admin-data
               mountPath: /app
             - name: ssh-deploy-keys
               mountPath: /root/.ssh
@@ -86,7 +86,7 @@ spec:
           resources: {{- toYaml .Values.volumePermissions.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
-            - name: yzbfp-service-base-data
+            - name: yzbfp-web-admin-data
               mountPath: /app
         {{- end }}
       containers:
@@ -104,21 +104,6 @@ spec:
           args: {{- include "common.tplvalues.render" (dict "value" .Values.args "context" $) | nindent 12 }}
           {{- end }}
           env:
-            - name: MYSQL_URL
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "yzbfp.databaseSecretName" . | quote }}
-                  key: "mysql-url"
-            - name: MYSQL_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "yzbfp.databaseSecretName" . | quote }}
-                  key: "mysql-username"
-            - name: MYSQL_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "yzbfp.databaseSecretName" . | quote }}
-                  key: "mysql-password"
             - name: REDIS_HOST
               value: {{ include "yzbfp.redisHost" . | quote }}
             - name: REDIS_PASSWORD
@@ -133,7 +118,7 @@ spec:
           resources: {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
-            - name: yzbfp-service-base-data
+            - name: yzbfp-web-admin-data
               mountPath: /app
             {{- if .Values.customPostInitScripts }}
             - mountPath: /docker-entrypoint-init.d
@@ -156,7 +141,7 @@ spec:
             - key: known_hosts
               path: known_hosts
               mode: 438
-        - name: yzbfp-service-base-data
+        - name: yzbfp-web-admin-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
             claimName: {{ .Values.persistence.existingClaim | default (include "yzbfp.fullname" .) }}
