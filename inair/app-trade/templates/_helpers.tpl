@@ -39,6 +39,14 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- end -}}
 
 {{/*
+Create a default fully qualified app name.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+*/}}
+{{- define "yzbfp.rabbitmq.fullname" -}}
+{{- printf "%s-%s" .Release.Name "mq" | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+
+{{/*
 Create chart name and version as used by the chart label.
 */}}
 {{- define "yzbfp.chart" -}}
@@ -164,6 +172,17 @@ Return the Redis Secret Name
     {{- printf "%s" (include "yzbfp.mongodb.fullname" .) -}}
 {{- else -}}
     {{- printf "%s-%s" .Release.Name "mongodb" -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the Redis Secret Name
+*/}}
+{{- define "yzbfp.mqSecretName" -}}
+{{- if .Values.rabbitmq.enabled }}
+    {{- printf "%s-default-user" (include "yzbfp.rabbitmq.fullname" .) -}}
+{{- else -}}
+    {{- printf "%s-%s" .Release.Name "mq-default-user" -}}
 {{- end -}}
 {{- end -}}
 

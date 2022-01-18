@@ -91,6 +91,9 @@ args: [
   "--dubbo.registry.address=nacos://nacos-cs:8848",
   "--spring.redis.host=$(REDIS_HOST)",
   "--spring.redis.password=$(REDIS_PASSWORD)",
+  "--spring.rabbitmq.host=$(RABBITMQ_HOST)",
+  "--spring.rabbitmq.username=$(RABBITMQ_USERNAME)",
+  "--spring.rabbitmq.password=$(RABBITMQ_PASSWORD)",
   "--spring.data.mongodb.uri=mongodb://$(MONGODB_USERNAME):$(MONGODB_PASSWORD)@$(MONGODB_HOST)/$(MONGODB_DB)",
   "--server.port=9001"
 ]

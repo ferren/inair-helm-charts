@@ -180,6 +180,17 @@ Return the Redis Secret Name
 {{- end -}}
 
 {{/*
+Return the Redis Secret Name
+*/}}
+{{- define "yzbfp.mqSecretName" -}}
+{{- if .Values.rabbitmq.enabled }}
+    {{- printf "%s-default-user" (include "yzbfp.rabbitmq.fullname" .) -}}
+{{- else -}}
+    {{- printf "%s-%s" .Release.Name "mq-default-user" -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
 YZBfp credential secret name
 */}}
 {{- define "yzbfp.secretName" -}}

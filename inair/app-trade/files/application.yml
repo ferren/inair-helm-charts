@@ -1,48 +1,96 @@
+server:
+  port: 21000
+  tomcat:
+    max-threads: 200
+service:
+  version: 2.0
 spring:
   application:
-    name: service-bfp-customer
+    name: app
   datasource:
     url: 
     username: 
     password: 
-    type: com.zaxxer.hikari.HikariDataSource
-    hikari:
-      connection-test-query: SELECT 1
-      validation-timeout: 250
-      minimum-idle: 5
-      auto-commit: true
-      connection-timeout: 30000
-      idle-timeout: 30000
-      max-lifetime: 500000 #不小于30s 否则会回到默认的1800秒
-      maximum-pool-size: 15
-      pool-name: DatebookHikariCP
+    driver-class-name: com.mysql.jdbc.Driver
+#    type: com.zaxxer.hikari.HikariDataSource
+#    hikari:
+#      #自动提交
+#      auto-commit: true
+#      # 检测连接是否有效
+#      connection-test-query: SELECT 1
+#      #等待连接池分配连接的最大时长（毫秒），超过这个时长还没可用的连接则发生SQLException， 缺省:30秒 -->
+#      connection-timeout: 30000
+#      # 一个连接idle状态的最大时长（毫秒），超时则被释放（retired），缺省:10分钟 -->
+#      idle-timeout: 300000
+#      #一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟
+#      max-lifetime: 1800000
+#      #连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count) -->
+#      maximum-pool-size: 20
+#      #池中维护的最小空闲连接数，如果当连接池空闲连接少于 minimumIdle，
+#      #而且总共连接数不大于 maximumPoolSize 时，HikariCP 会尽力补充新的连接。为了性能考虑，不建议设置此值，而是让 HikariCP 把连接池当做固定大小的处理，默认 minimumIdle 与 maximumPoolSize 一样。
+#      minimum-idle: 5
+#      pool-name: DatebookHikariCP
+#      read-only: false
+#      #验证与数据库连接的有效时间
+#      validation-timeout: 5000
+    druid:
+      max-active: 17
+      initial-size: 8
+      min-idle: 8
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      validationQuery: SELECT'x'
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      filters: stat,config
+  redis:
+    database: 0
+    host: 
+    port: 6379  #单实例redis用这个配置
+    password: 
+    timeout: 5000ms
+    lettuce:
+      pool:
+        max-active: 100
+        max-wait: 15000ms
+        min-idle: 50
+  jmx:
+    default-domain: base
+  rabbitmq:
+    virtual-host: /dev
+    host: 
+    port: 5672
+    username: 
+    password: 
+    listener:
+      simple:
+        retry:
+          enabled: false
+        acknowledge-mode: manual
+    publisher-confirms: true
+    publisher-returns: true
   data:
     mongodb:
       uri: 
 dubbo:
-  registry:
-    address: 
-  protocol:
-    port: 20882
-    name: dubbo
   application:
-    name: service-bfp-customer
+    name: app-trade
     qos:
       enable: false
       accept:
         foreign:
           ip: false
-  scan:
-    basePackages: com.yzbfp.admin.customer.service
-  provider:
+  registry:
+    address: 
+  consumer:
     timeout: 30000
-service:
-  version: 2.0
-server:
-  port: 9002
 mybatis-plus:
   #如果是放在java下 classpath:/yourpackage/mapper/*Mapper.xml  如果是resource classpath:/mapper/*Mapper.xml
-  mapper-locations: classpath:/com/yzbfp/admin/common/mapper/*Mapper.xml
+  mapper-locations: classpath:/com/yzbfp/admin/common/mapper/*Mapper.xml,classpath:/com/yzbfp/app/trade/dao/*Mapper.xml
   #多个package用逗号或者分号分隔
   typeAliasesPackage: com.yzbfp.admin.common.pojo
   configuration:
@@ -50,8 +98,31 @@ mybatis-plus:
     call-setters-on-nulls: true
     cache-enabled: false
   global-config:
+    enable-sql-runner: true
     banner: false
     db-config:
-      db-type: mysql
       logic-delete-value: 0
       logic-not-delete-value: 1
+      update-strategy: not_empty
+repay:
+  helipay:
+    customerNumber: 
+    signKey: 
+    publicKey: 
+    privateKey: 
+#    notifyUrl: http://gouhua.yzbfp.com/pay/notify/helipay
+    notifyUrl: http://dev.test.gouhua.yzbfp.com:18888/pay/notify/helipay
+    #    notifyUrl: http://yzbfp.utools.club/pay/notify/helipay
+    transfer: Transfer
+    transferQuery: TransferQuery
+
+# 江苏农商行接口路径
+bank:
+  jiangSu:
+    path: 
+
+#添加测试账号，自动过滤sms短信、risk风控链
+test:
+  phone:
+    sms: 18739915910,18739915911,18795958212,13545058638,13613787118,18837853292,13991910808,18909298576,15060769727,18050000689,15099188865,13579911240,15766990011,17376820011,13700000001,13800000001
+    risk: 18739915910,18739915911,18795958212,13545058638,13613787118,18837853292,13991910808,18909298576,15060769727,18050000689,15099188865,13579911240,15766990011,17376820011,13700000001,13800000001

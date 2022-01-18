@@ -126,6 +126,18 @@ spec:
                 secretKeyRef:
                   name: {{ include "yzbfp.redisSecretName" . | quote }}
                   key: "redis-password"
+            - name: RABBITMQ_HOST
+              value: {{ include "yzbfp.rabbitmq.fullname" . | quote }}
+            - name: RABBITMQ_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "yzbfp.mqSecretName" . | quote }}
+                  key: "username"
+            - name: RABBITMQ_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "yzbfp.mqSecretName" . | quote }}
+                  key: "password"
             - name: MONGODB_HOST
               value: {{ include "yzbfp.mongodb.fullname" . | quote }}
             - name: MONGODB_DB
