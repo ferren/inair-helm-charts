@@ -18,6 +18,10 @@ dependencies:
     name: mongodb
     repository: https://charts.bitnami.com/bitnami
     version: 10.x.x
+  - condition: nginx.enabled
+    name: nginx
+    repository: https://charts.bitnami.com/bitnami
+    version: 9.x.x
   - condition: service-base.enabled
     name: service-base
     repository: https://ferren.github.io/inair-helm-charts/
@@ -63,4 +67,4 @@ name: yzbfp
 sources:
   - https://codeup.aliyun.com/61bd3e98fa282c88e103b306/java/bfp-admin2.0-dev
   - https://www.incosten.com/
-version: 0.1.7
+version: 0.1.9

@@ -11,6 +11,9 @@ dependencies:
 - name: mongodb
   repository: https://charts.bitnami.com/bitnami
   version: 10.31.3
+- name: nginx
+  repository: https://charts.bitnami.com/bitnami
+  version: 9.7.2
 - name: service-base
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.1.7
@@ -31,6 +34,6 @@ dependencies:
   version: 0.1.7
 - name: web-admin
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.1.7
-digest: sha256:6e914e8f019b27c71069f31e09f1c53c5b29eb8c5bf918e443aee9e26e844cd8
-generated: "2022-01-18T09:39:30.9586564+08:00"
+  version: 0.1.8
+digest: sha256:317749f0c310c87276bdfa1f94748c967dfdc278119621f77e9960090ca608ff
+generated: "2022-01-18T11:03:31.6231054+08:00"
