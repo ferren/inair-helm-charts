@@ -6,7 +6,7 @@ dependencies:
   - name: common
     repository: https://ferren.github.io/inair-helm-charts/
     version: 1.x.x
-description: YZ bfp service customer.
+description: YZ bfp App trade.
 engine: gotpl
 home: https://www.incosten.com/
 icon: https://www.incosten.com/_nuxt/img/logo.a9cdf55.svg
@@ -19,8 +19,8 @@ keywords:
 maintainers:
   - email: ferrenliu@163.com
     name: FerrenLiu
-name: service-customer
+name: app-trade
 sources:
-  - https://codeup.aliyun.com/61bd3e98fa282c88e103b306/java/bfp-admin2.0-dev
+  - https://codeup.aliyun.com/61bd3e98fa282c88e103b306/java/app-trade-dev
   - https://www.incosten.com/
 version: 0.1.7

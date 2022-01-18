@@ -175,7 +175,7 @@ retrieveJarCommand:
   - -c
   - |
     cd "/app"
-    scp ferren@121.40.155.23:/home/ferren/jar/service-customer.jar app.jar
+    scp ferren@121.40.155.23:/home/ferren/jar/app-trade.jar app.jar
 ## @param podLabels Extra labels for Odoo pods
 ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 ##
@@ -530,7 +530,7 @@ externalDatabase:
 nacos:
   address: nacos://nacos-cs:8848
   application:
-    name: service-bfp-customer
+    name: app-trade
 
 redis:
   enable: true
