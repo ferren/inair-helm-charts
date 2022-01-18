@@ -42,6 +42,10 @@ dependencies:
     name: service-channel
     repository: https://ferren.github.io/inair-helm-charts/
     version: 0.x.x
+  - condition: web-admin.enabled
+    name: web-admin
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 0.x.x
 description: YZ bfp system.
 engine: gotpl
 home: https://www.incosten.com/
