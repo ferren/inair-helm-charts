@@ -256,7 +256,7 @@ containerSecurityContext:
 service:
   ## @param service.type Odoo service type
   ##
-  type: clusterIP
+  type: ClusterIP
   ## @param service.port Odoo service HTTP port
   ##
   port: 80
