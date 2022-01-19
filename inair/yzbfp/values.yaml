@@ -441,7 +441,7 @@ persistence:
   ## @param persistence.accessModes [array] Persistent Volume access modes
   ##
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   ## @param persistence.accessMode Persistent Volume access mode (DEPRECATED: use `persistence.accessModes` instead)
   ##
   accessMode: ReadWriteOnce
