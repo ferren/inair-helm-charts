@@ -7,7 +7,7 @@ dependencies:
   version: 0.1.5
 - name: redis
   repository: https://charts.bitnami.com/bitnami
-  version: 15.7.5
+  version: 15.7.6
 - name: mongodb
   repository: https://charts.bitnami.com/bitnami
   version: 10.31.3
@@ -16,24 +16,27 @@ dependencies:
   version: 9.7.2
 - name: service-base
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.1.7
+  version: 0.2.1
 - name: service-apimanage
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.1.7
+  version: 0.2.1
 - name: service-customer
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.1.7
+  version: 0.2.1
 - name: service-repay
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.1.7
+  version: 0.2.1
 - name: service-risk
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.1.7
+  version: 0.2.1
 - name: service-channel
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.1.7
+  version: 0.2.1
 - name: web-admin
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.1.8
-digest: sha256:317749f0c310c87276bdfa1f94748c967dfdc278119621f77e9960090ca608ff
-generated: "2022-01-18T11:03:31.6231054+08:00"
+  version: 0.2.1
+- name: app-trade
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 0.2.1
+digest: sha256:19b062d89b2d2c927c537c2cd08487da020457161a8ca9dbe698a8828223dc07
+generated: "2022-01-19T09:17:08.2944832+08:00"
