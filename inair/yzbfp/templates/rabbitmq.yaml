@@ -13,6 +13,6 @@ metadata:
   {{- end }}
 spec:
   persistence:
-    storageClassName: longhorn
+    storageClassName: {{ .Values.rabbitmq.storageClass }}
     storage: 20Gi
 {{- end }}

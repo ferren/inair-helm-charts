@@ -821,6 +821,7 @@ mongodb:
 
 rabbitmq:
   enabled: true
+  storageClass: longhorn
 
 nginx:
   enable: false
