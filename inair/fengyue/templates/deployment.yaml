@@ -60,7 +60,7 @@ spec:
       initContainers:
         {{- if .Values.cloneStaticSiteFromGit.enabled }}
         - name: git-clone-repository
-          image: {{ include "Values.cloneStaticSiteFromGit.image" . }}
+          image: {{ include "fengyue.cloneStaticSiteFromGit.image" . }}
           imagePullPolicy: {{ .Values.cloneStaticSiteFromGit.image.pullPolicy | quote }}
           {{- if .Values.containerSecurityContext.enabled }}
           securityContext: {{- omit .Values.containerSecurityContext "enabled" | toYaml | nindent 12 }}

@@ -54,6 +54,13 @@ Create chart name and version as used by the chart label.
 {{- end -}}
 
 {{/*
+Return the proper Fengyue git image name
+*/}}
+{{- define "fengyue.cloneStaticSiteFromGit.image" -}}
+{{ include "common.images.image" (dict "imageRoot" .Values.cloneStaticSiteFromGit.image "global" .Values.global) }}
+{{- end -}}
+
+{{/*
 Return the proper Fengyue image name
 */}}
 {{- define "fengyue.image" -}}
