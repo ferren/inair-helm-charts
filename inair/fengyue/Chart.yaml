@@ -1,0 +1,43 @@
+annotations:
+  category: SRM
+apiVersion: v2
+appVersion: 2.0.20220114
+dependencies:
+  - name: common
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 1.x.x
+  # - condition: nacos.enabled
+  #   name: nacos
+  #   repository: https://ferren.github.io/inair-helm-charts/
+  #   version: 0.1.x
+  - condition: redis.enabled
+    name: redis
+    repository: https://charts.bitnami.com/bitnami
+    version: 15.x.x
+  # - condition: mongodb.enabled
+  #   name: mongodb
+  #   repository: https://charts.bitnami.com/bitnami
+  #   version: 10.x.x
+  # - condition: nginx.enabled
+  #   name: nginx
+  #   repository: https://charts.bitnami.com/bitnami
+  #   version: 9.x.x
+description: Fengyue.
+engine: gotpl
+home: http://www.onthesky.cn/
+icon: http://www.onthesky.cn/_nuxt/img/logo.a9cdf55.svg
+keywords:
+  - fengyue
+  - srm
+  - crm
+  - www
+  - http
+  - web
+maintainers:
+  - email: ferrenliu@163.com
+    name: FerrenLiu
+name: fengyue
+sources:
+  - https://svn.coding.net/szyq/yq-srm/srm
+  - http://www.onthesky.cn/
+version: 0.0.1
