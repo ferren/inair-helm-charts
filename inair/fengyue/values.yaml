@@ -296,6 +296,83 @@ customReadinessProbe: {}
 #
 customStartupProbe: {}
 
+## @section Custom NGINX application parameters
+
+## Get the server static content from a git repository
+## NOTE: This will override staticSiteConfigmap and staticSitePVC
+##
+cloneStaticSiteFromGit:
+  ## @param cloneStaticSiteFromGit.enabled Get the server static content from a Git repository
+  ##
+  enabled: false
+  ## Bitnami Git image version
+  ## ref: https://hub.docker.com/r/bitnami/git/tags/
+  ## @param cloneStaticSiteFromGit.image.registry Git image registry
+  ## @param cloneStaticSiteFromGit.image.repository Git image repository
+  ## @param cloneStaticSiteFromGit.image.tag Git image tag (immutable tags are recommended)
+  ## @param cloneStaticSiteFromGit.image.pullPolicy Git image pull policy
+  ## @param cloneStaticSiteFromGit.image.pullSecrets Specify docker-registry secret names as an array
+  ##
+  image:
+    registry: docker.io
+    repository: bitnami/git
+    tag: 2.34.1-debian-10-r33
+    ## Specify a imagePullPolicy
+    ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
+    ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+    ##
+    pullPolicy: IfNotPresent
+    ## Optionally specify an array of imagePullSecrets.
+    ## Secrets must be manually created in the namespace.
+    ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+    ## e.g:
+    ## pullSecrets:
+    ##   - myRegistryKeySecretName
+    ##
+    pullSecrets: []
+  ## @param cloneStaticSiteFromGit.repository Git Repository to clone static content from
+  ##
+  repository: ""
+  ## @param cloneStaticSiteFromGit.branch Git branch to checkout
+  ##
+  branch: ""
+  ## @param cloneStaticSiteFromGit.interval Interval for sidecar container pull from the Git repository
+  ##
+  interval: 60
+  ## Additional configuration for git-clone-repository initContainer
+  ##
+  gitClone:
+    ## @param cloneStaticSiteFromGit.gitClone.command Override default container command for git-clone-repository
+    ##
+    command: []
+    ## @param cloneStaticSiteFromGit.gitClone.args Override default container args for git-clone-repository
+    ##
+    args: []
+  ## Additional configuration for the git-repo-syncer container
+  ##
+  gitSync:
+    ## @param cloneStaticSiteFromGit.gitSync.command Override default container command for git-repo-syncer
+    ##
+    command: []
+    ## @param cloneStaticSiteFromGit.gitSync.args Override default container args for git-repo-syncer
+    ##
+    args: []
+  ## @param cloneStaticSiteFromGit.extraEnvVars Additional environment variables to set for the in the containers that clone static site from git
+  ## E.g:
+  ## extraEnvVars:
+  ##   - name: FOO
+  ##     value: BAR
+  ##
+  extraEnvVars: []
+  ## @param cloneStaticSiteFromGit.extraVolumeMounts Add extra volume mounts for the Git containers
+  ## Useful to mount keys to connect through ssh. (normally used with extraVolumes)
+  ## E.g:
+  ## extraVolumeMounts:
+  ##   - name: ssh-dir
+  ##     mountPath: /root/.ssh/
+  ##
+  extraVolumeMounts: []
+
 ## @section Traffic Exposure Parameters
 
 ## Odoo service parameters
@@ -619,283 +696,3 @@ redis:
     ## @param volumePermissions.enabled Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`
     ##
     enabled: true
-
-nginx:
-  enable: false
-
-  extraVolumes:
-    - name: ssh-deploy-keys
-      secret:
-        secretName: ssh-keys
-        items:
-        - key: id_rsa
-          path: id_rsa
-          mode: 384
-        - key: known_hosts
-          path: known_hosts
-          mode: 438
-
-  command: []
-  args: []
-  replicaCount: 1
-
-  podSecurityContext:
-    enabled: false
-    fsGroup: 1001
-    ## sysctl settings
-    ## Example:
-    ## sysctls:
-    ## - name: net.core.somaxconn
-    ##   value: "10000"
-    ##
-    sysctls: []
-
-  containerSecurityContext:
-    enabled: false
-    runAsUser: 1001
-    runAsNonRoot: true
-  ## Configures the ports NGINX listens on
-  ## @param containerPorts.http Sets http port inside NGINX container
-  ## @param containerPorts.https Sets https port inside NGINX container
-  ##
-  containerPorts:
-    http: 8080
-    https: ""
-
-  ## Autoscaling parameters
-  ## @param autoscaling.enabled Enable autoscaling for NGINX deployment
-  ## @param autoscaling.minReplicas Minimum number of replicas to scale back
-  ## @param autoscaling.maxReplicas Maximum number of replicas to scale out
-  ## @param autoscaling.targetCPU Target CPU utilization percentage
-  ## @param autoscaling.targetMemory Target Memory utilization percentage
-  ##
-  autoscaling:
-    enabled: false
-    minReplicas: ""
-    maxReplicas: ""
-    targetCPU: ""
-    targetMemory: ""
-
-  cloneStaticSiteFromGit:
-    ## @param cloneStaticSiteFromGit.enabled Get the server static content from a Git repository
-    ##
-    enabled: false
-    ## @param cloneStaticSiteFromGit.repository Git Repository to clone static content from
-    ##
-    repository: ""
-    ## @param cloneStaticSiteFromGit.branch Git branch to checkout
-    ##
-    branch: ""
-    ## @param cloneStaticSiteFromGit.interval Interval for sidecar container pull from the Git repository
-    ##
-    interval: 60
-    ## Additional configuration for git-clone-repository initContainer
-    ##
-    gitClone:
-      ## @param cloneStaticSiteFromGit.gitClone.command Override default container command for git-clone-repository
-      ##
-      command: []
-      ## @param cloneStaticSiteFromGit.gitClone.args Override default container args for git-clone-repository
-      ##
-      args: []
-    ## Additional configuration for the git-repo-syncer container
-    ##
-    gitSync:
-      ## @param cloneStaticSiteFromGit.gitSync.command Override default container command for git-repo-syncer
-      ##
-      command: []
-      ## @param cloneStaticSiteFromGit.gitSync.args Override default container args for git-repo-syncer
-      ##
-      args: []
-
-    extraVolumeMounts:
-      - name: ssh-deploy-keys
-        mountPath: /root/.ssh
-
-  ## NGINX Service properties
-  ##
-  service:
-    ## @param service.type Service type
-    ##
-    type: LoadBalancer
-    ## @param service.port Service HTTP port
-    ##
-    port: 80
-    ## @param service.httpsPort Service HTTPS port
-    ##
-    httpsPort: 443
-    ## @param service.nodePorts [object] Specify the nodePort(s) value(s) for the LoadBalancer and NodePort service types.
-    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
-    ##
-    nodePorts:
-      http: ""
-      https: ""
-    ## @param service.targetPort [object] Target port reference value for the Loadbalancer service types can be specified explicitly.
-    ## Listeners for the Loadbalancer can be custom mapped to the http or https service.
-    ## Example: Mapping the https listener to targetPort http [http: https]
-    ##
-    targetPort:
-      http: http
-      https: https
-    ## @param service.loadBalancerIP LoadBalancer service IP address
-    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
-    ##
-    loadBalancerIP: ""
-    ## @param service.annotations Service annotations
-    ## This can be used to set the LoadBalancer service type to internal only.
-    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
-    ##
-    annotations: {}
-    ## @param service.externalTrafficPolicy Enable client source IP preservation
-    ## ref https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
-    ##
-    externalTrafficPolicy: Cluster
-  ## Configure the ingress resource that allows you to access the
-  ## Nginx installation. Set up the URL
-  ## ref: https://kubernetes.io/docs/user-guide/ingress/
-  ##
-  ingress:
-    ## @param ingress.enabled Set to true to enable ingress record generation
-    ##
-    enabled: false
-    ## DEPRECATED: Use ingress.annotations instead of ingress.certManager
-    ## certManager: false
-    ##
-
-    ## @param ingress.pathType Ingress path type
-    ##
-    pathType: ImplementationSpecific
-    ## @param ingress.apiVersion Force Ingress API version (automatically detected if not set)
-    ##
-    apiVersion: ""
-    ## @param ingress.hostname Default host for the ingress resource
-    ##
-    hostname: nginx.local
-    ## @param ingress.path The Path to Nginx. You may need to set this to '/*' in order to use this with ALB ingress controllers.
-    ##
-    path: /
-    ## @param ingress.annotations Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations.
-    ## For a full list of possible ingress annotations, please see
-    ## ref: https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md
-    ## Use this parameter to set the required annotations for cert-manager, see
-    ## ref: https://cert-manager.io/docs/usage/ingress/#supported-annotations
-    ##
-    ## e.g:
-    ## annotations:
-    ##   kubernetes.io/ingress.class: nginx
-    ##   cert-manager.io/cluster-issuer: cluster-issuer-name
-    ##
-    annotations: {}
-    ## @param ingress.tls Create TLS Secret
-    ## TLS certificates will be retrieved from a TLS secret with name: {{- printf "%s-tls" .Values.ingress.hostname }}
-    ## You can use the ingress.secrets parameter to create this TLS secret or relay on cert-manager to create it
-    ##
-    tls: false
-    ## @param ingress.extraHosts The list of additional hostnames to be covered with this ingress record.
-    ## Most likely the hostname above will be enough, but in the event more hosts are needed, this is an array
-    ## extraHosts:
-    ## - name: nginx.local
-    ##   path: /
-    ##
-    extraHosts: []
-    ## @param ingress.extraPaths Any additional arbitrary paths that may need to be added to the ingress under the main host.
-    ## For example: The ALB ingress controller requires a special rule for handling SSL redirection.
-    ## extraPaths:
-    ## - path: /*
-    ##   backend:
-    ##     serviceName: ssl-redirect
-    ##     servicePort: use-annotation
-    ##
-    extraPaths: []
-    ## @param ingress.extraTls The tls configuration for additional hostnames to be covered with this ingress record.
-    ## see: https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
-    ## extraTls:
-    ## - hosts:
-    ##     - nginx.local
-    ##   secretName: nginx.local-tls
-    ##
-    extraTls: []
-    ## @param ingress.secrets If you're providing your own certificates, please use this to add the certificates as secrets
-    ## key and certificate should start with -----BEGIN CERTIFICATE----- or
-    ## -----BEGIN RSA PRIVATE KEY-----
-    ##
-    ## name should line up with a tlsSecret set further up
-    ## If you're using cert-manager, this is unneeded, as it will create the secret for you if it is not set
-    ##
-    ## It is also possible to create and manage the certificates outside of this helm chart
-    ## Please see README.md for more information
-    ## e.g:
-    ## - name: nginx.local-tls
-    ##   key:
-    ##   certificate:
-    ##
-    secrets: []
-  ## Health Ingress parameters
-  ##
-  healthIngress:
-    ## @param healthIngress.enabled Set to true to enable health ingress record generation
-    ##
-    enabled: false
-    ## DEPRECATED: Use ingress.annotations instead of ingress.certManager
-    ## certManager: false
-    ##
-
-    ## @param healthIngress.pathType Ingress path type
-    ##
-    pathType: ImplementationSpecific
-    ## @param healthIngress.hostname When the health ingress is enabled, a host pointing to this will be created
-    ##
-    hostname: example.local
-    ## @param healthIngress.annotations Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations.
-    ## For a full list of possible ingress annotations, please see
-    ## ref: https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md
-    ## Use this parameter to set the required annotations for cert-manager, see
-    ## ref: https://cert-manager.io/docs/usage/ingress/#supported-annotations
-    ##
-    ## e.g:
-    ## annotations:
-    ##   kubernetes.io/ingress.class: nginx
-    ##   cert-manager.io/cluster-issuer: cluster-issuer-name
-    ##
-    annotations: {}
-    ## @param healthIngress.tls Enable TLS configuration for the hostname defined at `healthIngress.hostname` parameter
-    ## TLS certificates will be retrieved from a TLS secret with name: {{- printf "%s-tls" .Values.healthIngress.hostname }}
-    ## You can use the healthIngress.secrets parameter to create this TLS secret, relay on cert-manager to create it, or
-    ## let the chart create self-signed certificates for you
-    ##
-    tls: false
-    ## @param healthIngress.extraHosts The list of additional hostnames to be covered with this health ingress record
-    ## Most likely the hostname above will be enough, but in the event more hosts are needed, this is an array
-    ## E.g.
-    ## extraHosts:
-    ##   - name: example.local
-    ##     path: /
-    ##
-    extraHosts: []
-    ## @param healthIngress.extraTls TLS configuration for additional hostnames to be covered
-    ## see: https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
-    ## E.g.
-    ## extraTls:
-    ##   - hosts:
-    ##       - example.local
-    ##     secretName: example.local-tls
-    ##
-    extraTls: []
-    ## @param healthIngress.secrets TLS Secret configuration
-    ## If you're providing your own certificates, please use this to add the certificates as secrets
-    ## key and certificate should start with -----BEGIN CERTIFICATE----- or -----BEGIN RSA PRIVATE KEY-----
-    ## name should line up with a secretName set further up
-    ## If it is not set and you're using cert-manager, this is unneeded, as it will create the secret for you
-    ## If it is not set and you're NOT using cert-manager either, self-signed certificates will be created
-    ## It is also possible to create and manage the certificates outside of this helm chart
-    ## Please see README.md for more information
-    ##
-    ## E.g.
-    ## secrets:
-    ##   - name: example.local-tls
-    ##     key:
-    ##     certificate:
-    ##
-    secrets: []
-
-  ## @section Metrics parameters

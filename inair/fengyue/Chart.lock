@@ -1,0 +1,9 @@
+dependencies:
+- name: common
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 1.8.0
+- name: redis
+  repository: https://charts.bitnami.com/bitnami
+  version: 15.7.6
+digest: sha256:4054d673ec292f60c29bf5f01d85b842c6189423e1503f008ba821a57d3b3931
+generated: "2022-01-22T11:53:50.241430787+08:00"
