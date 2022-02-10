@@ -1,0 +1,59 @@
+{{- if .Values.ingress.mall.enabled }}
+apiVersion: {{ include "common.capabilities.ingress.apiVersion" . }}
+kind: Ingress
+metadata:
+  name: {{ template "fengyue.fullname.mall" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels: {{- include "common.labels.standard" . | nindent 4 }}
+    {{- if .Values.commonLabels }}
+    {{- include "common.tplvalues.render" ( dict "value" .Values.commonLabels "context" $ ) | nindent 4 }}
+    {{- end }}
+  {{- if or .Values.ingress.mall.annotations .Values.commonAnnotations .Values.ingress.mall.certManager }}
+  annotations:
+    {{- if .Values.ingress.mall.certManager }}
+    kubernetes.io/tls-acme: "true"
+    {{- end }}
+    {{- if .Values.ingress.mall.annotations }}
+    {{- include "common.tplvalues.render" ( dict "value" .Values.ingress.mall.annotations "context" $) | nindent 4 }}
+    {{- end }}
+    {{- if .Values.commonAnnotations }}
+    {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
+    {{- end }}
+  {{- end }}
+spec:
+  rules:
+    {{- if .Values.ingress.mall.hostname }}
+    - host: {{ .Values.ingress.mall.hostname }}
+      http:
+        paths:
+          {{- if .Values.ingress.mall.extraPaths }}
+          {{- toYaml .Values.ingress.mall.extraPaths | nindent 10 }}
+          {{- end }}
+          - path: {{ .Values.ingress.mall.path }}
+            {{- if eq "true" (include "common.ingress.supportsPathType" .) }}
+            pathType: {{ .Values.ingress.mall.pathType }}
+            {{- end }}
+            backend: {{- include "common.ingress.backend" (dict "serviceName" (include "fengyue.fullname.mall" .) "servicePort" "http" "context" $)  | nindent 14 }}
+    {{- end }}
+    {{- range .Values.ingress.mall.extraHosts }}
+    - host: {{ .name | quote }}
+      http:
+        paths:
+          - path: {{ default "/" .path }}
+            {{- if eq "true" (include "common.ingress.supportsPathType" $) }}
+            pathType: {{ default "ImplementationSpecific" .pathType }}
+            {{- end }}
+            backend: {{- include "common.ingress.backend" (dict "serviceName" (include "fengyue.fullname.mall" $) "servicePort" "http" "context" $) | nindent 14 }}
+    {{- end }}
+  {{- if or (and .Values.ingress.mall.tls (or .Values.ingress.mall.certManager .Values.ingress.mall.selfSigned)) .Values.ingress.mall.extraTls }}
+  tls:
+    {{- if and .Values.ingress.mall.tls (or .Values.ingress.mall.certManager .Values.ingress.mall.selfSigned) }}
+    - hosts:
+        - {{ .Values.ingress.mall.hostname | quote }}
+      secretName: {{ printf "%s-tls" .Values.ingress.mall.hostname }}
+    {{- end }}
+    {{- if .Values.ingress.mall.extraTls }}
+    {{- include "common.tplvalues.render" (dict "value" .Values.ingress.mall.extraTls "context" $) | nindent 4 }}
+    {{- end }}
+  {{- end }}
+{{- end }}

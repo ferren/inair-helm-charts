@@ -18,6 +18,14 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
+{{- define "fengyue.fullname.mall" -}}
+{{- printf "%s-mall" (include "common.names.fullname" .) -}}
+{{- end -}}
+
+{{/*
+Create a default fully qualified app name.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+*/}}
 {{- define "fengyue.nacos.fullname" -}}
 {{- printf "%s-%s" .Release.Name "nacos" | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
