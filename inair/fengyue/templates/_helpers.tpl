@@ -18,8 +18,54 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
+{{- define "fengyue.fullname.order" -}}
+{{- printf "%s-order" (include "common.names.fullname" .) -}}
+{{- end -}}
+
+{{/*
+Create a default fully qualified app name.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+*/}}
 {{- define "fengyue.fullname.mall" -}}
 {{- printf "%s-mall" (include "common.names.fullname" .) -}}
+{{- end -}}
+
+{{/* vim: set filetype=mustache: */}}
+{{/*
+Kubernetes standard labels
+*/}}
+{{- define "fengyue.labels.standard.mall" -}}
+app.kubernetes.io/name: {{ include "fengyue.fullname.mall" . }}
+helm.sh/chart: {{ include "common.names.chart" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end -}}
+
+{{/* vim: set filetype=mustache: */}}
+{{/*
+Kubernetes standard labels
+*/}}
+{{- define "fengyue.labels.standard.order" -}}
+app.kubernetes.io/name: {{ include "fengyue.fullname.order" . }}
+helm.sh/chart: {{ include "common.names.chart" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end -}}
+
+{{/*
+Labels to use on deploy.spec.selector.matchLabels and svc.spec.selector
+*/}}
+{{- define "fengyue.labels.matchLabels.mall" -}}
+app.kubernetes.io/name: {{ include "fengyue.fullname.mall" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end -}}
+
+{{/*
+Labels to use on deploy.spec.selector.matchLabels and svc.spec.selector
+*/}}
+{{- define "fengyue.labels.matchLabels.order" -}}
+app.kubernetes.io/name: {{ include "fengyue.fullname.order" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 
 {{/*

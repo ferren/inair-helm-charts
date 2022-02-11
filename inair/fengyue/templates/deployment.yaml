@@ -1,9 +1,9 @@
 apiVersion: {{ template "common.capabilities.deployment.apiVersion" . }}
 kind: Deployment
 metadata:
-  name: {{ template "fengyue.fullname" . }}
+  name: {{ template "fengyue.fullname.order" . }}
   namespace: {{ .Release.Namespace | quote }}
-  labels: {{- include "common.labels.standard" . | nindent 4 }}
+  labels: {{- include "fengyue.labels.standard.order" . | nindent 4 }}
     {{- if .Values.commonLabels }}
     {{- include "common.tplvalues.render" ( dict "value" .Values.commonLabels "context" $ ) | nindent 4 }}
     {{- end }}
@@ -12,7 +12,7 @@ metadata:
   {{- end }}
 spec:
   selector:
-    matchLabels: {{- include "common.labels.matchLabels" . | nindent 6 }}
+    matchLabels: {{- include "fengyue.labels.matchLabels.order" . | nindent 6 }}
   {{- if .Values.updateStrategy }}
   strategy: {{- toYaml .Values.updateStrategy | nindent 4 }}
   {{- end }}
@@ -21,7 +21,7 @@ spec:
   {{- end }}
   template:
     metadata:
-      labels: {{- include "common.labels.standard" . | nindent 8 }}
+      labels: {{- include "fengyue.labels.standard.order" . | nindent 8 }}
         {{- if .Values.podLabels }}
         {{- include "common.tplvalues.render" (dict "value" .Values.podLabels "context" $) | nindent 8 }}
         {{- end }}
@@ -115,7 +115,7 @@ spec:
               mountPath: /app
         {{- end }}
       containers:
-        - name: {{ template "fengyue.fullname" . }}
+        - name: {{ template "fengyue.fullname.order" . }}
           {{- if .Values.containerSecurityContext.enabled }}
           securityContext:
             runAsUser: {{ .Values.containerSecurityContext.runAsUser }}
@@ -225,7 +225,7 @@ spec:
         - name: fengyue-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ .Values.persistence.existingClaim | default (include "fengyue.fullname" .) }}
+            claimName: {{ .Values.persistence.existingClaim | default (include "fengyue.fullname.order" .) }}
           {{- else }}
           emptyDir: {}
           {{- end }}
