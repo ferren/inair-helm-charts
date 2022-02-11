@@ -1,7 +1,7 @@
 annotations:
   category: SRM
 apiVersion: v2
-appVersion: 2.0.20220114
+appVersion: 2.0.20220211
 dependencies:
   - name: common
     repository: https://ferren.github.io/inair-helm-charts/
@@ -40,4 +40,4 @@ name: fengyue
 sources:
   - https://svn.coding.net/szyq/yq-srm/srm
   - http://www.onthesky.cn/
-version: 0.1.1
+version: 0.1.2
