@@ -1,7 +1,7 @@
 annotations:
   category: BFP
 apiVersion: v2
-appVersion: 2.0.20220114
+appVersion: 2.0.20220211
 dependencies:
   - name: common
     repository: https://ferren.github.io/inair-helm-charts/
@@ -23,4 +23,4 @@ name: service-repay
 sources:
   - https://codeup.aliyun.com/61bd3e98fa282c88e103b306/java/bfp-admin2.0-dev
   - https://www.incosten.com/
-version: 0.2.1
+version: 0.2.2
