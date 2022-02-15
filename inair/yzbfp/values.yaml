@@ -826,6 +826,14 @@ rabbitmq:
 nginx:
   enable: false
 
+  image:
+    registry: registry.cn-hangzhou.aliyuncs.com
+    repository: yzbfp/vue-nginx
+    tag: 20220215
+    pullPolicy: IfNotPresent
+    pullSecrets:
+      - inair-image-ps
+
   extraVolumes:
     - name: ssh-deploy-keys
       secret:
