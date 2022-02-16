@@ -88,6 +88,7 @@ args: [
   "--dubbo.registry.address=nacos://nacos-cs:8848",
   "--shiro-redis.redis-manager.host=$(REDIS_HOST):6379",
   "--shiro-redis.redis-manager.password=$(REDIS_PASSWORD)",
+  "--k8sdeploy.profile=dev",
   "--server.port=9001"
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
