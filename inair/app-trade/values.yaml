@@ -95,6 +95,8 @@ args: [
   "--spring.rabbitmq.username=$(RABBITMQ_USERNAME)",
   "--spring.rabbitmq.password=$(RABBITMQ_PASSWORD)",
   "--spring.data.mongodb.uri=mongodb://$(MONGODB_USERNAME):$(MONGODB_PASSWORD)@$(MONGODB_HOST)/$(MONGODB_DB)",
+  "--external-api.xdf=http://172.16.155.61:18890",
+  "--k8sdeploy.profile=dev",
   "--server.port=9001"
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
