@@ -29,6 +29,9 @@ dependencies:
 - name: service-risk
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.2.2
+- name: risk-bairong
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 0.2.2
 - name: service-channel
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.2.2
@@ -38,5 +41,5 @@ dependencies:
 - name: app-trade
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.2.3
-digest: sha256:34fae68304de08b1d987530f151bc96dda0fc6270ad2b4b582da02076bc59306
-generated: "2022-02-16T13:26:50.4485272+08:00"
+digest: sha256:f5f59e5ab10c730b522d1f4e18175023465564eb4e8c4bfd9c3248af84a16897
+generated: "2022-02-16T18:41:37.4547823+08:00"

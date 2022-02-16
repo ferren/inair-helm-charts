@@ -42,6 +42,10 @@ dependencies:
     name: service-risk
     repository: https://ferren.github.io/inair-helm-charts/
     version: 0.x.x
+  - condition: risk-bairong.enabled
+    name: risk-bairong
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 0.x.x
   - condition: service-channel.enabled
     name: service-channel
     repository: https://ferren.github.io/inair-helm-charts/
@@ -71,4 +75,4 @@ name: yzbfp
 sources:
   - https://codeup.aliyun.com/61bd3e98fa282c88e103b306/java/bfp-admin2.0-dev
   - https://www.incosten.com/
-version: 0.2.8
+version: 0.2.9
