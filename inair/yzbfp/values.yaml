@@ -829,7 +829,7 @@ nginx:
   image:
     registry: registry.cn-hangzhou.aliyuncs.com
     repository: yzbfp/vue-nginx
-    tag: 20220215
+    tag: vue_20220215
     pullPolicy: IfNotPresent
     pullSecrets:
       - inair-image-ps
