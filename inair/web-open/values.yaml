@@ -463,6 +463,70 @@ autoscaling:
   targetCPU: 50
   targetMemory: 50
 
+## @section Database Parameters
+
+## MySQL chart configuration
+## ref: https://github.com/bitnami/charts/blob/master/bitnami/mysql/values.yaml
+##
+mysql:
+  ## @param mysql.enabled Deploy MySQL container(s)
+  ##
+  enabled: false
+  ## @param mysql.mysqllUsername MySQL username
+  ## ref: https://hub.docker.com/_/mysql/
+  ##
+  mysqllUsername: "yzbfp"
+  ## @param mysql.mysqllUsername MySQL password
+  ## ref: https://hub.docker.com/_/mysql/
+  ##
+  mysqlPassword: ""
+  ## @param mysql.mysqlDatabase MySQL database
+  ## ref: https://github.com/bitnami/bitnami-docker-mysql/blob/master/README.md#creating-a-database-on-first-run
+  ##
+  mysqlDatabase: yzbfp
+  ## @param mysql.existingSecret Name of existing secret object
+  ## The secret should contain the following keys:
+  ## mysql-mysql-password (for root user)
+  ## mysql-password (for the unprivileged user)
+  ##
+  # existingSecret: my-secret
+  existingSecret: ""
+
+  ## Enable persistence using Persistent Volume Claims
+  ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+  ##
+  persistence:
+    ## @param postgresql.persistence.enabled Enable PostgreSQL persistence using PVC
+    ##
+    enabled: true
+    ## @param postgresql.persistence.existingClaim Provide an existing `PersistentVolumeClaim`, the value is evaluated as a template
+    ##
+    # existingClaim: your-claim
+    existingClaim: ""
+
+    ## @param postgresql.persistence.storageClass PVC Storage Class for PostgreSQL volume
+    ## If defined, storageClassName: <storageClass>
+    ## If set to "-", storageClassName: "", which disables dynamic provisioning
+    ## If undefined (the default) or set to null, no storageClassName spec is
+    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+    ##   GKE, AWS & OpenStack)
+    ##
+    # storageClass: "-"
+    storageClass: ""
+    ## @param postgresql.persistence.accessMode PVC Access Mode for PostgreSQL volume
+    ##
+    accessMode: ReadWriteOnce
+    ## @param postgresql.persistence.size PVC Storage Request for PostgreSQL volume
+    ##
+    size: 8Gi
+
+## External Database Configuration
+## All of these values are only used when postgresql.enabled is set to false
+externalDatabase:
+  url: ""
+  username: yzbfp
+  password: ""
+
 nacos:
   address: nacos://nacos-cs:8848
   application:
