@@ -54,6 +54,10 @@ dependencies:
     name: web-admin
     repository: https://ferren.github.io/inair-helm-charts/
     version: 0.x.x
+  - condition: web-open.enabled
+    name: web-open
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 0.x.x
   - condition: app-trade.enabled
     name: app-trade
     repository: https://ferren.github.io/inair-helm-charts/
@@ -75,4 +79,4 @@ name: yzbfp
 sources:
   - https://codeup.aliyun.com/61bd3e98fa282c88e103b306/java/bfp-admin2.0-dev
   - https://www.incosten.com/
-version: 0.3.1
+version: 0.3.2
