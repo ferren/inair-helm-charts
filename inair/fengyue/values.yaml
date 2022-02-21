@@ -89,7 +89,9 @@ args: [
   "--spring.datasource.username=$(MYSQL_USERNAME)",
   "--spring.datasource.password=$(MYSQL_PASSWORD)",
   "--spring.redis.security.host=$(REDIS_HOST)",
+  "--spring.redis.security.password=$(REDIS_PASSWORD)",
   "--spring.redis.normal.host=$(REDIS_HOST)",
+  "--spring.redis.normal.password=$(REDIS_PASSWORD)",
   "--server.port=9001"
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
