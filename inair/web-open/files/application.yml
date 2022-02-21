@@ -1,13 +1,43 @@
 server:
-  port: 8088
+  port: 8090
 service:
   version: 2.0
 spring:
   application:
-    name: bfp-web
+    name: bfp-open
+  datasource:
+    url: 
+    username: 
+    password: 
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-test-query: SELECT 1
+      validation-timeout: 250
+      minimum-idle: 5
+      auto-commit: true
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 500000 #不小于30s 否则会回到默认的1800秒
+      maximum-pool-size: 15
+      pool-name: DatebookHikariCP
+  redis:
+    database: 0
+    host: 
+    port: 
+    password: 
+    # 连接超时时间（毫秒）
+    timeout: 5000ms
+    jedis:
+      pool:
+        # 连接池最大连接数（使用负值表示没有限制）
+        max-active: 200
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: 15000ms
+        # 连接池中的最小空闲连接
+        min-idle: 100
 dubbo:
   application:
-    name: bfp-web
+    name: bfp-open
     qos:
       enable: false
       accept:
@@ -17,15 +47,29 @@ dubbo:
     address: 
   consumer:
     timeout: 30000
-shiro:
-  loginUrl: /401
-shiro-redis:
-  session-dao:
-    expire: -2
-  redis-manager:
-    database: 0
-    host: 
-    timeout: 50000
-    password: 
-  cache-manager:
-    expire: 3600
+
+mybatis-plus:
+  #如果是放在java下 classpath:/yourpackage/mapper/*Mapper.xml  如果是resource classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:/com/yzbfp/admin/common/mapper/*Mapper.xml
+  #多个package用逗号或者分号分隔
+  typeAliasesPackage: com.yzbfp.admin.common.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    cache-enabled: false
+  global-config:
+    enable-sql-runner: true
+    banner: false
+    db-config:
+      db-type: mysql
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+
+k8sdeploy:
+  profile: dev
+
+#添加测试账号，自动过滤sms短信、risk风控链
+test:
+  phone:
+    sms: 18739915910,18739915911,18795958212,13545058638,13613787118,18837853292,13991910808,18909298576,15060769727,18050000689,15099188865,13579911240,15766990011,17376820011
+    risk: 18739915910,18739915911,18795958212,13545058638,13613787118,18837853292,13991910808,18909298576,15060769727,18050000689,15099188865,13579911240,15766990011,17376820011

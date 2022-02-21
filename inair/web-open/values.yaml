@@ -85,10 +85,12 @@ command: []
 ## @param args Override default container args (useful when using custom images)
 ##
 args: [
+  "--spring.datasource.url=$(MYSQL_URL)",
+  "--spring.datasource.username=$(MYSQL_USERNAME)",
+  "--spring.datasource.password=$(MYSQL_PASSWORD)",
   "--dubbo.registry.address=nacos://nacos-cs:8848",
-  "--shiro-redis.redis-manager.host=$(REDIS_HOST):6379",
-  "--shiro-redis.redis-manager.password=$(REDIS_PASSWORD)",
-  "--k8sdeploy.profile=dev",
+  "--spring.redis.host=$(REDIS_HOST)",
+  "--spring.redis.password=$(REDIS_PASSWORD)",
   "--server.port=9001"
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
