@@ -1,0 +1,31 @@
+server:
+  port: 8088
+service:
+  version: 2.0
+spring:
+  application:
+    name: bfp-web
+dubbo:
+  application:
+    name: bfp-web
+    qos:
+      enable: false
+      accept:
+        foreign:
+          ip: false
+  registry:
+    address: 
+  consumer:
+    timeout: 30000
+shiro:
+  loginUrl: /401
+shiro-redis:
+  session-dao:
+    expire: -2
+  redis-manager:
+    database: 0
+    host: 
+    timeout: 50000
+    password: 
+  cache-manager:
+    expire: 3600
