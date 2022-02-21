@@ -84,7 +84,14 @@ allowEmptyPassword: false
 command: []
 ## @param args Override default container args (useful when using custom images)
 ##
-args: []
+args: [
+  "--spring.datasource.url=$(MYSQL_URL)",
+  "--spring.datasource.username=$(MYSQL_USERNAME)",
+  "--spring.datasource.password=$(MYSQL_PASSWORD)",
+  "--spring.redis.security.host=$(REDIS_HOST)",
+  "--spring.redis.normal.host=$(REDIS_HOST)",
+  "--server.port=9001"
+]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
 ## e.g:
 ## extraEnvVars:
@@ -332,7 +339,7 @@ cloneStaticSiteFromGit:
     pullSecrets: []
   ## @param cloneStaticSiteFromGit.repository Git Repository to clone static content from
   ##
-  repository: ""
+  repository: "git@e.coding.net:szyq/yq-srm/deploy-fengyue.git"
   ## @param cloneStaticSiteFromGit.branch Git branch to checkout
   ##
   branch: ""
