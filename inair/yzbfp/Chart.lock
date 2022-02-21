@@ -38,8 +38,11 @@ dependencies:
 - name: web-admin
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.2.4
+- name: web-open
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 0.2.4
 - name: app-trade
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.2.3
-digest: sha256:c2199ed8cf7c49d9b1ec3fd4aec50957845db68b2e7d13f57ca0a1f7ec3cc2a6
-generated: "2022-02-17T19:43:25.3609829+08:00"
+digest: sha256:1fae1441eebd1574ee5676c5e1340cbd829b90ccbf3a5bc7b6146238d8c9c82c
+generated: "2022-02-21T13:57:11.9532717+08:00"
