@@ -13,7 +13,7 @@ dependencies:
   version: 10.31.5
 - name: nginx
   repository: https://charts.bitnami.com/bitnami
-  version: 9.7.6
+  version: 9.7.8
 - name: service-base
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.2.2
@@ -40,9 +40,12 @@ dependencies:
   version: 0.2.4
 - name: web-open
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.2.7
+  version: 0.2.8
+- name: gentleman-sign
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 0.2.8
 - name: app-trade
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.2.3
-digest: sha256:1f50f18b8bf265e1bf5242deebc1ab17d11099b42b80b190eae6227f26c2d840
-generated: "2022-02-21T17:55:11.612324+08:00"
+digest: sha256:ba87c469f949f54efb8071b29a3b973a6bc9fe853d0aa89ffa6c8d4f90397e9d
+generated: "2022-02-22T19:27:30.2121649+08:00"
