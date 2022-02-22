@@ -92,7 +92,7 @@ args: [
   "--spring.redis.host=$(REDIS_HOST)",
   "--spring.redis.password=$(REDIS_PASSWORD)",
   "--spring.data.mongodb.uri=mongodb://$(MONGODB_USERNAME):$(MONGODB_PASSWORD)@$(MONGODB_HOST)/$(MONGODB_DB)",
-  "--external-api.jzq=http://172.16.155.61:18892",
+  "--external-api.jzq=http://yzbfp-gentleman-sign/JZQ",
   "--server.port=9001"
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
