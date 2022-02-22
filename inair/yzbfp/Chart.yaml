@@ -58,6 +58,10 @@ dependencies:
     name: web-open
     repository: https://ferren.github.io/inair-helm-charts/
     version: 0.x.x
+  - condition: gentleman-sign.enabled
+    name: gentleman-sign
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 0.x.x
   - condition: app-trade.enabled
     name: app-trade
     repository: https://ferren.github.io/inair-helm-charts/
