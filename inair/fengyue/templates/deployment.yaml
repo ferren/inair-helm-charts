@@ -146,14 +146,15 @@ spec:
                   key: "mysql-password"
             - name: REDIS_HOST
               value: {{ include "fengyue.redisHost" . | quote }}
-            - name: REDIS_PASSWORD
             {{- if .Values.redis.auth.enabled }}
+            - name: REDIS_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: {{ include "fengyue.redisSecretName" . | quote }}
                   key: "redis-password"
-            {{- else -}}
-              value: 
+            {{- else }}
+            - name: REDIS_PASSWORD
+              value: {{- printf "%s" "" -}}
             {{- end }}
             {{- if .Values.ingress.enabled }}
             - name: APP_HOST

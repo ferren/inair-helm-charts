@@ -152,6 +152,9 @@ spec:
                 secretKeyRef:
                   name: {{ include "fengyue.redisSecretName" . | quote }}
                   key: "redis-password"
+            {{- else }}
+            - name: REDIS_PASSWORD
+              value: {{- printf "%s" "" -}}
             {{- end }}
           ports:
             - name: http
