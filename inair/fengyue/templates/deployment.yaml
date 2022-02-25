@@ -153,6 +153,10 @@ spec:
                   name: {{ include "fengyue.redisSecretName" . | quote }}
                   key: "redis-password"
             {{- end }}
+            {{- if .Values.ingress.enabled }}
+            - name: APP_HOST
+              value: {{ .Values.ingress.hostname }}
+            {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.containerPort }}
