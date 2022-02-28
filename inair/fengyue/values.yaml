@@ -94,6 +94,7 @@ args: [
   "--spring.redis.normal.password=$(REDIS_PASSWORD)",
   "--spring.redis.cart.host=$(REDIS_HOST)",
   "--spring.redis.cart.password=$(REDIS_PASSWORD)",
+  "--spring.profiles.active=$(APP_ACTIVE)",
   "--server.port=9001"
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container

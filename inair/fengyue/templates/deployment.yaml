@@ -160,6 +160,13 @@ spec:
             - name: APP_HOST
               value: {{ .Values.ingress.hostname }}
             {{- end }}
+            {{- if .Values.cloneStaticSiteFromGit.enabled }}
+            - name: APP_ACTIVE
+              value: {{ .Values.cloneStaticSiteFromGit.branch }}
+            {{- else }}
+            - name: APP_ACTIVE
+              value: test
+            {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.containerPort }}
