@@ -156,6 +156,32 @@ spec:
             - name: REDIS_PASSWORD
               value: {{- printf "%s" "" -}}
             {{- end }}
+            - name: KUAIDI_URL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "fengyue.kuaidiSecretName" . | quote }}
+                  key: "url"
+            - name: KUAIDI_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "fengyue.kuaidiSecretName" . | quote }}
+                  key: "username"
+            - name: KUAIDI_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "fengyue.kuaidiSecretName" . | quote }}
+                  key: "key"
+            {{- if .Values.ingress.enabled }}
+            - name: APP_HOST
+              value: {{ .Values.ingress.hostname }}
+            {{- end }}
+            {{- if .Values.cloneStaticSiteFromGit.enabled }}
+            - name: APP_ACTIVE
+              value: {{ .Values.cloneStaticSiteFromGit.branch }}
+            {{- else }}
+            - name: APP_ACTIVE
+              value: test
+            {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.containerPort }}
