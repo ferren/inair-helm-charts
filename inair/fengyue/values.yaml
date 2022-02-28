@@ -94,6 +94,9 @@ args: [
   "--spring.redis.normal.password=$(REDIS_PASSWORD)",
   "--spring.redis.cart.host=$(REDIS_HOST)",
   "--spring.redis.cart.password=$(REDIS_PASSWORD)",
+  "--kuaidi.user=$(KUAIDI_USERNAME)",
+  "--kuaidi.key=$(KUAIDI_KEY)",
+  "--kuaidi.url=$(KUAIDI_URL)",
   "--spring.profiles.active=$(APP_ACTIVE)",
   "--server.port=9001"
 ]
@@ -739,6 +742,12 @@ externalDatabase:
   url: ""
   username: fengyue
   password: ""
+
+kuaidi:
+  enable: false
+  url: ""
+  username: ""
+  key: ""
 
 ## Redis chart configuration
 ## ref: https://github.com/bitnami/charts/blob/master/bitnami/redis/values.yaml

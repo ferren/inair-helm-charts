@@ -196,6 +196,10 @@ Return the MySql Secret Name
 {{- end -}}
 {{- end -}}
 
+{{- define "fengyue.kuaidiSecretName" -}}
+    {{- printf "%s-%s" .Release.Name "kuaidi" -}}
+{{- end -}}
+
 {{/*
 Return the Redis hostname
 */}}
