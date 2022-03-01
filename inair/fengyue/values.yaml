@@ -347,7 +347,7 @@ cloneStaticSiteFromGit:
     pullSecrets: []
   ## @param cloneStaticSiteFromGit.repository Git Repository to clone static content from
   ##
-  repository: "git@e.coding.net:szyq/yq-srm/deploy-fengyue.git"
+  repository: "git@e.coding.net:szyq/yq-srm/fengyue-deploy.git"
   ## @param cloneStaticSiteFromGit.branch Git branch to checkout
   ##
   branch: ""
