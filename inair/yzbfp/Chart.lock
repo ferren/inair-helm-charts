@@ -13,39 +13,39 @@ dependencies:
   version: 10.31.5
 - name: nginx
   repository: https://charts.bitnami.com/bitnami
-  version: 9.7.8
+  version: 9.9.3
 - name: service-base
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.2.2
+  version: 0.2.3
 - name: service-apimanage
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.2.2
+  version: 0.2.3
 - name: service-customer
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.2.4
+  version: 0.2.5
 - name: service-repay
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.2.2
+  version: 0.2.3
 - name: service-risk
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.2.2
+  version: 0.2.3
 - name: risk-bairong
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.2.2
+  version: 0.2.3
 - name: service-channel
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.2.2
+  version: 0.2.3
 - name: web-admin
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.2.4
+  version: 0.2.5
 - name: web-open
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.2.8
+  version: 0.2.9
 - name: gentleman-sign
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.2.8
+  version: 0.2.9
 - name: app-trade
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.2.3
-digest: sha256:a2b79517d96e160497b0953da5b1fb7fe062ae5e7770c5a32062b26a961d5381
-generated: "2022-02-22T19:41:07.3081405+08:00"
+  version: 0.2.4
+digest: sha256:11f0dd592c460c57bf63bf5eded76abee8ff86c7f900185bfa9ba4d36d0dabd3
+generated: "2022-03-02T19:16:06.3631057+08:00"
