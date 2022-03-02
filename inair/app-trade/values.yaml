@@ -235,8 +235,8 @@ tolerations: []
 resources:
   limits: {}
   requests:
-    memory: 512Mi
-    cpu: 300m
+    memory: 1024Mi
+    cpu: 100m
 ## Container ports
 ## @param containerPort Odoo HTTP container port
 ##
