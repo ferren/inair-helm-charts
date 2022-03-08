@@ -40,7 +40,7 @@ extraDeploy: []
 image:
   registry: registry.cn-hangzhou.aliyuncs.com
   repository: yzbfp/springboot
-  tag: app_20220211
+  tag: app_20220308
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -266,10 +266,9 @@ containerSecurityContext:
 ##
 livenessProbe:
   enabled: true
-  path: /
-  initialDelaySeconds: 600
-  periodSeconds: 30
-  timeoutSeconds: 5
+  initialDelaySeconds: 300
+  periodSeconds: 120
+  timeoutSeconds: 10
   failureThreshold: 6
   successThreshold: 1
 ## @param readinessProbe.enabled Enable readinessProbe
@@ -282,10 +281,9 @@ livenessProbe:
 ##
 readinessProbe:
   enabled: true
-  path: /
   initialDelaySeconds: 30
-  periodSeconds: 10
-  timeoutSeconds: 5
+  periodSeconds: 60
+  timeoutSeconds: 10
   failureThreshold: 6
   successThreshold: 1
 ## @param startupProbe.enabled Enable startupProbe
@@ -297,11 +295,10 @@ readinessProbe:
 ## @param startupProbe.successThreshold Success threshold for startupProbe
 ##
 startupProbe:
-  enabled: false
-  path: /
-  initialDelaySeconds: 300
-  periodSeconds: 10
-  timeoutSeconds: 5
+  enabled: true
+  initialDelaySeconds: 30
+  periodSeconds: 30
+  timeoutSeconds: 10
   failureThreshold: 6
   successThreshold: 1
 ## @param customLivenessProbe Custom livenessProbe that overrides the default one

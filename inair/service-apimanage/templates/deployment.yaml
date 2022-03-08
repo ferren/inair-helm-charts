@@ -127,7 +127,7 @@ spec:
                   name: {{ include "yzbfp.redisSecretName" . | quote }}
                   key: "redis-password"
             - name: DUBBO_PORT
-              value: {{ .Values.dubboPort }}
+              value: {{ .Values.dubboPort | quote }}
           ports:
             - name: http
               containerPort: {{ .Values.containerPort }}
@@ -135,9 +135,9 @@ spec:
           livenessProbe:
             exec:
               command:
-              - /bin/bash
-              - dubbo_probe.sh
-              - {{ .Values.dubboPort }}
+                - sh
+                - -c
+                - dubbo_probe.sh {{ .Values.dubboPort }}
             initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
             timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
@@ -150,9 +150,9 @@ spec:
           readinessProbe:
             exec:
               command:
-              - /bin/bash
-              - dubbo_probe.sh
-              - {{ .Values.dubboPort }}
+                - sh
+                - -c
+                - dubbo_probe.sh {{ .Values.dubboPort }}
             initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
             timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
@@ -165,9 +165,9 @@ spec:
           startupProbe:
             exec:
               command:
-              - /bin/bash
-              - dubbo_probe.sh
-              - {{ .Values.dubboPort }}
+                - sh
+                - -c
+                - dubbo_probe.sh {{ .Values.dubboPort }}
             initialDelaySeconds: {{ .Values.startupProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.startupProbe.periodSeconds }}
             timeoutSeconds: {{ .Values.startupProbe.timeoutSeconds }}
