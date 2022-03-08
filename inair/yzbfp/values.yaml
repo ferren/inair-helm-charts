@@ -1119,18 +1119,23 @@ service-apimanage:
 
 service-customer:
   enable: true
+  dubboPort: 20891
 
 service-repay:
   enable: true
+  dubboPort: 20892
 
 service-risk:
   enable: true
+  dubboPort: 20893
 
 risk-bairong:
   enable: true
+  dubboPort: 20894
 
 service-channel:
   enable: true
+  dubboPort: 20895
 
 web-admin:
   enable: true
