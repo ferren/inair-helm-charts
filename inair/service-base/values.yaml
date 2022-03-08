@@ -40,7 +40,7 @@ extraDeploy: []
 image:
   registry: registry.cn-hangzhou.aliyuncs.com
   repository: yzbfp/springboot
-  tag: app_20220211
+  tag: app_20220308
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -89,6 +89,7 @@ args: [
   "--spring.datasource.username=$(MYSQL_USERNAME)",
   "--spring.datasource.password=$(MYSQL_PASSWORD)",
   "--dubbo.registry.address=nacos://nacos-cs:8848",
+  "--dubbo.protocol.port=$(DUBBO_PORT)",
   "--spring.redis.host=$(REDIS_HOST)",
   "--spring.redis.password=$(REDIS_PASSWORD)",
   "--server.port=9001"
@@ -235,6 +236,7 @@ resources:
 ## @param containerPort Odoo HTTP container port
 ##
 containerPort: 9001
+dubboPort: 20890
 ## Configure Pods Security Context
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
 ## @param podSecurityContext.enabled Enabled Odoo pods' Security Context
@@ -252,7 +254,62 @@ containerSecurityContext:
   enabled: false
   runAsUser: 1001
 
-## @section Traffic Exposure Parameters
+## Configure extra options for Odoo containers' liveness and readiness probes
+## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
+## @param livenessProbe.enabled Enable livenessProbe
+## @param livenessProbe.path Path for to check for livenessProbe
+## @param livenessProbe.initialDelaySeconds Initial delay seconds for livenessProbe
+## @param livenessProbe.periodSeconds Period seconds for livenessProbe
+## @param livenessProbe.timeoutSeconds Timeout seconds for livenessProbe
+## @param livenessProbe.failureThreshold Failure threshold for livenessProbe
+## @param livenessProbe.successThreshold Success threshold for livenessProbe
+##
+livenessProbe:
+  enabled: true
+  initialDelaySeconds: 300
+  periodSeconds: 120
+  timeoutSeconds: 10
+  failureThreshold: 6
+  successThreshold: 1
+## @param readinessProbe.enabled Enable readinessProbe
+## @param readinessProbe.path Path to check for readinessProbe
+## @param readinessProbe.initialDelaySeconds Initial delay seconds for readinessProbe
+## @param readinessProbe.periodSeconds Period seconds for readinessProbe
+## @param readinessProbe.timeoutSeconds Timeout seconds for readinessProbe
+## @param readinessProbe.failureThreshold Failure threshold for readinessProbe
+## @param readinessProbe.successThreshold Success threshold for readinessProbe
+##
+readinessProbe:
+  enabled: true
+  initialDelaySeconds: 30
+  periodSeconds: 60
+  timeoutSeconds: 10
+  failureThreshold: 6
+  successThreshold: 1
+## @param startupProbe.enabled Enable startupProbe
+## @param startupProbe.path Path to check for startupProbe
+## @param startupProbe.initialDelaySeconds Initial delay seconds for startupProbe
+## @param startupProbe.periodSeconds Period seconds for startupProbe
+## @param startupProbe.timeoutSeconds Timeout seconds for startupProbe
+## @param startupProbe.failureThreshold Failure threshold for startupProbe
+## @param startupProbe.successThreshold Success threshold for startupProbe
+##
+startupProbe:
+  enabled: true
+  initialDelaySeconds: 30
+  periodSeconds: 30
+  timeoutSeconds: 10
+  failureThreshold: 6
+  successThreshold: 1
+## @param customLivenessProbe Custom livenessProbe that overrides the default one
+##
+customLivenessProbe: {}
+## @param customReadinessProbe Custom readinessProbe that overrides the default one
+#
+customReadinessProbe: {}
+## @param customStartupProbe Custom startupProbe that overrides the default one
+#
+customStartupProbe: {}
 
 ## Odoo service parameters
 ##
