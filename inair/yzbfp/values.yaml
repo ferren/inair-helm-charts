@@ -1146,5 +1146,26 @@ web-open:
 gentleman-sign:
   enable: true
 
+handtenpay:
+  enable: true
+
+  xdfHandtenpay:
+    enable: true
+
+    messageQueue:
+      host: 39.100.4.179
+      port: 5672
+      username: yz
+      password: yz2021
+      virtualHost: yz
+
+    ftp:
+      ip: 39.99.232.115
+      port: 22
+      username: mysftp
+      password: Shi321!@#
+      ##FTP目录/dataA/ftpdata/yz/银行行号/日期YYYYMMDD
+      catalogue: /upload/yz/
+
 app-trade:
   enable: true
