@@ -157,13 +157,13 @@ spec:
             - name: BFP_PRIVATE_KEY
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "yzbfp.handtenpay.tls" . | quote }}
-                  key: "bfp-rsa.key"
+                  name: {{ .Values.xdfHandtenpay.keySecret | quote }}
+                  key: "bfp-rsa"
             - name: HANDTENPAY_PUB
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "yzbfp.handtenpay.tls" . | quote }}
-                  key: "handtenpay.pub"
+                  name: {{ .Values.xdfHandtenpay.keySecret | quote }}
+                  key: "handtenpay-pub"
             - name: DEPLOY_PROFILE
               value: {{ .Values.deployProfile | quote }}
           ports:

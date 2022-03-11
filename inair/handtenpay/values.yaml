@@ -102,6 +102,9 @@ args: [
 xdfHandtenpay:
   enable: true
 
+  baseUrl: http://dspre.xxx.com/
+  keySecret: handtenpay-keys
+
   messageQueue:
     host: 39.100.4.179
     port: 5672
@@ -110,10 +113,10 @@ xdfHandtenpay:
     virtualHost: yz
 
   ftp:
-    ip: 39.99.232.115
+    ip: 192.168.0.1
     port: 22
     username: mysftp
-    password: Shi321!@#
+    password: abcd
     ##FTP目录/dataA/ftpdata/yz/银行行号/日期YYYYMMDD
     catalogue: /upload/yz/0102
 
