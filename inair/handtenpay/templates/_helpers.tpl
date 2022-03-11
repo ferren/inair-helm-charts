@@ -117,6 +117,10 @@ Return the Handtenpay settings
 {{- printf "%s-%s" .Release.Name "handtenpay" -}}
 {{- end -}}
 
+{{- define "yzbfp.handtenpay.tls" -}}
+{{- printf "%s-%s" .Release.Name "handtenpay-tls" -}}
+{{- end -}}
+
 {{/*
 Return the MySql Secret Name
 */}}

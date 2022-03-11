@@ -154,6 +154,16 @@ spec:
                 secretKeyRef:
                   name: {{ include "yzbfp.handtenpay" . | quote }}
                   key: "ftp-catalogue"
+            - name: BFP_PRIVATE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "yzbfp.handtenpay.tls" . | quote }}
+                  key: "bfp-rsa.key"
+            - name: HANDTENPAY_PUB
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "yzbfp.handtenpay.tls" . | quote }}
+                  key: "handtenpay.pub"
             - name: DEPLOY_PROFILE
               value: {{ .Values.deployProfile | quote }}
           ports:

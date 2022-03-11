@@ -115,7 +115,7 @@ xdfHandtenpay:
     username: mysftp
     password: Shi321!@#
     ##FTP目录/dataA/ftpdata/yz/银行行号/日期YYYYMMDD
-    catalogue: /upload/yz/
+    catalogue: /upload/yz/0102
 
 deployProfile: dev
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
