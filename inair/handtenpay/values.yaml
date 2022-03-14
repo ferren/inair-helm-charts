@@ -96,6 +96,9 @@ args: [
   "--billftp.password=$(FTP_PASSWORD)",
   "--billftp.catalogue=$(FTP_CATALOGUE)",
   "--k8sdeploy.profile=$(DEPLOY_PROFILE)",
+  "--constants.baseurl=$(BASE_URL)",
+  "--constants.bfp-private-key=$(BFP_PRIVATE_KEY)",
+  "--constants.handtenpay-pub=$(HANDTENPAY_PUB)",
   "--server.port=9001"
 ]
 

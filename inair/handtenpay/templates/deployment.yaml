@@ -104,6 +104,11 @@ spec:
           args: {{- include "common.tplvalues.render" (dict "value" .Values.args "context" $) | nindent 12 }}
           {{- end }}
           env:
+            - name: BASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "yzbfp.handtenpay" . | quote }}
+                  key: "handtenpay-url"
             - name: MQ_HOST
               valueFrom:
                 secretKeyRef:
