@@ -97,8 +97,8 @@ args: [
   "--billftp.catalogue=$(FTP_CATALOGUE)",
   "--k8sdeploy.profile=$(DEPLOY_PROFILE)",
   "--constants.baseurl=$(BASE_URL)",
-  "--constants.bfp-private-key=$(BFP_PRIVATE_KEY)",
-  "--constants.handtenpay-pub=$(HANDTENPAY_PUB)",
+  "--constants.bfp-private-key=$(BFP_PRIVATE_KEY_FILE)",
+  "--constants.handtenpay-pub=$(HANDTENPAY_PUB_FILE)",
   "--server.port=9001"
 ]
 
@@ -106,13 +106,14 @@ xdfHandtenpay:
   enable: true
 
   baseUrl: http://dspre.xxx.com/
-  keySecret: handtenpay-keys
+  bfpRsa: /app/keys/bfp-rsa.key
+  handtenpayPub: /app/keys/handtenpay.pub
 
   messageQueue:
-    host: 39.100.4.179
+    host: 1.1.1.1
     port: 5672
-    username: yz
-    password: yz2021
+    username: yy
+    password: yyyy
     virtualHost: yz
 
   ftp:
@@ -282,6 +283,72 @@ podSecurityContext:
 containerSecurityContext:
   enabled: false
   runAsUser: 1001
+
+## Get the server static content from a git repository
+## NOTE: This will override staticSiteConfigmap and staticSitePVC
+##
+cloneStaticSiteFromGit:
+  ## @param cloneStaticSiteFromGit.enabled Get the server static content from a Git repository
+  ##
+  enabled: false
+  ## Bitnami Git image version
+  ## ref: https://hub.docker.com/r/bitnami/git/tags/
+  ## @param cloneStaticSiteFromGit.image.registry Git image registry
+  ## @param cloneStaticSiteFromGit.image.repository Git image repository
+  ## @param cloneStaticSiteFromGit.image.tag Git image tag (immutable tags are recommended)
+  ## @param cloneStaticSiteFromGit.image.pullPolicy Git image pull policy
+  ## @param cloneStaticSiteFromGit.image.pullSecrets Specify docker-registry secret names as an array
+  ##
+  image:
+    registry: docker.io
+    repository: bitnami/git
+    tag: 2.34.1-debian-10-r33
+    ## Specify a imagePullPolicy
+    ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
+    ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+    ##
+    pullPolicy: IfNotPresent
+    ## Optionally specify an array of imagePullSecrets.
+    ## Secrets must be manually created in the namespace.
+    ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+    ## e.g:
+    ## pullSecrets:
+    ##   - myRegistryKeySecretName
+    ##
+    pullSecrets: []
+  ## @param cloneStaticSiteFromGit.repository Git Repository to clone static content from
+  ##
+  repository: ""
+  ## @param cloneStaticSiteFromGit.branch Git branch to checkout
+  ##
+  branch: ""
+  ## @param cloneStaticSiteFromGit.interval Interval for sidecar container pull from the Git repository
+  ##
+  interval: 60
+  ## Additional configuration for git-clone-repository initContainer
+  ##
+  gitClone:
+    ## @param cloneStaticSiteFromGit.gitClone.command Override default container command for git-clone-repository
+    ##
+    command: []
+    ## @param cloneStaticSiteFromGit.gitClone.args Override default container args for git-clone-repository
+    ##
+    args: []
+  ## @param cloneStaticSiteFromGit.extraEnvVars Additional environment variables to set for the in the containers that clone static site from git
+  ## E.g:
+  ## extraEnvVars:
+  ##   - name: FOO
+  ##     value: BAR
+  ##
+  extraEnvVars: []
+  ## @param cloneStaticSiteFromGit.extraVolumeMounts Add extra volume mounts for the Git containers
+  ## Useful to mount keys to connect through ssh. (normally used with extraVolumes)
+  ## E.g:
+  ## extraVolumeMounts:
+  ##   - name: ssh-dir
+  ##     mountPath: /root/.ssh/
+  ##
+  extraVolumeMounts: []
 
 ## Configure extra options for Odoo containers' liveness and readiness probes
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
@@ -476,7 +543,7 @@ ingress:
 persistence:
   ## @param persistence.enabled Enable persistence using Persistent Volume Claims
   ##
-  enabled: true
+  enabled: false
   ## @param persistence.storageClass Persistent Volume storage class
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning
