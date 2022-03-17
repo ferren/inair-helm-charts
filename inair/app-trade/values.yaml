@@ -305,7 +305,7 @@ readinessProbe:
 startupProbe:
   enabled: true
   path: /login/ready
-  initialDelaySeconds: 10
+  initialDelaySeconds: 120
   periodSeconds: 10
   timeoutSeconds: 5
   failureThreshold: 6
