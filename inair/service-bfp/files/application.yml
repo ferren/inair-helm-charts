@@ -1,0 +1,76 @@
+spring:
+  application:
+    name: service-bfp
+  datasource:
+    url: 
+    username: root
+    password: 111!@
+    driver‐class‐name: com.mysql.cj.jdbc.Driver
+    #    hikari:
+    #      connection-timeout: 50000
+    #      max-lifetime: 1800000
+    #      connection-test-query: SELECT 1
+    #      validation-timeout: 250
+    #      maximum-pool-size: 25
+    #      minimum-idle: 15
+  redis:
+    host: 10.10.66.154
+    port: 6379
+    password: redis_repay
+    timeout: 5000ms
+    lettuce:
+      pool:
+        max-active: 100
+        max-wait: 15000ms
+        min-idle: 5
+  task:
+    execution:
+      pool:
+        core-size: 5
+        max-size: 10
+        queue-capacity: 200
+
+#        keep-alive: 100
+dubbo:
+  registry:
+    address: nacos://127.0.0.1:8848
+  protocol:
+    port: 20783
+    name: dubbo
+  application:
+    name: service-bfp
+    qos:
+      enable: false
+      accept:
+        foreign:
+          ip: false
+  scan:
+    basePackages: com.yzbfp.cas.bfp.service
+  provider:
+    timeout: 8000
+#    filter: -exception,apifilter
+server:
+  port: 7003
+mybatis-plus:
+  #如果是放在java下 classpath:/yourpackage/mapper/*Mapper.xml  如果是resource classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  #多个package用逗号或者分号分隔
+  typeAliasesPackage: com.yzbfp.cas.common.bfp
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+    cache-enabled: false
+  global-config:
+    field-strategy: 2
+    banner: false
+    db-config:
+      db-type: mysql
+      id-type: auto
+logging:
+  level:
+    com.yzbfp.cas.common.mapper: debug
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

@@ -1,0 +1,45 @@
+server:
+  port: 7088
+spring:
+  application:
+    name: cas-web
+dubbo:
+  application:
+    name: cas-web
+    qos:
+      enable: false
+      accept:
+        foreign:
+          ip: false
+  registry:
+    address: nacos://127.0.0.1:8848
+  consumer:
+    timeout: 30000
+shiro:
+ loginUrl: /401
+shiro-redis:
+ session-dao:
+   expire: -2
+ redis-manager:
+   host: 10.10.66.10:6379
+   timeout: 50000
+   password: redis_repay
+ cache-manager:
+   expire: 3600
+
+#Base64编码后的值
+aliyun:
+  oss:
+    endpoint: 1111
+    accessKeyId: 2222
+    accessKeySecret: 3333
+    bucketName: 4444
+    url: 5555==
+
+#yzcas:
+#  jwt:
+#    # 加密秘钥
+#    secret: f4e2e52034348f86b67cde581c0f9eb5
+#    # token有效时长，7天，单位秒
+#    expire: 604800
+#    header: token

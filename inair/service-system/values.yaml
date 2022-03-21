@@ -84,7 +84,16 @@ allowEmptyPassword: false
 command: []
 ## @param args Override default container args (useful when using custom images)
 ##
-args: []
+args: [
+  "--spring.datasource.url=$(MYSQL_URL)",
+  "--spring.datasource.username=$(MYSQL_USERNAME)",
+  "--spring.datasource.password=$(MYSQL_PASSWORD)",
+  "--dubbo.registry.address=nacos://nacos-cs:8848",
+  "--dubbo.protocol.port=$(DUBBO_PORT)",
+  "--spring.redis.host=$(REDIS_HOST)",
+  "--spring.redis.password=$(REDIS_PASSWORD)",
+  "--server.port=9001"
+]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
 ## e.g:
 ## extraEnvVars:
@@ -160,6 +169,13 @@ sidecars: []
 ##    command: ['sh', '-c', 'copy addons from git and push to /bitnami/odoo/addons. Should work with extraVolumeMounts and extraVolumes']
 ##
 initContainers: []
+
+retrieveJarCommand:
+  - sh
+  - -c
+  - |
+    cd "/app"
+    scp ferren@121.40.155.23:/home/ferren/jar/service-system.jar app.jar
 ## @param podLabels Extra labels for Odoo pods
 ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 ##
@@ -214,12 +230,13 @@ tolerations: []
 resources:
   limits: {}
   requests:
-    memory: 128Mi
-    cpu: 10m
+    memory: 512Mi
+    cpu: 30m
 ## Container ports
 ## @param containerPort Odoo HTTP container port
 ##
 containerPort: 9001
+dubboPort: 20890
 ## Configure Pods Security Context
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
 ## @param podSecurityContext.enabled Enabled Odoo pods' Security Context
@@ -236,6 +253,7 @@ podSecurityContext:
 containerSecurityContext:
   enabled: false
   runAsUser: 1001
+
 ## Configure extra options for Odoo containers' liveness and readiness probes
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
 ## @param livenessProbe.enabled Enable livenessProbe
@@ -248,10 +266,9 @@ containerSecurityContext:
 ##
 livenessProbe:
   enabled: true
-  path: /
-  initialDelaySeconds: 600
-  periodSeconds: 30
-  timeoutSeconds: 5
+  initialDelaySeconds: 300
+  periodSeconds: 120
+  timeoutSeconds: 10
   failureThreshold: 6
   successThreshold: 1
 ## @param readinessProbe.enabled Enable readinessProbe
@@ -264,10 +281,9 @@ livenessProbe:
 ##
 readinessProbe:
   enabled: true
-  path: /
   initialDelaySeconds: 30
-  periodSeconds: 10
-  timeoutSeconds: 5
+  periodSeconds: 60
+  timeoutSeconds: 10
   failureThreshold: 6
   successThreshold: 1
 ## @param startupProbe.enabled Enable startupProbe
@@ -279,11 +295,10 @@ readinessProbe:
 ## @param startupProbe.successThreshold Success threshold for startupProbe
 ##
 startupProbe:
-  enabled: false
-  path: /
-  initialDelaySeconds: 300
-  periodSeconds: 10
-  timeoutSeconds: 5
+  enabled: true
+  initialDelaySeconds: 30
+  periodSeconds: 30
+  timeoutSeconds: 10
   failureThreshold: 6
   successThreshold: 1
 ## @param customLivenessProbe Custom livenessProbe that overrides the default one
@@ -295,8 +310,6 @@ customReadinessProbe: {}
 ## @param customStartupProbe Custom startupProbe that overrides the default one
 #
 customStartupProbe: {}
-
-## @section Traffic Exposure Parameters
 
 ## Odoo service parameters
 ##
@@ -444,7 +457,7 @@ persistence:
     - ReadWriteMany
   ## @param persistence.accessMode Persistent Volume access mode (DEPRECATED: use `persistence.accessModes` instead)
   ##
-  accessMode: ReadWriteOnce
+  accessMode: ReadWriteMany
   ## @param persistence.size Persistent Volume size
   ##
   size: 5Gi
@@ -571,601 +584,9 @@ externalDatabase:
   password: ""
 
 nacos:
-  global:
-    mode: standalone
-    #  mode: cluster
+  address: nacos://nacos-cs:8848
+  application:
+    name: service-bfp-base
 
-  nacos:
-    image:
-      repository: nacos/nacos-server
-      tag: latest
-      pullPolicy: IfNotPresent
-    plugin:
-      enable: true
-      image:
-        repository: nacos/nacos-peer-finder-plugin
-        tag: 1.1
-    replicaCount: 1
-    domainName: cluster.local
-    preferhostmode: hostname
-    serverPort: 8848
-    health:
-      enabled: false
-    storage:
-      type: embedded
-      #type: mysql
-      db:
-        host: ""
-        name: ""
-        port: ""
-        username: ""
-        password: ""
-        param: "characterEncoding=utf8&connectTimeout=10000&socketTimeout=30000&autoReconnect=true&useSSL=false&serverTimezone=UTC"
-
-  persistence:
-    enabled: true
-    data:
-      accessModes:
-        - ReadWriteOnce
-      storageClassName: longhorn
-      resources:
-        requests:
-          storage: 10Gi
-
-  service:
-    type: ClusterIP
-    # type: NodePort
-    # port: 8848
-    # nodePort: 30000
-
-
-  ingress:
-    enabled: false
-    annotations: { }
-      # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-    hosts:
-      - host: nacos.example.com
-        paths: [ ]
-
-    tls: [ ]
-    #  - secretName: chart-example-tls
-    #    hosts:
-    #      - chart-example.local
-
-  resources:
-    # We usually recommend not to specify default resources and to leave this as a conscious
-    # choice for the user. This also increases chances charts run on environments with little
-    # resources, such as Minikube. If you do want to specify resources, uncomment the following
-    # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-    # limits:
-    #   cpu: 100m
-    #   memory: 128Mi
-    requests:
-      cpu: 500m
-      memory: 2Gi
-  annotations: { }
-
-  nodeSelector: { }
-
-  tolerations: [ ]
-
-  affinity: { }
-
-## Redis chart configuration
-## ref: https://github.com/bitnami/charts/blob/master/bitnami/redis/values.yaml
-##
 redis:
-  ## @param postgresql.enabled Deploy PostgreSQL container(s)
-  ##
-  enabled: true
-  ## @param architecture Redis&trade; architecture. Allowed values: `standalone` or `replication`
-  ##
-  architecture: standalone
-  ## Redis&trade; Authentication parameters
-  ## ref: https://github.com/bitnami/bitnami-docker-redis#setting-the-server-password-on-first-run
-  ##
-  auth:
-    ## @param auth.enabled Enable password authentication
-    ##
-    enabled: true
-    ## @param auth.sentinel Enable password authentication on sentinels too
-    ##
-    sentinel: true
-    ## @param auth.password Redis&trade; password
-    ## Defaults to a random 10-character alphanumeric string if not set
-    ##
-    password: ""
-    ## @param auth.existingSecret The name of an existing secret with Redis&trade; credentials
-    ## NOTE: When it's set, the previous `auth.password` parameter is ignored
-    ##
-    existingSecret: ""
-    ## @param auth.existingSecretPasswordKey Password key to be retrieved from existing secret
-    ## NOTE: ignored unless `auth.existingSecret` parameter is set
-    ##
-    existingSecretPasswordKey: ""
-    ## @param auth.usePasswordFiles Mount credentials as files instead of using an environment variable
-    ##
-    usePasswordFiles: false
-
-  master:
-    persistence:
-      enabled: true
-      size: 3Gi
-
-  ## 'volumePermissions' init container parameters
-  ## Changes the owner and group of the persistent volume mount point to runAsUser:fsGroup values
-  ##   based on the *podSecurityContext/*containerSecurityContext parameters
-  ##
-  volumePermissions:
-    ## @param volumePermissions.enabled Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup`
-    ##
-    enabled: true
-
-## MongoDB chart configuration
-## ref: https://github.com/bitnami/charts/blob/master/bitnami/mongodb/values.yaml
-##
-mongodb:
-  ## @param clusterDomain Default Kubernetes cluster domain
-  ##
-  clusterDomain: cluster.local
-  ## @param architecture MongoDB&reg; architecture (`standalone` or `replicaset`)
-  ##
-  architecture: standalone
-  ## @param useStatefulSet Set to true to use a StatefulSet instead of a Deployment (only when `architecture=standalone`)
-  ##
-  useStatefulSet: true
-  ## MongoDB&reg; Authentication parameters
-  ##
-  auth:
-    ## @param auth.enabled Enable authentication
-    ## ref: https://docs.mongodb.com/manual/tutorial/enable-authentication/
-    ##
-    enabled: true
-    ## @param auth.rootUser MongoDB&reg; root user
-    ##
-    rootUser: galaxy
-    ## @param auth.rootPassword MongoDB&reg; root password
-    ## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#setting-the-root-password-on-first-run
-    ##
-    rootPassword: "Galaxy574988"
-    ## MongoDB&reg; custom users and databases
-    ## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#creating-users-and-databases-on-first-run
-    ## @param auth.usernames List of custom users to be created during the initialization
-    ## @param auth.passwords List of passwords for the custom users set at `auth.usernames`
-    ## @param auth.databases List of custom databases to be created during the initialization
-    ##
-    usernames: ['user-bfp']
-    passwords: ['YZbfp574988']
-    databases: ['bfp-app']
-
-    ## @param auth.replicaSetKey Key used for authentication in the replicaset (only when `architecture=replicaset`)
-    ##
-    replicaSetKey: ""
-    ## @param auth.existingSecret Existing secret with MongoDB&reg; credentials (keys: `mongodb-password`, `mongodb-root-password`, ` mongodb-replica-set-key`)
-    ## NOTE: When it's set the previous parameters are ignored.
-    ##
-    existingSecret: ""
-
-  replicaSetConfigurationSettings:
-    enabled: false
-    configuration: {}
-  ##    chainingAllowed : false
-  ##    heartbeatTimeoutSecs : 10
-  ##    heartbeatIntervalMillis : 2000
-  ##    electionTimeoutMillis : 10000
-  ##    catchUpTimeoutMillis : 30000
-  ## @param existingConfigmap Name of existing ConfigMap with MongoDB&reg; configuration for Primary and Secondary nodes
-  ## NOTE: When it's set the arbiter.configuration parameter is ignored
-  ##
-  existingConfigmap: ""
-  ## @param initdbScripts Dictionary of initdb scripts
-  ## Specify dictionary of scripts to be run at first boot
-  ## Example:
-  ## initdbScripts:
-  ##   my_init_script.sh: |
-  ##      #!/bin/bash
-  ##      echo "Do something."
-  ##
-  initdbScripts: {}
-  ## @param initdbScriptsConfigMap Existing ConfigMap with custom initdb scripts
-  ##
-  initdbScriptsConfigMap: ""
-  ## Command and args for running the container (set to default if not set). Use array form
-  ## @param command Override default container command (useful when using custom images)
-  ## @param args Override default container args (useful when using custom images)
-  ##
-  command: []
-  args: []
-
-  ## @param replicaCount Number of MongoDB&reg; nodes (only when `architecture=replicaset`)
-  ## Ignored when mongodb.architecture=standalone
-  ##
-  replicaCount: 2
-  ## @param strategyType StrategyType for MongoDB&reg; statefulset
-  ## It can be set to RollingUpdate or Recreate by default.
-  ##
-  strategyType: RollingUpdate
-  ## @section Persistence parameters
-  ##
-
-  ## Enable persistence using Persistent Volume Claims
-  ## ref: https://kubernetes.io/docs/user-guide/persistent-volumes/
-  ##
-  persistence:
-    ## @param persistence.enabled Enable MongoDB&reg; data persistence using PVC
-    ##
-    enabled: true
-    ## @param persistence.storageClass PVC Storage Class for MongoDB&reg; data volume
-    ## If defined, storageClassName: <storageClass>
-    ## If set to "-", storageClassName: "", which disables dynamic provisioning
-    ## If undefined (the default) or set to null, no storageClassName spec is
-    ## set, choosing the default provisioner.
-    ##
-    storageClass: "longhorn"
-    ## @param persistence.accessModes PV Access Mode
-    ##
-    accessModes:
-      - ReadWriteOnce
-    ## @param persistence.size PVC Storage Request for MongoDB&reg; data volume
-    ##
-    size: 8Gi
-    ## @param persistence.mountPath Path to mount the volume at
-    ## MongoDB&reg; images.
-    ##
-    mountPath: /bitnami/mongodb
-    ## @param persistence.subPath Subdirectory of the volume to mount at
-    ## and one PV for multiple services.
-    ##
-    subPath: ""
-
-rabbitmq:
-  enabled: true
-  storageClass: longhorn
-
-nginx:
-  enable: false
-
-  image:
-    registry: registry.cn-hangzhou.aliyuncs.com
-    repository: yzbfp/vue-nginx
-    tag: vue_20220215
-    pullPolicy: IfNotPresent
-    pullSecrets:
-      - inair-image-ps
-
-  extraVolumes:
-    - name: ssh-deploy-keys
-      secret:
-        secretName: ssh-keys
-        items:
-        - key: id_rsa
-          path: id_rsa
-          mode: 384
-        - key: known_hosts
-          path: known_hosts
-          mode: 438
-
-  command: []
-  args: []
-  replicaCount: 1
-
-  podSecurityContext:
-    enabled: false
-    fsGroup: 1001
-    ## sysctl settings
-    ## Example:
-    ## sysctls:
-    ## - name: net.core.somaxconn
-    ##   value: "10000"
-    ##
-    sysctls: []
-
-  containerSecurityContext:
-    enabled: false
-    runAsUser: 1001
-    runAsNonRoot: true
-  ## Configures the ports NGINX listens on
-  ## @param containerPorts.http Sets http port inside NGINX container
-  ## @param containerPorts.https Sets https port inside NGINX container
-  ##
-  containerPorts:
-    http: 8080
-    https: ""
-
-  ## Autoscaling parameters
-  ## @param autoscaling.enabled Enable autoscaling for NGINX deployment
-  ## @param autoscaling.minReplicas Minimum number of replicas to scale back
-  ## @param autoscaling.maxReplicas Maximum number of replicas to scale out
-  ## @param autoscaling.targetCPU Target CPU utilization percentage
-  ## @param autoscaling.targetMemory Target Memory utilization percentage
-  ##
-  autoscaling:
-    enabled: false
-    minReplicas: ""
-    maxReplicas: ""
-    targetCPU: ""
-    targetMemory: ""
-
-  cloneStaticSiteFromGit:
-    ## @param cloneStaticSiteFromGit.enabled Get the server static content from a Git repository
-    ##
-    enabled: false
-    ## @param cloneStaticSiteFromGit.repository Git Repository to clone static content from
-    ##
-    repository: ""
-    ## @param cloneStaticSiteFromGit.branch Git branch to checkout
-    ##
-    branch: ""
-    ## @param cloneStaticSiteFromGit.interval Interval for sidecar container pull from the Git repository
-    ##
-    interval: 60
-    ## Additional configuration for git-clone-repository initContainer
-    ##
-    gitClone:
-      ## @param cloneStaticSiteFromGit.gitClone.command Override default container command for git-clone-repository
-      ##
-      command: []
-      ## @param cloneStaticSiteFromGit.gitClone.args Override default container args for git-clone-repository
-      ##
-      args: []
-    ## Additional configuration for the git-repo-syncer container
-    ##
-    gitSync:
-      ## @param cloneStaticSiteFromGit.gitSync.command Override default container command for git-repo-syncer
-      ##
-      command: []
-      ## @param cloneStaticSiteFromGit.gitSync.args Override default container args for git-repo-syncer
-      ##
-      args: []
-
-    extraVolumeMounts:
-      - name: ssh-deploy-keys
-        mountPath: /root/.ssh
-
-  ## NGINX Service properties
-  ##
-  service:
-    ## @param service.type Service type
-    ##
-    type: LoadBalancer
-    ## @param service.port Service HTTP port
-    ##
-    port: 80
-    ## @param service.httpsPort Service HTTPS port
-    ##
-    httpsPort: 443
-    ## @param service.nodePorts [object] Specify the nodePort(s) value(s) for the LoadBalancer and NodePort service types.
-    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
-    ##
-    nodePorts:
-      http: ""
-      https: ""
-    ## @param service.targetPort [object] Target port reference value for the Loadbalancer service types can be specified explicitly.
-    ## Listeners for the Loadbalancer can be custom mapped to the http or https service.
-    ## Example: Mapping the https listener to targetPort http [http: https]
-    ##
-    targetPort:
-      http: http
-      https: https
-    ## @param service.loadBalancerIP LoadBalancer service IP address
-    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
-    ##
-    loadBalancerIP: ""
-    ## @param service.annotations Service annotations
-    ## This can be used to set the LoadBalancer service type to internal only.
-    ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
-    ##
-    annotations: {}
-    ## @param service.externalTrafficPolicy Enable client source IP preservation
-    ## ref https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
-    ##
-    externalTrafficPolicy: Cluster
-  ## Configure the ingress resource that allows you to access the
-  ## Nginx installation. Set up the URL
-  ## ref: https://kubernetes.io/docs/user-guide/ingress/
-  ##
-  ingress:
-    ## @param ingress.enabled Set to true to enable ingress record generation
-    ##
-    enabled: false
-    ## DEPRECATED: Use ingress.annotations instead of ingress.certManager
-    ## certManager: false
-    ##
-
-    ## @param ingress.pathType Ingress path type
-    ##
-    pathType: ImplementationSpecific
-    ## @param ingress.apiVersion Force Ingress API version (automatically detected if not set)
-    ##
-    apiVersion: ""
-    ## @param ingress.hostname Default host for the ingress resource
-    ##
-    hostname: nginx.local
-    ## @param ingress.path The Path to Nginx. You may need to set this to '/*' in order to use this with ALB ingress controllers.
-    ##
-    path: /
-    ## @param ingress.annotations Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations.
-    ## For a full list of possible ingress annotations, please see
-    ## ref: https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md
-    ## Use this parameter to set the required annotations for cert-manager, see
-    ## ref: https://cert-manager.io/docs/usage/ingress/#supported-annotations
-    ##
-    ## e.g:
-    ## annotations:
-    ##   kubernetes.io/ingress.class: nginx
-    ##   cert-manager.io/cluster-issuer: cluster-issuer-name
-    ##
-    annotations: {}
-    ## @param ingress.tls Create TLS Secret
-    ## TLS certificates will be retrieved from a TLS secret with name: {{- printf "%s-tls" .Values.ingress.hostname }}
-    ## You can use the ingress.secrets parameter to create this TLS secret or relay on cert-manager to create it
-    ##
-    tls: false
-    ## @param ingress.extraHosts The list of additional hostnames to be covered with this ingress record.
-    ## Most likely the hostname above will be enough, but in the event more hosts are needed, this is an array
-    ## extraHosts:
-    ## - name: nginx.local
-    ##   path: /
-    ##
-    extraHosts: []
-    ## @param ingress.extraPaths Any additional arbitrary paths that may need to be added to the ingress under the main host.
-    ## For example: The ALB ingress controller requires a special rule for handling SSL redirection.
-    ## extraPaths:
-    ## - path: /*
-    ##   backend:
-    ##     serviceName: ssl-redirect
-    ##     servicePort: use-annotation
-    ##
-    extraPaths: []
-    ## @param ingress.extraTls The tls configuration for additional hostnames to be covered with this ingress record.
-    ## see: https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
-    ## extraTls:
-    ## - hosts:
-    ##     - nginx.local
-    ##   secretName: nginx.local-tls
-    ##
-    extraTls: []
-    ## @param ingress.secrets If you're providing your own certificates, please use this to add the certificates as secrets
-    ## key and certificate should start with -----BEGIN CERTIFICATE----- or
-    ## -----BEGIN RSA PRIVATE KEY-----
-    ##
-    ## name should line up with a tlsSecret set further up
-    ## If you're using cert-manager, this is unneeded, as it will create the secret for you if it is not set
-    ##
-    ## It is also possible to create and manage the certificates outside of this helm chart
-    ## Please see README.md for more information
-    ## e.g:
-    ## - name: nginx.local-tls
-    ##   key:
-    ##   certificate:
-    ##
-    secrets: []
-  ## Health Ingress parameters
-  ##
-  healthIngress:
-    ## @param healthIngress.enabled Set to true to enable health ingress record generation
-    ##
-    enabled: false
-    ## DEPRECATED: Use ingress.annotations instead of ingress.certManager
-    ## certManager: false
-    ##
-
-    ## @param healthIngress.pathType Ingress path type
-    ##
-    pathType: ImplementationSpecific
-    ## @param healthIngress.hostname When the health ingress is enabled, a host pointing to this will be created
-    ##
-    hostname: example.local
-    ## @param healthIngress.annotations Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations.
-    ## For a full list of possible ingress annotations, please see
-    ## ref: https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md
-    ## Use this parameter to set the required annotations for cert-manager, see
-    ## ref: https://cert-manager.io/docs/usage/ingress/#supported-annotations
-    ##
-    ## e.g:
-    ## annotations:
-    ##   kubernetes.io/ingress.class: nginx
-    ##   cert-manager.io/cluster-issuer: cluster-issuer-name
-    ##
-    annotations: {}
-    ## @param healthIngress.tls Enable TLS configuration for the hostname defined at `healthIngress.hostname` parameter
-    ## TLS certificates will be retrieved from a TLS secret with name: {{- printf "%s-tls" .Values.healthIngress.hostname }}
-    ## You can use the healthIngress.secrets parameter to create this TLS secret, relay on cert-manager to create it, or
-    ## let the chart create self-signed certificates for you
-    ##
-    tls: false
-    ## @param healthIngress.extraHosts The list of additional hostnames to be covered with this health ingress record
-    ## Most likely the hostname above will be enough, but in the event more hosts are needed, this is an array
-    ## E.g.
-    ## extraHosts:
-    ##   - name: example.local
-    ##     path: /
-    ##
-    extraHosts: []
-    ## @param healthIngress.extraTls TLS configuration for additional hostnames to be covered
-    ## see: https://kubernetes.io/docs/concepts/services-networking/ingress/#tls
-    ## E.g.
-    ## extraTls:
-    ##   - hosts:
-    ##       - example.local
-    ##     secretName: example.local-tls
-    ##
-    extraTls: []
-    ## @param healthIngress.secrets TLS Secret configuration
-    ## If you're providing your own certificates, please use this to add the certificates as secrets
-    ## key and certificate should start with -----BEGIN CERTIFICATE----- or -----BEGIN RSA PRIVATE KEY-----
-    ## name should line up with a secretName set further up
-    ## If it is not set and you're using cert-manager, this is unneeded, as it will create the secret for you
-    ## If it is not set and you're NOT using cert-manager either, self-signed certificates will be created
-    ## It is also possible to create and manage the certificates outside of this helm chart
-    ## Please see README.md for more information
-    ##
-    ## E.g.
-    ## secrets:
-    ##   - name: example.local-tls
-    ##     key:
-    ##     certificate:
-    ##
-    secrets: []
-
-  ## @section Metrics parameters
-
-service-base:
-  enable: true
-
-service-apimanage:
-  enable: true
-
-service-customer:
-  enable: true
-  dubboPort: 20891
-
-service-repay:
-  enable: true
-  dubboPort: 20892
-
-service-risk:
-  enable: true
-  dubboPort: 20893
-
-risk-bairong:
-  enable: true
-  dubboPort: 20894
-
-service-channel:
-  enable: true
-  dubboPort: 20895
-
-web-admin:
-  enable: true
-
-web-open:
-  enable: true
-
-gentleman-sign:
-  enable: true
-
-handtenpay:
-  enable: true
-
-  xdfHandtenpay:
-    enable: true
-
-    messageQueue:
-      host: 39.100.4.179
-      port: 5672
-      username: yz
-      password: yz2021
-      virtualHost: yz
-
-    ftp:
-      ip: 39.99.232.115
-      port: 22
-      username: mysftp
-      password: Shi321!@#
-      ##FTP目录/dataA/ftpdata/yz/银行行号/日期YYYYMMDD
-      catalogue: /upload/yz/
-
-app-trade:
   enable: true

@@ -702,127 +702,6 @@ redis:
     ##
     enabled: true
 
-## MongoDB chart configuration
-## ref: https://github.com/bitnami/charts/blob/master/bitnami/mongodb/values.yaml
-##
-mongodb:
-  ## @param clusterDomain Default Kubernetes cluster domain
-  ##
-  clusterDomain: cluster.local
-  ## @param architecture MongoDB&reg; architecture (`standalone` or `replicaset`)
-  ##
-  architecture: standalone
-  ## @param useStatefulSet Set to true to use a StatefulSet instead of a Deployment (only when `architecture=standalone`)
-  ##
-  useStatefulSet: true
-  ## MongoDB&reg; Authentication parameters
-  ##
-  auth:
-    ## @param auth.enabled Enable authentication
-    ## ref: https://docs.mongodb.com/manual/tutorial/enable-authentication/
-    ##
-    enabled: true
-    ## @param auth.rootUser MongoDB&reg; root user
-    ##
-    rootUser: galaxy
-    ## @param auth.rootPassword MongoDB&reg; root password
-    ## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#setting-the-root-password-on-first-run
-    ##
-    rootPassword: "Galaxy574988"
-    ## MongoDB&reg; custom users and databases
-    ## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#creating-users-and-databases-on-first-run
-    ## @param auth.usernames List of custom users to be created during the initialization
-    ## @param auth.passwords List of passwords for the custom users set at `auth.usernames`
-    ## @param auth.databases List of custom databases to be created during the initialization
-    ##
-    usernames: ['user-bfp']
-    passwords: ['YZbfp574988']
-    databases: ['bfp-app']
-
-    ## @param auth.replicaSetKey Key used for authentication in the replicaset (only when `architecture=replicaset`)
-    ##
-    replicaSetKey: ""
-    ## @param auth.existingSecret Existing secret with MongoDB&reg; credentials (keys: `mongodb-password`, `mongodb-root-password`, ` mongodb-replica-set-key`)
-    ## NOTE: When it's set the previous parameters are ignored.
-    ##
-    existingSecret: ""
-
-  replicaSetConfigurationSettings:
-    enabled: false
-    configuration: {}
-  ##    chainingAllowed : false
-  ##    heartbeatTimeoutSecs : 10
-  ##    heartbeatIntervalMillis : 2000
-  ##    electionTimeoutMillis : 10000
-  ##    catchUpTimeoutMillis : 30000
-  ## @param existingConfigmap Name of existing ConfigMap with MongoDB&reg; configuration for Primary and Secondary nodes
-  ## NOTE: When it's set the arbiter.configuration parameter is ignored
-  ##
-  existingConfigmap: ""
-  ## @param initdbScripts Dictionary of initdb scripts
-  ## Specify dictionary of scripts to be run at first boot
-  ## Example:
-  ## initdbScripts:
-  ##   my_init_script.sh: |
-  ##      #!/bin/bash
-  ##      echo "Do something."
-  ##
-  initdbScripts: {}
-  ## @param initdbScriptsConfigMap Existing ConfigMap with custom initdb scripts
-  ##
-  initdbScriptsConfigMap: ""
-  ## Command and args for running the container (set to default if not set). Use array form
-  ## @param command Override default container command (useful when using custom images)
-  ## @param args Override default container args (useful when using custom images)
-  ##
-  command: []
-  args: []
-
-  ## @param replicaCount Number of MongoDB&reg; nodes (only when `architecture=replicaset`)
-  ## Ignored when mongodb.architecture=standalone
-  ##
-  replicaCount: 2
-  ## @param strategyType StrategyType for MongoDB&reg; statefulset
-  ## It can be set to RollingUpdate or Recreate by default.
-  ##
-  strategyType: RollingUpdate
-  ## @section Persistence parameters
-  ##
-
-  ## Enable persistence using Persistent Volume Claims
-  ## ref: https://kubernetes.io/docs/user-guide/persistent-volumes/
-  ##
-  persistence:
-    ## @param persistence.enabled Enable MongoDB&reg; data persistence using PVC
-    ##
-    enabled: true
-    ## @param persistence.storageClass PVC Storage Class for MongoDB&reg; data volume
-    ## If defined, storageClassName: <storageClass>
-    ## If set to "-", storageClassName: "", which disables dynamic provisioning
-    ## If undefined (the default) or set to null, no storageClassName spec is
-    ## set, choosing the default provisioner.
-    ##
-    storageClass: "longhorn"
-    ## @param persistence.accessModes PV Access Mode
-    ##
-    accessModes:
-      - ReadWriteOnce
-    ## @param persistence.size PVC Storage Request for MongoDB&reg; data volume
-    ##
-    size: 8Gi
-    ## @param persistence.mountPath Path to mount the volume at
-    ## MongoDB&reg; images.
-    ##
-    mountPath: /bitnami/mongodb
-    ## @param persistence.subPath Subdirectory of the volume to mount at
-    ## and one PV for multiple services.
-    ##
-    subPath: ""
-
-rabbitmq:
-  enabled: true
-  storageClass: longhorn
-
 nginx:
   enable: false
 
@@ -1111,61 +990,16 @@ nginx:
 
   ## @section Metrics parameters
 
-service-base:
+service-system:
   enable: true
 
-service-apimanage:
-  enable: true
-
-service-customer:
+service-bfp:
   enable: true
   dubboPort: 20891
 
-service-repay:
+service-worker:
   enable: true
   dubboPort: 20892
 
-service-risk:
-  enable: true
-  dubboPort: 20893
-
-risk-bairong:
-  enable: true
-  dubboPort: 20894
-
-service-channel:
-  enable: true
-  dubboPort: 20895
-
-web-admin:
-  enable: true
-
-web-open:
-  enable: true
-
-gentleman-sign:
-  enable: true
-
-handtenpay:
-  enable: true
-
-  xdfHandtenpay:
-    enable: true
-
-    messageQueue:
-      host: 39.100.4.179
-      port: 5672
-      username: yz
-      password: yz2021
-      virtualHost: yz
-
-    ftp:
-      ip: 39.99.232.115
-      port: 22
-      username: mysftp
-      password: Shi321!@#
-      ##FTP目录/dataA/ftpdata/yz/银行行号/日期YYYYMMDD
-      catalogue: /upload/yz/
-
-app-trade:
+cas-web:
   enable: true
