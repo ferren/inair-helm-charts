@@ -8,47 +8,20 @@ dependencies:
 - name: redis
   repository: https://charts.bitnami.com/bitnami
   version: 15.7.6
-- name: mongodb
-  repository: https://charts.bitnami.com/bitnami
-  version: 10.31.5
 - name: nginx
   repository: https://charts.bitnami.com/bitnami
-  version: 9.9.4
-- name: service-base
-  repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
-- name: service-apimanage
-  repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
-- name: service-customer
-  repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.4.1
-- name: service-repay
-  repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
-- name: service-risk
-  repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
-- name: risk-bairong
-  repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
-- name: service-channel
-  repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
-- name: web-admin
+  version: 9.9.5
+- name: service-system
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.4.0
-- name: web-open
-  repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
-- name: gentleman-sign
-  repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
-- name: handtenpay
-  repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.4.3
-- name: app-trade
+- name: service-bfp
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.4.0
-digest: sha256:71207fb4e3ad1d3f38d79e56c3053b4a64304fc83d22f8ee39809ccf4f1e9ea5
-generated: "2022-03-18T02:01:28.054505901+08:00"
+- name: service-worker
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 0.4.0
+- name: cas-web
+  repository: https://ferren.github.io/inair-helm-charts/
+  version: 0.4.0
+digest: sha256:baa3d16acb1b69e9f0515b9a4b0d92b44f4d75b5b6561975dd5a9c6c7336b8c3
+generated: "2022-03-21T15:06:31.467765302+08:00"

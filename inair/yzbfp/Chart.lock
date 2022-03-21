@@ -13,7 +13,7 @@ dependencies:
   version: 10.31.5
 - name: nginx
   repository: https://charts.bitnami.com/bitnami
-  version: 9.9.4
+  version: 9.9.5
 - name: service-base
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.3.9
@@ -50,5 +50,5 @@ dependencies:
 - name: app-trade
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.4.0
-digest: sha256:71207fb4e3ad1d3f38d79e56c3053b4a64304fc83d22f8ee39809ccf4f1e9ea5
-generated: "2022-03-18T02:01:28.054505901+08:00"
+digest: sha256:0136bc74e5e275299160c436230aed436ae32fcb0a7eb62358392308d41849a0
+generated: "2022-03-21T15:38:14.623431119+08:00"
