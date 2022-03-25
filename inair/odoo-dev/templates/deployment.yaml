@@ -69,17 +69,23 @@ spec:
             - sh
             - -c
             - |
-              cp -a /root/.ssh /home/odoo/projects/
+              cp -a /root/.ssh /home/odoo/
+              mkdir -p /home/odoo/projects/conf.d/
+              cp /home/odoo/conf.d/* /home/odoo/projects/conf.d/
               chown -R "odoo:odoo" "/home/odoo"
           securityContext: {{- .Values.volumePermissions.securityContext | toYaml | nindent 12 }}
           {{- if .Values.volumePermissions.resources }}
           resources: {{- toYaml .Values.volumePermissions.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
+            - name: odoo-conf
+              mountPath: /home/odoo/conf.d/
             - name: odoo-data
               mountPath: /home/odoo/projects
             - name: ssh-keys
               mountPath: /root/.ssh
+            - name: odoo-ssh-cache
+              mountPath: /home/odoo/.ssh/
         {{- end }}
       {{- end }}
       containers:
@@ -171,6 +177,8 @@ spec:
               mountPath: /home/odoo/conf.d/
             - name: odoo-data
               mountPath: /home/odoo/projects/
+            - name: odoo-ssh-cache
+              mountPath: /home/odoo/.ssh/
             {{- if .Values.extraVolumeMounts }}
             {{- include "common.tplvalues.render" (dict "value" .Values.extraVolumeMounts "context" $) | nindent 12 }}
             {{- end }}
@@ -191,6 +199,8 @@ spec:
           {{- else }}
           emptyDir: {}
           {{- end }}
+        - name: odoo-ssh-cache
+          emptyDir: {}
         {{- if .Values.extraVolumes }}
         {{- include "common.tplvalues.render" (dict "value" .Values.extraVolumes "context" $) | nindent 8 }}
         {{- end }}
