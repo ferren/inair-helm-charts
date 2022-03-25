@@ -69,7 +69,8 @@ spec:
             - sh
             - -c
             - |
-              cp -a /root/.ssh /home/odoo/
+              mkdir -p /home/odoo/.ssh/
+              cp /root/.ssh/* /home/odoo/.ssh/
               mkdir -p /home/odoo/projects/conf.d/
               cp /home/odoo/conf.d/* /home/odoo/projects/conf.d/
               chown -R "odoo:odoo" "/home/odoo"
