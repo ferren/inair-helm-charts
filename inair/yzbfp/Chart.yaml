@@ -86,10 +86,6 @@ dependencies:
     name: cas-web
     repository: https://ferren.github.io/inair-helm-charts/
     version: 0.x.x
-  - condition: yzbfp-cas.enabled
-    name: yzbfp-cas
-    repository: https://ferren.github.io/inair-helm-charts/
-    version: 0.x.x
 description: YZ bfp system.
 engine: gotpl
 home: https://www.incosten.com/
@@ -107,4 +103,4 @@ name: yzbfp
 sources:
   - https://codeup.aliyun.com/61bd3e98fa282c88e103b306/java/bfp-admin2.0-dev
   - https://www.incosten.com/
-version: 0.5.2
+version: 0.5.3
