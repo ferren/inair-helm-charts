@@ -73,10 +73,7 @@ spec:
             - -ec
             - |
               [[ -f "/opt/bitnami/scripts/git/entrypoint.sh" ]] && source "/opt/bitnami/scripts/git/entrypoint.sh"
-              rm -rf /app/deploy
-              git clone {{ .Values.cloneStaticSiteFromGit.repository }} --branch {{ .Values.cloneStaticSiteFromGit.branch }} /app/deploy
-              cp /app/deploy/app.jar /app/app.jar
-              cp -a /app/deploy/pingan /app/pingan
+              git clone {{ .Values.cloneStaticSiteFromGit.repository }} --branch {{ .Values.cloneStaticSiteFromGit.branch }} /app
           {{- end }}
           {{- if .Values.cloneStaticSiteFromGit.gitClone.args }}
           args: {{- include "common.tplvalues.render" (dict "value" .Values.cloneStaticSiteFromGit.gitClone.args "context" $) | nindent 12 }}
