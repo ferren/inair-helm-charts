@@ -6,34 +6,10 @@ dependencies:
   - name: common
     repository: https://ferren.github.io/inair-helm-charts/
     version: 1.x.x
-  - condition: nacos.enabled
-    name: nacos
-    repository: https://ferren.github.io/inair-helm-charts/
-    version: 0.1.x
-  - condition: redis.enabled
-    name: redis
-    repository: https://charts.bitnami.com/bitnami
-    version: 15.x.x
   - condition: nginx.enabled
     name: nginx
     repository: https://charts.bitnami.com/bitnami
     version: 9.x.x
-  - condition: service-system.enabled
-    name: service-system
-    repository: https://ferren.github.io/inair-helm-charts/
-    version: 0.x.x
-  - condition: service-bfp.enabled
-    name: service-bfp
-    repository: https://ferren.github.io/inair-helm-charts/
-    version: 0.x.x
-  - condition: service-worker.enabled
-    name: service-worker
-    repository: https://ferren.github.io/inair-helm-charts/
-    version: 0.x.x
-  - condition: cas-web.enabled
-    name: cas-web
-    repository: https://ferren.github.io/inair-helm-charts/
-    version: 0.x.x
 description: YZ bfp system.
 engine: gotpl
 home: https://www.incosten.com/
@@ -51,4 +27,4 @@ name: yzbfp-cas
 sources:
   - https://codeup.aliyun.com/61bd3e98fa282c88e103b306/java/bfp-admin2.0-dev
   - https://www.incosten.com/
-version: 0.5.1
+version: 0.5.2
