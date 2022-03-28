@@ -75,6 +75,8 @@ spec:
               cp /home/odoo/conf.d/* /home/odoo/projects/conf.d/
               chown -R "odoo:odoo" "/home/odoo/projects"
               chown -R "odoo:odoo" "/home/odoo/.ssh"
+              chmod 0755 "/home/odoo/.ssh"
+              chmod 0400 "/home/odoo/.ssh/authorized_keys"
           securityContext: {{- .Values.volumePermissions.securityContext | toYaml | nindent 12 }}
           {{- if .Values.volumePermissions.resources }}
           resources: {{- toYaml .Values.volumePermissions.resources | nindent 12 }}
