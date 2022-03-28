@@ -108,17 +108,17 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: {{ include "yzbfp.databaseSecretName" . | quote }}
-                  key: "mysql-bfp-url"
+                  key: "mysql-url"
             - name: MYSQL_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: {{ include "yzbfp.databaseSecretName" . | quote }}
-                  key: "mysql-bfp-username"
+                  key: "mysql-username"
             - name: MYSQL_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: {{ include "yzbfp.databaseSecretName" . | quote }}
-                  key: "mysql-bfp-password"
+                  key: "mysql-password"
             - name: REDIS_HOST
               value: {{ include "yzbfp.redisHost" . | quote }}
             - name: REDIS_PASSWORD

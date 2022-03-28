@@ -70,6 +70,22 @@ dependencies:
     name: app-trade
     repository: https://ferren.github.io/inair-helm-charts/
     version: 0.x.x
+  - condition: service-system.enabled
+    name: service-system
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 0.x.x
+  - condition: service-bfp.enabled
+    name: service-bfp
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 0.x.x
+  - condition: service-worker.enabled
+    name: service-worker
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 0.x.x
+  - condition: cas-web.enabled
+    name: cas-web
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 0.x.x
 description: YZ bfp system.
 engine: gotpl
 home: https://www.incosten.com/
