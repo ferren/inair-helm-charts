@@ -1174,3 +1174,15 @@ handtenpay:
 
 app-trade:
   enable: true
+
+service-system:
+  enable: true
+
+service-bfp:
+  enable: true
+
+service-worker:
+  enable: true
+
+cas-web:
+  enable: true
