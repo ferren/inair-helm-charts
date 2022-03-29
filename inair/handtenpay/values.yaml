@@ -91,13 +91,6 @@ args: [
   "--spring.rabbitmq.password=$(MQ_PASSWORD)",
   "--spring.rabbitmq.virtual-host=$(MQ_VIRTUAL_HOST)",
   "--spring.rabbitmq.ssl.enabled=$(MQ_SSL_ENABLED)",
-  "--spring.rabbitmq.ssl.key-store=$(MQ_SSL_KSTORE)",
-  "--spring.rabbitmq.ssl.key-store-password=$(MQ_SSL_KSTORE_PWD)",
-  "--spring.rabbitmq.ssl.trust-store=$(MQ_SSL_TSTORE)",
-  "--spring.rabbitmq.ssl.algorithm=$(MQ_SSL_ALG)",
-  "--spring.rabbitmq.ssl.key-store-type=$(MQ_SSL_KEY_STYPE)",
-  "--spring.rabbitmq.ssl.validate-server-certificate=$(MQ_SSL_VSC)",
-  "--spring.rabbitmq.ssl.verify-hostname=$(MQ_SSL_VHN)",
   "--billftp.ipaddr=$(FTP_IP)",
   "--billftp.port=$(FTP_PORT)",
   "--billftp.username=$(FTP_USERNAME)",
@@ -126,13 +119,6 @@ xdfHandtenpay:
 
     ssl:
       enabled: false
-      keyStore: /app/keys/handtenpay.p12
-      keyStorePassword: rbts
-      trustStore: /app/keys/rabbitstore.jks
-      algorithm: TLSv1.2
-      keyStoreType: PKCS12
-      validateServerCertificate: true
-      verifyHostname: false
 
   ftp:
     ip: 192.168.0.1
