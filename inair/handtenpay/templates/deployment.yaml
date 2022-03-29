@@ -168,7 +168,7 @@ spec:
                   name: {{ include "yzbfp.handtenpay" . | quote }}
                   key: "mq-virtual-host"
             - name: MQ_SSL_ENABLED
-              value: {{ .Values.xdfHandtenpay.messageQueue.ssl.enabled }}
+              value: {{ .Values.xdfHandtenpay.messageQueue.ssl.enabled | quote }}
             - name: MQ_SSL_KSTORE
               valueFrom:
                 secretKeyRef:
@@ -189,9 +189,9 @@ spec:
             - name: MQ_SSL_KEY_STYPE
               value: {{ .Values.xdfHandtenpay.messageQueue.ssl.keyStoreType | quote }}
             - name: MQ_SSL_VSC
-              value: {{ .Values.xdfHandtenpay.messageQueue.ssl.validateServerCertificate }}
+              value: {{ .Values.xdfHandtenpay.messageQueue.ssl.validateServerCertificate | quote }}
             - name: MQ_SSL_VHN
-              value: {{ .Values.xdfHandtenpay.messageQueue.ssl.verifyHostname }}
+              value: {{ .Values.xdfHandtenpay.messageQueue.ssl.verifyHostname | quote }}
             - name: FTP_IP
               valueFrom:
                 secretKeyRef:
