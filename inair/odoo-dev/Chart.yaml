@@ -5,12 +5,12 @@ appVersion: 20220402
 dependencies:
   - condition: postgresql.enabled
     name: postgresql
-    repository: https://ferren.github.io/inair-helm-charts/
-    version: 1.x.x
+    repository: https://charts.bitnami.com/bitnami
+    version: 11.x.x
   - condition: redis.enabled
     name: redis
     repository: https://charts.bitnami.com/bitnami
-    version: 15.x.x
+    version: 16.x.x
   - name: common
     repository: https://ferren.github.io/inair-helm-charts/
     version: 1.x.x
@@ -31,4 +31,4 @@ name: odoo-dev
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 1.2.0
+version: 1.2.1
