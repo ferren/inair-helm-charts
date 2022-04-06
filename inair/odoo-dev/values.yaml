@@ -454,53 +454,27 @@ postgresql:
   ## @param postgresql.enabled Deploy PostgreSQL container(s)
   ##
   enabled: true
-  ## @param postgresql.postgresqlUsername PostgreSQL username
-  ## ref: https://hub.docker.com/_/postgres/
-  ##
-  postgresqlUsername: "bn_odoo"
-  ## @param postgresql.postgresqlPassword PostgreSQL password
-  ## ref: https://hub.docker.com/_/postgres/
-  ##
-  postgresqlPassword: ""
-  ## @param postgresql.postgresqlDatabase PostgreSQL database
-  ## ref: https://github.com/bitnami/bitnami-docker-postgresql/blob/master/README.md#creating-a-database-on-first-run
-  ##
-  postgresqlDatabase: bitnami_odoo
-  ## @param postgresql.existingSecret Name of existing secret object
-  ## The secret should contain the following keys:
-  ## postgresql-postgres-password (for root user)
-  ## postgresql-password (for the unprivileged user)
-  ##
-  # existingSecret: my-secret
-  existingSecret: ""
 
-  ## Enable persistence using Persistent Volume Claims
-  ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
-  ##
-  persistence:
-    ## @param postgresql.persistence.enabled Enable PostgreSQL persistence using PVC
-    ##
-    enabled: true
-    ## @param postgresql.persistence.existingClaim Provide an existing `PersistentVolumeClaim`, the value is evaluated as a template
-    ##
-    # existingClaim: your-claim
-    existingClaim: ""
-
-    ## @param postgresql.persistence.storageClass PVC Storage Class for PostgreSQL volume
-    ## If defined, storageClassName: <storageClass>
-    ## If set to "-", storageClassName: "", which disables dynamic provisioning
-    ## If undefined (the default) or set to null, no storageClassName spec is
-    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
-    ##   GKE, AWS & OpenStack)
-    ##
-    # storageClass: "-"
-    storageClass: ""
-    ## @param postgresql.persistence.accessMode PVC Access Mode for PostgreSQL volume
-    ##
-    accessMode: ReadWriteOnce
-    ## @param postgresql.persistence.size PVC Storage Request for PostgreSQL volume
-    ##
-    size: 8Gi
+  global:
+    storageClass: "longhorn"
+    postgresql:
+      ## @param global.postgresql.auth.postgresPassword Password for the "postgres" admin user (overrides `auth.postgresPassword`)
+      ## @param global.postgresql.auth.username Name for a custom user to create (overrides `auth.username`)
+      ## @param global.postgresql.auth.password Password for the custom user to create (overrides `auth.password`)
+      ## @param global.postgresql.auth.database Name for a custom database to create (overrides `auth.database`)
+      ## @param global.postgresql.auth.existingSecret Name of existing secret to use for PostgreSQL credentials (overrides `auth.existingSecret`)
+      ##
+      auth:
+        postgresPassword: ""
+        username: ""
+        password: ""
+        database: ""
+        existingSecret: ""
+      ## @param global.postgresql.service.ports.postgresql PostgreSQL service port (overrides `service.ports.postgresql`)
+      ##
+      service:
+        ports:
+          postgresql: ""
 
 ## External Database Configuration
 ## All of these values are only used when postgresql.enabled is set to false
