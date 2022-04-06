@@ -96,7 +96,11 @@ Return the Postgresql user
 */}}
 {{- define "odoo.databaseUser" -}}
 {{- if .Values.postgresql.enabled }}
-    {{- printf "%s" .Values.postgresql.postgresqlUsername -}}
+    {{- if .Values.global.postgresql.auth.username }}
+        {{- .Values.global.postgresql.auth.username -}}
+    {{- else -}}
+        {{- .Values.postgresql.auth.username -}}
+    {{- end -}}
 {{- else -}}
     {{- printf "%s" .Values.externalDatabase.user -}}
 {{- end -}}
@@ -107,7 +111,11 @@ Return the Postgresql user password
 */}}
 {{- define "odoo.databasePassword" -}}
 {{- if .Values.postgresql.enabled }}
-    {{- printf "%s" .Values.postgresql.postgresqlPassword -}}
+    {{- if .Values.global.postgresql.auth.password }}
+        {{- .Values.global.postgresql.auth.password -}}
+    {{- else -}}
+        {{- .Values.postgresql.auth.password -}}
+    {{- end -}}
 {{- else -}}
     {{- printf "%s" .Values.externalDatabase.password -}}
 {{- end -}}
