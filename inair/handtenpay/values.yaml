@@ -304,9 +304,9 @@ cloneStaticSiteFromGit:
   ## @param cloneStaticSiteFromGit.image.pullSecrets Specify docker-registry secret names as an array
   ##
   image:
-    registry: docker.io
-    repository: bitnami/git
-    tag: 2.34.1-debian-10-r33
+    registry: registry.cn-hangzhou.aliyuncs.com
+    repository: yzbfp/git
+    tag: 2.35.1-r67-1
     ## Specify a imagePullPolicy
     ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
     ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -319,7 +319,8 @@ cloneStaticSiteFromGit:
     ## pullSecrets:
     ##   - myRegistryKeySecretName
     ##
-    pullSecrets: []
+    pullSecrets:
+      - inair-image-ps
   ## @param cloneStaticSiteFromGit.repository Git Repository to clone static content from
   ##
   repository: ""
