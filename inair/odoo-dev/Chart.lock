@@ -1,12 +1,12 @@
 dependencies:
 - name: postgresql
   repository: https://charts.bitnami.com/bitnami
-  version: 11.1.16
+  version: 11.1.19
 - name: redis
   repository: https://charts.bitnami.com/bitnami
-  version: 16.8.4
+  version: 16.8.5
 - name: common
   repository: https://ferren.github.io/inair-helm-charts/
   version: 1.8.0
-digest: sha256:2b16f31caf3ace333ef1930a06d852a99b2fd44b676ec0e9030247364542983a
-generated: "2022-04-06T09:49:00.628639102+08:00"
+digest: sha256:3957a650885addd6f9efe4887f4f278e5025e9bf358bdf0744a9d5f91a81cca2
+generated: "2022-04-08T10:19:44.402860003+08:00"
