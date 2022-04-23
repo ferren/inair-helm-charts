@@ -1,12 +1,12 @@
 annotations:
   category: CRM
 apiVersion: v2
-appVersion: 14.0.20211011
+appVersion: 15.0.20220423
 dependencies:
   - condition: postgresql.enabled
     name: postgresql
-    repository: https://ferren.github.io/inair-helm-charts/
-    version: 1.x.x
+    repository: https://charts.bitnami.com/bitnami
+    version: 11.x.x
   - condition: redis.enabled
     name: redis
     repository: https://charts.bitnami.com/bitnami
@@ -31,4 +31,4 @@ name: odoo
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 1.1.7
+version: 1.2.1

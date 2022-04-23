@@ -47,9 +47,9 @@ extraDeploy: []
 ## @param image.debug Enable image debug mode
 ##
 image:
-  registry: registry.cn-shenzhen.aliyuncs.com
-  repository: inair/inair-odoo
-  tag: 14.0.20211011
+  registry: registry.cn-hangzhou.aliyuncs.com
+  repository: yzbfp/galaxy-odoo
+  tag: 15.0.20220423
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
