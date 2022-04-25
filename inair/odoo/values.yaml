@@ -16,6 +16,25 @@ global:
   imagePullSecrets: []
   storageClass: ""
 
+  postgresql:
+    ## @param global.postgresql.auth.postgresPassword Password for the "postgres" admin user (overrides `auth.postgresPassword`)
+    ## @param global.postgresql.auth.username Name for a custom user to create (overrides `auth.username`)
+    ## @param global.postgresql.auth.password Password for the custom user to create (overrides `auth.password`)
+    ## @param global.postgresql.auth.database Name for a custom database to create (overrides `auth.database`)
+    ## @param global.postgresql.auth.existingSecret Name of existing secret to use for PostgreSQL credentials (overrides `auth.existingSecret`)
+    ##
+    auth:
+      postgresPassword: ""
+      username: ""
+      password: ""
+      database: ""
+      existingSecret: ""
+    ## @param global.postgresql.service.ports.postgresql PostgreSQL service port (overrides `service.ports.postgresql`)
+    ##
+    service:
+      ports:
+        postgresql: ""
+
 ## @section Common parameters
 
 ## @param kubeVersion Override Kubernetes version
@@ -49,7 +68,7 @@ extraDeploy: []
 image:
   registry: registry.cn-hangzhou.aliyuncs.com
   repository: yzbfp/galaxy-odoo
-  tag: 15.0.20220423
+  tag: 15.0.2022042401
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -548,53 +567,44 @@ postgresql:
   ## @param postgresql.enabled Deploy PostgreSQL container(s)
   ##
   enabled: true
-  ## @param postgresql.postgresqlUsername PostgreSQL username
-  ## ref: https://hub.docker.com/_/postgres/
-  ##
-  postgresqlUsername: "bn_odoo"
-  ## @param postgresql.postgresqlPassword PostgreSQL password
-  ## ref: https://hub.docker.com/_/postgres/
-  ##
-  postgresqlPassword: ""
-  ## @param postgresql.postgresqlDatabase PostgreSQL database
-  ## ref: https://github.com/bitnami/bitnami-docker-postgresql/blob/master/README.md#creating-a-database-on-first-run
-  ##
-  postgresqlDatabase: bitnami_odoo
-  ## @param postgresql.existingSecret Name of existing secret object
-  ## The secret should contain the following keys:
-  ## postgresql-postgres-password (for root user)
-  ## postgresql-password (for the unprivileged user)
-  ##
-  # existingSecret: my-secret
-  existingSecret: ""
-
-  ## Enable persistence using Persistent Volume Claims
-  ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
-  ##
-  persistence:
-    ## @param postgresql.persistence.enabled Enable PostgreSQL persistence using PVC
+  auth:
+    ## @param auth.enablePostgresUser Assign a password to the "postgres" admin user. Otherwise, remote access will be blocked for this user
     ##
-    enabled: true
-    ## @param postgresql.persistence.existingClaim Provide an existing `PersistentVolumeClaim`, the value is evaluated as a template
+    enablePostgresUser: true
+    ## @param auth.postgresPassword Password for the "postgres" admin user
     ##
-    # existingClaim: your-claim
-    existingClaim: ""
-
-    ## @param postgresql.persistence.storageClass PVC Storage Class for PostgreSQL volume
-    ## If defined, storageClassName: <storageClass>
-    ## If set to "-", storageClassName: "", which disables dynamic provisioning
-    ## If undefined (the default) or set to null, no storageClassName spec is
-    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
-    ##   GKE, AWS & OpenStack)
+    postgresPassword: ""
+    ## @param auth.username Name for a custom user to create
     ##
-    # storageClass: "-"
-    storageClass: ""
-    ## @param postgresql.persistence.accessMode PVC Access Mode for PostgreSQL volume
+    username: ""
+    ## @param auth.password Password for the custom user to create
     ##
-    accessMode: ReadWriteOnce
-    ## @param postgresql.persistence.size PVC Storage Request for PostgreSQL volume
+    password: ""
+    ## @param auth.database Name for a custom database to create
     ##
-    size: 8Gi
+    database: ""
+    ## @param auth.replicationUsername Name of the replication user
+    ##
+    replicationUsername: repl_user
+    ## @param auth.replicationPassword Password for the replication user
+    ##
+    replicationPassword: ""
+    ## @param auth.existingSecret Name of existing secret to use for PostgreSQL credentials
+    ## `auth.postgresPassword`, `auth.password`, and `auth.replicationPassword` will be ignored and picked up from this secret
+    ## The secret must contain the keys `postgres-password` (which is the password for "postgres" admin user),
+    ## `password` (which is the password for the custom user to create when `auth.username` is set),
+    ## and `replication-password` (which is the password for replication user).
+    ## The secret might also contains the key `ldap-password` if LDAP is enabled. `ldap.bind_password` will be ignored and
+    ## picked from this secret in this case.
+    ## The value is evaluated as a template.
+    ##
+    existingSecret: ""
+    ## @param auth.usePasswordFiles Mount credentials as a files instead of using an environment variable
+    ##
+    usePasswordFiles: false
+  ## @param architecture PostgreSQL architecture (`standalone` or `replication`)
+  ##
+  architecture: standalone
 
 ## External Database Configuration
 ## All of these values are only used when postgresql.enabled is set to false

@@ -113,7 +113,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: {{ include "odoo.databaseSecretName" . | quote }}
-                  key: "postgresql-password"
+                  key: "password"
             {{- if .Values.redis.enabled }}
             - name: ODOO_REDIS_HOST
               value: {{ template "odoo.redisHost" . }}
@@ -149,7 +149,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: {{ include "odoo.databaseSecretName" . }}
-                  key: "postgresql-password"
+                  key: "postgres-password"
             {{- end }}
             - name: ODOO_SKIP_BOOTSTRAP
               value: {{ .Values.skipInstall | quote }}
