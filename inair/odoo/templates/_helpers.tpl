@@ -147,7 +147,7 @@ Add environment variables to configure database values
 Return the Redis hostname
 */}}
 {{- define "odoo.redisHost" -}}
-{{- ternary (include "odoo.redis.fullname" .) "" .Values.redis.enabled | quote -}}
+{{- default (printf "%s-master" (include "odoo.redis.fullname" .)) | quote -}}
 {{- end -}}
 
 {{/*
