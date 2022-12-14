@@ -6,15 +6,17 @@ dependencies:
   - condition: postgresql.enabled
     name: postgresql
     repository: https://charts.bitnami.com/bitnami
-    version: 11.x.x
+    version: 12.x.x
   - condition: redis.enabled
     name: redis
     repository: https://charts.bitnami.com/bitnami
-    version: 15.x.x
+    version: 17.x.x
   - name: common
-    repository: https://ferren.github.io/inair-helm-charts/
-    version: 1.x.x
-description: A suite of web based open source business apps.
+    repository: https://charts.bitnami.com/bitnami
+    tags:
+      - bitnami-common
+    version: 2.x.x
+description: Odoo is an open source ERP and CRM platform, formerly known as OpenERP, that can connect a wide variety of business operations such as sales, supply chain, finance, and project management.
 engine: gotpl
 home: https://github.com/ferren/inair-helm-charts/tree/master/inair/odoo
 icon: https://bitnami.com/assets/stacks/odoo/img/odoo-stack-220x234.png
@@ -31,4 +33,4 @@ name: odoo
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 1.5.1
+version: 2.0.1
