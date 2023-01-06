@@ -34,14 +34,22 @@ Return the proper Docker Image Registry Secret Names
 Return the Postgresql hostname
 */}}
 {{- define "odoo.databaseHost" -}}
-{{- ternary (include "odoo.postgresql.fullname" .) .Values.externalDatabase.host .Values.postgresql.enabled | quote -}}
+{{- if .Values.postgresql.enabled }}
+    {{- (include "odoo.postgresql.fullname" .) -}}
+{{- else -}}
+    {{- .Values.externalDatabase.host -}}
+{{- end -}}
 {{- end -}}
 
 {{/*
 Return the Postgresql port
 */}}
 {{- define "odoo.databasePort" -}}
-{{- ternary "5432" .Values.externalDatabase.port .Values.postgresql.enabled | quote -}}
+{{- if .Values.postgresql.enabled }}
+    {{- printf "5432" -}}
+{{- else -}}
+    {{- .Values.externalDatabase.port -}}
+{{- end -}}
 {{- end -}}
 
 {{/*
@@ -97,14 +105,14 @@ Return the Postgresql user password
 Return the Redis hostname
 */}}
 {{- define "odoo.redisHost" -}}
-{{- default (printf "%s-master" (include "odoo.redis.fullname" .)) | quote -}}
+{{- default (printf "%s-master" (include "odoo.redis.fullname" .)) -}}
 {{- end -}}
 
 {{/*
 Return the Redis port
 */}}
 {{- define "odoo.redisPort" -}}
-{{- ternary "6379" "" .Values.redis.enabled | quote -}}
+{{- printf "6379" -}}
 {{- end -}}
 
 {{/*
