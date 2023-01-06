@@ -231,6 +231,7 @@ resources:
 ## @param containerPort Odoo HTTP container port
 ##
 containerPorts:
+  ssh: 22
   http: 8069
 ## Configure Pods Security Context
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod

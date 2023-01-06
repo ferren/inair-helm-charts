@@ -121,9 +121,9 @@ spec:
             {{- end }}
           ports:
             - name: ssh
-              containerPort: 22
+              containerPort: {{ coalesce .Values.containerPorts.ssh .Values.containerPort }}
             - name: http
-              containerPort: {{ .Values.containerPort }}
+              containerPort: {{ coalesce .Values.containerPorts.http .Values.containerPort }}
           {{- if .Values.resources }}
           resources: {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
