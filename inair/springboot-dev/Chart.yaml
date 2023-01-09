@@ -1,0 +1,36 @@
+annotations:
+  category: SpringBoot
+apiVersion: v1
+appVersion: 20230109
+dependencies:
+  - condition: postgresql.enabled
+    name: postgresql
+    repository: https://charts.bitnami.com/bitnami
+    version: 12.x.x
+  - condition: redis.enabled
+    name: redis
+    repository: https://charts.bitnami.com/bitnami
+    version: 17.x.x
+  - name: common
+    repository: https://charts.bitnami.com/bitnami
+    tags:
+      - bitnami-common
+    version: 2.x.x
+description: Springboot developer
+engine: gotpl
+home: https://www.incosten.com/
+icon: https://www.incosten.com/_nuxt/img/logo.a9cdf55.svg
+keywords:
+  - sb
+  - crm
+  - www
+  - http
+  - web
+maintainers:
+  - email: ferrenliu@163.com
+    name: FerrenLiu
+name: springboot-dev
+sources:
+  - https://codeup.aliyun.com/61bd3e98fa282c88e103b306/java/bfp-admin2.0-dev
+  - https://www.incosten.com/
+version: 0.0.1
