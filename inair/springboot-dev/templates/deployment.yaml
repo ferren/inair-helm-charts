@@ -81,8 +81,8 @@ spec:
           resources: {{- toYaml .Values.volumePermissions.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
-            - name: sb-conf
-              mountPath: /home/coding/conf.d/
+            # - name: sb-conf
+            #   mountPath: /home/coding/conf.d/
             - name: sb-data
               mountPath: /home/coding/projects
             - name: ssh-keys
@@ -127,12 +127,12 @@ spec:
           resources: {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
-            - name: sb-conf
-              mountPath: /home/odoo/conf.d/
+            # - name: sb-conf
+            #   mountPath: /home/coding/conf.d/
             - name: sb-data
-              mountPath: /home/odoo/projects/
+              mountPath: /home/coding/projects/
             - name: sb-ssh-cache
-              mountPath: /home/odoo/.ssh/
+              mountPath: /home/coding/.ssh/
             {{- if .Values.extraVolumeMounts }}
             {{- include "common.tplvalues.render" (dict "value" .Values.extraVolumeMounts "context" $) | nindent 12 }}
             {{- end }}
@@ -140,12 +140,12 @@ spec:
         {{- include "common.tplvalues.render" (dict "value" .Values.sidecars "context" $) | nindent 8 }}
         {{- end }}
       volumes:
-        - name: sb-conf
-          configMap:
-            name: {{ template "common.names.fullname" . }}
-            items:
-            - key: sb.conf
-              path: sb.conf
+        # - name: sb-conf
+        #   configMap:
+        #     name: {{ template "common.names.fullname" . }}
+        #     items:
+        #     - key: sb.conf
+        #       path: sb.conf
         - name: sb-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
