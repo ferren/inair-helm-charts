@@ -100,7 +100,7 @@ spec:
       {{- end }}
       containers:
         - name: {{ template "common.names.fullname" . }}
-          image: {{ template "odoo.image" . }}
+          image: {{ template "hict.image" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
           {{- if .Values.lifecycleHooks }}
           lifecycle: {{- include "common.tplvalues.render" (dict "value" .Values.lifecycleHooks "context" $) | nindent 12 }}
