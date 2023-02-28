@@ -1,4 +1,4 @@
-{{- $secretName := include "yzbfp.secretName" . -}}
+{{- $secretName := include "hict.databaseSecretName" . -}}
 
 *******************************************************************
 *** PLEASE BE PATIENT: HICT may take a few minutes to install   ***

@@ -64,7 +64,6 @@ spec:
       {{- if .Values.terminationGracePeriodSeconds }}
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
       {{- end }}
-      {{- if or (and .Values.volumePermissions.enabled .Values.persistence.enabled) .Values.initContainers }}
       initContainers:
         - name: jar-retrieve
           image: registry.cn-shenzhen.aliyuncs.com/inair/utils:scp-shell-20230228
@@ -97,7 +96,6 @@ spec:
             - name: hict-data
               mountPath: /app
         {{- end }}
-      {{- end }}
       containers:
         - name: {{ template "common.names.fullname" . }}
           image: {{ template "hict.image" . }}
@@ -214,7 +212,7 @@ spec:
         - name: hict-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ .Values.persistence.existingClaim | default (include "yzbfp.fullname" .) }}
+            claimName: {{ (tpl .Values.persistence.existingClaim $) | default (include "common.names.fullname" .) }}
           {{- else }}
           emptyDir: {}
           {{- end }}
