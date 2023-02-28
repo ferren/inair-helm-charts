@@ -1,0 +1,31 @@
+annotations:
+  category: HICT
+apiVersion: v1
+appVersion: 1.0.20230228
+dependencies:
+  - condition: redis.enabled
+    name: redis
+    repository: https://charts.bitnami.com/bitnami
+    version: 17.x.x
+  - name: common
+    repository: https://charts.bitnami.com/bitnami
+    tags:
+      - bitnami-common
+    version: 2.x.x
+description: HICT gate service core system.
+engine: gotpl
+home: http://www.lifewiz.cn/
+icon: https://misc.i-gozuche.com/static/home_page1/img/yt-logo.png
+keywords:
+  - hict
+  - www
+  - http
+  - web
+maintainers:
+  - email: ferrenliu@163.com
+    name: FerrenLiu
+name: hict-gss
+sources:
+  - https://onthesky.coding.net/p/hictchankoufuwuxitong/d/hict-deployment/git
+  - http://www.lifewiz.cn/
+version: 0.0.1

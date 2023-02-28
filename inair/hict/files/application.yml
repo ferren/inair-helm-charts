@@ -1,0 +1,100 @@
+server:
+  port: 8005
+spring:
+  redis:
+    normal:
+       hostname: ${REDIS_HOST:localhost}
+       password: ${REDIS_PASSWORD:}
+       port: ${REDIS_PORT:6379}
+       database: 1
+       lettuce:
+         pool:
+           max-active: 300
+  datasource:
+#    url: jdbc:postgresql://${POSTGRESQL_HOST:xxxxx.aliyuncs.com}:${POSTGRESQL_PORT:5432}/${POSTGRESQL_DB:gscs_dev}?useUnicode=true&characterEncoding=utf8
+#    username: xxxx_sa
+#    password: xxxx
+#    driver-class-name: org.postgresql.Driver
+    url: jdbc:oracle:thin:@xxxxx:15024/xx
+    username: xxx
+    password: xxx
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 120
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 120
+
+    druid:
+      filter:
+        slf4j:
+          enabled: true
+          statement-create-after-log-enabled: false
+          statement-log-enabled: false
+          statement-executable-sql-log-enable: true
+          statement-log-error-enabled: true
+          result-set-log-enabled: false
+
+#  jpa:
+#    hibernate:
+#      naming: 
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#    database: mysql
+#    properties:
+#      javax.persistence.validation.mode: none
+#      hibernate:
+#        default_schema: HICTSA
+#        show_sql: true
+#        format_sql: true
+#    generate-ddl: true
+#    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+  jpa:
+    show_sql: true
+    format_sql: true
+    hibernate:
+      ddl-auto: none
+  freemarker:
+    templateLoaderPath:
+      - classpath:/freemarker/templates/
+    suffix: .html
+logging.path: ./logs
+#logging.level.org.apache.http.wire: debug
+static.path: ./uploadfiles
+storableobject:
+  fileRoot: ./uploadfiles/files
+  urlPath: /files
+  filesystem:
+    root:  ./uploadfiles
+    urlPath: /files
+    domain:
+app:
+  security:
+    loginCaptchaEnabled: false
+    superPassword: 123456
+    passwordStrengthExpr: ^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[\\w]{6,16}$
+ngen:
+   ws.gatex:
+     #credentialsName: icc
+     #credentialsPassword: hict2013
+     uri: http://127.0.0.1:8005/ngen/dummy_ws
+   ws.tcms:
+     #credentialsName: icc
+     #credentialsPassword: hict2013
+     uri: http://127.0.0.1:8005/ngen/dummy_ws
+xcode:
+  view_cache_enabled: false
+  dev:
+    autoConfigEnabled: false
+  repository:
+    show_sql: true
+  emd:
+    path: ./src/main/resources/emd
