@@ -72,7 +72,7 @@ spec:
           securityContext:
             runAsUser: 0
           volumeMounts:
-            - name: hict-data
+            - name: hict-app
               mountPath: /app
             - name: ssh-deploy-keys
               mountPath: /root/.ssh
@@ -93,7 +93,7 @@ spec:
           resources: {{- toYaml .Values.volumePermissions.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
-            - name: hict-data
+            - name: hict-app
               mountPath: /app
         {{- end }}
       containers:
@@ -137,6 +137,16 @@ spec:
                 secretKeyRef:
                   name: {{ include "hict.redisSecretName" . }}
                   key: {{ include "hict.redisSecretPasswordKey" . }}
+            - name: ROOT_FILE_PATH
+              value: {{ .Values.filePath.root }}
+            - name: S_FILE_PATH
+              value: {{ .Values.filePath.storable }}
+            - name: LOGGING_PATH
+              value: {{ .Values.filePath.logging }}
+            - name: NGEN_WS_GATEX_URI
+              value: {{ .Values.ngen.wsGatexUri }}
+            - name: NGEN_WS_TCMS_URI
+              value: {{ .Values.ngen.wsTcmsUri }}
           ports:
             - name: http
               containerPort: {{ coalesce .Values.containerPorts.http .Values.containerPort }}
@@ -186,8 +196,12 @@ spec:
           resources: {{- toYaml .Values.resources | nindent 12 }}
           {{- end }}
           volumeMounts:
-            - name: hict-data
+            - name: hict-app
               mountPath: /app
+            - name: hict-logs
+              mountPath: {{ .Values.filePath.logging }}
+            - name: hict-files
+              mountPath: {{ .Values.filePath.root }}
             {{- if .Values.customPostInitScripts }}
             - mountPath: /docker-entrypoint-init.d
               name: custom-postinit
@@ -209,10 +223,19 @@ spec:
             - key: known_hosts
               path: known_hosts
               mode: 438
-        - name: hict-data
+        - name: hict-app
+          emptyDir: {}
+        - name: hict-logs
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ (tpl .Values.persistence.existingClaim $) | default (include "common.names.fullname" .) }}
+            claimName: {{ (tpl .Values.persistence.existingClaim $) | default (printf "%s-logs" (include "common.names.fullname" .) | trunc 63 | trimSuffix "-") }}
+          {{- else }}
+          emptyDir: {}
+          {{- end }}
+        - name: hict-files
+          {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ (tpl .Values.persistence.existingClaim $) | default (printf "%s-files" (include "common.names.fullname" .) | trunc 63 | trimSuffix "-") }}
           {{- else }}
           emptyDir: {}
           {{- end }}
