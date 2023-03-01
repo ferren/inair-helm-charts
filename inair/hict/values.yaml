@@ -103,8 +103,18 @@ args: [
   "--static.path=$(ROOT_FILE_PATH)",
   "--storableobject.fileRoot=$(S_FILE_PATH)",
   "--storableobject.filesystem.root=$(ROOT_FILE_PATH)",
+  "--ngen.ws.gatex.credentialsName=$(NGEN_WS_GATEX_CNAME)",
+  "--ngen.ws.gatex.credentialsPassword=$(NGEN_WS_GATEX_CPWD)",
   "--ngen.ws.gatex.uri=$(NGEN_WS_GATEX_URI)",
+  "--ngen.ws.tcms.credentialsName=$(NGEN_WS_TCMS_CNAME)",
+  "--ngen.ws.tcms.credentialsPassword=$(NGEN_WS_TCMS_CPWD)",
   "--ngen.ws.tcms.uri=$(NGEN_WS_TCMS_URI)",
+  "--app.security.ldap.url=$(LDAP_URL)",
+  "--app.security.ldap.userSearchFilter=$(LDAP_USER_SEARCH_FILTER)",
+  "--app.security.ldap.userDnPatterns=$(LDAP_USER_DN_PATTERNS)",
+  "--app.security.ldap.userSearchBase=$(LDAP_USER_SEARCH_BASE)",
+  "--app.security.ldap.managerDn=$(LDAP_MANAGER_DN)",
+  "--app.security.ldap.managerPassword=$(LDAP_MANAGER_PWD)",
   "--xcode.emd.path=classpath:/emd/",
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
@@ -147,8 +157,20 @@ filePath:
   logging: /opt/logs
 
 ngen:
+  wsGatexCName: gatexCName
+  wsGatexCPwd: gatexPWD
   wsGatexUri: http://127.0.0.1:8005/ngen/dummy_ws
+  wsTcmsCName: tcmsCName
+  wsTcmsCPwd: tcmsPWD
   wsTcmsUri: http://127.0.0.1:8005/ngen/dummy_ws
+
+ldap:
+  url: ldap://
+  userSearchFilter: (sAMAccountName={0})
+  userDnPatterns: CN={0},OU=Users,OU=NGEN,DC=ngen,DC=local
+  userSearchBase: OU=Users,OU=NGEN,DC=ngen,DC=local
+  managerDn: CN=Administrator,CN=Users,DC=ngen,DC=local
+  managerPwd: 1234
 
 updateStrategy:
   type: RollingUpdate
