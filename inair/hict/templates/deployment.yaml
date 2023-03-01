@@ -160,7 +160,7 @@ spec:
             - name: LDAP_USER_SEARCH_FILTER
               value: {{ .Values.ldap.userSearchFilter }}
             - name: LDAP_USER_DN_PATTERNS
-              value: {{ .Values.ldap.userDnPatters }}
+              value: {{ .Values.ldap.userDnPatterns }}
             - name: LDAP_USER_SEARCH_BASE
               value: {{ .Values.ldap.userSearchBase }}
             - name: LDAP_MANAGER_DN
