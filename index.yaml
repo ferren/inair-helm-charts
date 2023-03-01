@@ -5,7 +5,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:12.939592819+08:00"
+    created: "2023-03-01T12:20:36.491996797+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -34,7 +34,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:12.936781062+08:00"
+    created: "2023-03-01T12:20:36.488707428+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -63,7 +63,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:12.934126238+08:00"
+    created: "2023-03-01T12:20:36.485474352+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -92,7 +92,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.931189968+08:00"
+    created: "2023-03-01T12:20:36.48214621+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -121,7 +121,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.927237276+08:00"
+    created: "2023-03-01T12:20:36.48018358+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -150,7 +150,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.925163153+08:00"
+    created: "2023-03-01T12:20:36.478061825+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -179,7 +179,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.922543966+08:00"
+    created: "2023-03-01T12:20:36.475026728+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -208,7 +208,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.919592647+08:00"
+    created: "2023-03-01T12:20:36.468531089+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -237,7 +237,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.917274232+08:00"
+    created: "2023-03-01T12:20:36.463066039+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -267,7 +267,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:12.947281835+08:00"
+    created: "2023-03-01T12:20:36.499019789+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -296,7 +296,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:12.944832709+08:00"
+    created: "2023-03-01T12:20:36.496978473+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -325,7 +325,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:12.9417941+08:00"
+    created: "2023-03-01T12:20:36.494580989+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -355,7 +355,7 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.8.0
-    created: "2023-03-01T12:10:12.949459373+08:00"
+    created: "2023-03-01T12:20:36.5001921+08:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: d161f595c8c8b179ce593ec236441502e5c25b35b7d1ca5a0a0184dd71aca2fd
@@ -382,7 +382,7 @@ entries:
       category: Infrastructure
     apiVersion: v2
     appVersion: 1.7.1
-    created: "2023-03-01T12:10:12.948450076+08:00"
+    created: "2023-03-01T12:20:36.499605322+08:00"
     description: A Library Helm Chart for grouping common logic between bitnami charts.
       This chart is not deployable by itself.
     digest: dd8dadc1c5f02afd5e5e48c9d5bc3579a41b3ca8652b16dfe4c0a44b1f9b4a4a
@@ -410,7 +410,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.134118117+08:00"
+    created: "2023-03-01T12:20:36.667359326+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -444,7 +444,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.126566274+08:00"
+    created: "2023-03-01T12:20:36.661788781+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -478,7 +478,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.118083634+08:00"
+    created: "2023-03-01T12:20:36.655016524+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -512,7 +512,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.112201906+08:00"
+    created: "2023-03-01T12:20:36.649074096+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -546,7 +546,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.10492331+08:00"
+    created: "2023-03-01T12:20:36.642351618+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -580,7 +580,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.097821544+08:00"
+    created: "2023-03-01T12:20:36.636748012+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -614,7 +614,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.08901582+08:00"
+    created: "2023-03-01T12:20:36.629874747+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -648,7 +648,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.080681426+08:00"
+    created: "2023-03-01T12:20:36.623762222+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -682,7 +682,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.074471444+08:00"
+    created: "2023-03-01T12:20:36.616714454+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -716,7 +716,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.067427302+08:00"
+    created: "2023-03-01T12:20:36.610451182+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -750,7 +750,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.061578984+08:00"
+    created: "2023-03-01T12:20:36.604383647+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -784,7 +784,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.053414975+08:00"
+    created: "2023-03-01T12:20:36.59713505+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -818,7 +818,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.047527325+08:00"
+    created: "2023-03-01T12:20:36.591569829+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -852,7 +852,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.03992886+08:00"
+    created: "2023-03-01T12:20:36.585092072+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -886,7 +886,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.034013354+08:00"
+    created: "2023-03-01T12:20:36.579542274+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -920,7 +920,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:13.026740839+08:00"
+    created: "2023-03-01T12:20:36.572993589+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -954,7 +954,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:13.017985091+08:00"
+    created: "2023-03-01T12:20:36.566995663+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -988,7 +988,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:13.010475291+08:00"
+    created: "2023-03-01T12:20:36.560043175+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1022,7 +1022,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:13.003873514+08:00"
+    created: "2023-03-01T12:20:36.553597075+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1056,7 +1056,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.996566182+08:00"
+    created: "2023-03-01T12:20:36.547992578+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1090,7 +1090,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.991152966+08:00"
+    created: "2023-03-01T12:20:36.541447231+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1124,7 +1124,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.984195672+08:00"
+    created: "2023-03-01T12:20:36.535230511+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1158,7 +1158,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.97721849+08:00"
+    created: "2023-03-01T12:20:36.528632913+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1192,7 +1192,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.971779592+08:00"
+    created: "2023-03-01T12:20:36.522595347+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1226,7 +1226,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.962789167+08:00"
+    created: "2023-03-01T12:20:36.514346087+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1260,7 +1260,7 @@ entries:
       category: SRM
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:12.956771333+08:00"
+    created: "2023-03-01T12:20:36.507302107+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1295,7 +1295,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.144480662+08:00"
+    created: "2023-03-01T12:20:36.674109862+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1324,7 +1324,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.142088049+08:00"
+    created: "2023-03-01T12:20:36.672744568+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1353,7 +1353,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.139520515+08:00"
+    created: "2023-03-01T12:20:36.671334115+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1382,7 +1382,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:13.1373133+08:00"
+    created: "2023-03-01T12:20:36.670021526+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1412,7 +1412,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.176929149+08:00"
+    created: "2023-03-01T12:20:36.695736592+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1441,7 +1441,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.174468065+08:00"
+    created: "2023-03-01T12:20:36.693606776+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1470,7 +1470,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.171754126+08:00"
+    created: "2023-03-01T12:20:36.692058168+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1499,7 +1499,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.16763775+08:00"
+    created: "2023-03-01T12:20:36.690294449+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1528,7 +1528,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.164948374+08:00"
+    created: "2023-03-01T12:20:36.687140752+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1557,7 +1557,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.162018495+08:00"
+    created: "2023-03-01T12:20:36.685287158+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1586,7 +1586,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.159598118+08:00"
+    created: "2023-03-01T12:20:36.683684155+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1615,7 +1615,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.157412823+08:00"
+    created: "2023-03-01T12:20:36.682175297+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1644,7 +1644,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.153694319+08:00"
+    created: "2023-03-01T12:20:36.680543586+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1673,7 +1673,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.149717128+08:00"
+    created: "2023-03-01T12:20:36.678652475+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1702,7 +1702,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:13.147158524+08:00"
+    created: "2023-03-01T12:20:36.67569498+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -1732,7 +1732,31 @@ entries:
       category: HICT
     apiVersion: v1
     appVersion: 1.0.20230228
-    created: "2023-03-01T12:10:13.230264515+08:00"
+    created: "2023-03-01T12:20:36.75870365+08:00"
+    description: HICT gate service core system.
+    digest: 80b5a04021ca53a74dd6c31479d9bcefdf436869f48e87f0047f60e8c8149c9c
+    home: http://www.lifewiz.cn/
+    icon: https://misc.i-gozuche.com/static/home_page1/img/yt-logo.png
+    keywords:
+    - hict
+    - www
+    - http
+    - web
+    maintainers:
+    - email: ferrenliu@163.com
+      name: FerrenLiu
+    name: hict-gss
+    sources:
+    - https://onthesky.coding.net/p/hictchankoufuwuxitong/d/hict-deployment/git
+    - http://www.lifewiz.cn/
+    urls:
+    - https://ferren.github.io/inair-helm-charts/packages/hict-gss-0.0.8.tgz
+    version: 0.0.8
+  - annotations:
+      category: HICT
+    apiVersion: v1
+    appVersion: 1.0.20230228
+    created: "2023-03-01T12:20:36.752108591+08:00"
     description: HICT gate service core system.
     digest: 43c58833480fa918f732e7e8cb51b1aa589f4cb2c6368df3d6d970b597e2a872
     home: http://www.lifewiz.cn/
@@ -1756,7 +1780,7 @@ entries:
       category: HICT
     apiVersion: v1
     appVersion: 1.0.20230228
-    created: "2023-03-01T12:10:13.223917487+08:00"
+    created: "2023-03-01T12:20:36.743430526+08:00"
     description: HICT gate service core system.
     digest: 1d06b6c60ea0fd0bbf8be943cbb486ddb81a497c85a774bee443afe28bbc738f
     home: http://www.lifewiz.cn/
@@ -1780,7 +1804,7 @@ entries:
       category: HICT
     apiVersion: v1
     appVersion: 1.0.20230228
-    created: "2023-03-01T12:10:13.217299193+08:00"
+    created: "2023-03-01T12:20:36.735711098+08:00"
     description: HICT gate service core system.
     digest: 8083fef94e05546e3bff590919679441747636d4f0669db73ffbb60407e72ad4
     home: http://www.lifewiz.cn/
@@ -1804,7 +1828,7 @@ entries:
       category: HICT
     apiVersion: v1
     appVersion: 1.0.20230228
-    created: "2023-03-01T12:10:13.210587112+08:00"
+    created: "2023-03-01T12:20:36.72460695+08:00"
     description: HICT gate service core system.
     digest: 9240aabe37a08c51a3de24dfc94577fbc72bcc20de08f192286eaea9bcd811ee
     home: http://www.lifewiz.cn/
@@ -1828,7 +1852,7 @@ entries:
       category: HICT
     apiVersion: v1
     appVersion: 1.0.20230228
-    created: "2023-03-01T12:10:13.202763274+08:00"
+    created: "2023-03-01T12:20:36.716295186+08:00"
     description: HICT gate service core system.
     digest: 1891795448cb2cc099cf4630397d5d542a350257c9bdb280b0f4230d334f8bd1
     home: http://www.lifewiz.cn/
@@ -1852,7 +1876,7 @@ entries:
       category: HICT
     apiVersion: v1
     appVersion: 1.0.20230228
-    created: "2023-03-01T12:10:13.193765899+08:00"
+    created: "2023-03-01T12:20:36.708487527+08:00"
     description: HICT gate service core system.
     digest: 3edcea7adee9373573c9852ec3a0004cd04ef468a52ba6d86935c27007f82d39
     home: http://www.lifewiz.cn/
@@ -1876,7 +1900,7 @@ entries:
       category: HICT
     apiVersion: v1
     appVersion: 1.0.20230228
-    created: "2023-03-01T12:10:13.186987964+08:00"
+    created: "2023-03-01T12:20:36.702573763+08:00"
     description: HICT gate service core system.
     digest: 66ff2b1f414afe454a216b06cc7cbb06c67049ed9e04bb3036b2e4a93c06be23
     home: http://www.lifewiz.cn/
@@ -1899,7 +1923,7 @@ entries:
   nacos:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2023-03-01T12:10:13.231286343+08:00"
+    created: "2023-03-01T12:20:36.759224217+08:00"
     description: A Helm chart for Kubernetes
     digest: 7e4fb3e6446c58872039d9b2136c7ba5be48572493a81b4cde6d804245e6d616
     maintainers:
@@ -1914,7 +1938,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20230226
-    created: "2023-03-01T12:10:13.842600757+08:00"
+    created: "2023-03-01T12:20:37.413416731+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -1955,7 +1979,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20230204
-    created: "2023-03-01T12:10:13.830229148+08:00"
+    created: "2023-03-01T12:20:37.396629713+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -1996,7 +2020,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20230111
-    created: "2023-03-01T12:10:13.81662273+08:00"
+    created: "2023-03-01T12:20:37.382531044+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2037,7 +2061,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20230104
-    created: "2023-03-01T12:10:13.801643449+08:00"
+    created: "2023-03-01T12:20:37.367716756+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2078,7 +2102,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20230103
-    created: "2023-03-01T12:10:13.788243131+08:00"
+    created: "2023-03-01T12:20:37.353295641+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2119,7 +2143,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20221226
-    created: "2023-03-01T12:10:13.776801675+08:00"
+    created: "2023-03-01T12:20:37.338207299+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2160,7 +2184,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20221218
-    created: "2023-03-01T12:10:13.761883961+08:00"
+    created: "2023-03-01T12:20:37.322734595+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2201,7 +2225,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20221216
-    created: "2023-03-01T12:10:13.750691742+08:00"
+    created: "2023-03-01T12:20:37.308256204+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2242,7 +2266,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20221213
-    created: "2023-03-01T12:10:13.738109076+08:00"
+    created: "2023-03-01T12:20:37.296111112+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2283,7 +2307,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20221213
-    created: "2023-03-01T12:10:13.727453963+08:00"
+    created: "2023-03-01T12:20:37.281379991+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2324,7 +2348,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20221213
-    created: "2023-03-01T12:10:13.712871076+08:00"
+    created: "2023-03-01T12:20:37.266702561+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2361,7 +2385,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20221213
-    created: "2023-03-01T12:10:13.697781101+08:00"
+    created: "2023-03-01T12:20:37.253579758+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2398,7 +2422,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20221213
-    created: "2023-03-01T12:10:13.684349628+08:00"
+    created: "2023-03-01T12:20:37.239848731+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2435,7 +2459,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 16.0.20221107
-    created: "2023-03-01T12:10:13.670376695+08:00"
+    created: "2023-03-01T12:20:37.226402817+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2472,7 +2496,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20221009
-    created: "2023-03-01T12:10:13.65944942+08:00"
+    created: "2023-03-01T12:20:37.214423339+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2509,7 +2533,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20221009
-    created: "2023-03-01T12:10:13.647430706+08:00"
+    created: "2023-03-01T12:20:37.202172062+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2546,7 +2570,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20221007
-    created: "2023-03-01T12:10:13.636288645+08:00"
+    created: "2023-03-01T12:20:37.189469009+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2583,7 +2607,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20221004
-    created: "2023-03-01T12:10:13.623927896+08:00"
+    created: "2023-03-01T12:20:37.176851939+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2620,7 +2644,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220916
-    created: "2023-03-01T12:10:13.611849627+08:00"
+    created: "2023-03-01T12:20:37.166317426+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2657,7 +2681,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220915.01
-    created: "2023-03-01T12:10:13.599354771+08:00"
+    created: "2023-03-01T12:20:37.151795509+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2694,7 +2718,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220915
-    created: "2023-03-01T12:10:13.587379407+08:00"
+    created: "2023-03-01T12:20:37.13305602+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2731,7 +2755,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220914
-    created: "2023-03-01T12:10:13.574514397+08:00"
+    created: "2023-03-01T12:20:37.117884411+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2768,7 +2792,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220907
-    created: "2023-03-01T12:10:13.562879663+08:00"
+    created: "2023-03-01T12:20:37.105269186+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2805,7 +2829,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220906
-    created: "2023-03-01T12:10:13.551053583+08:00"
+    created: "2023-03-01T12:20:37.0882297+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2842,7 +2866,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220819
-    created: "2023-03-01T12:10:13.541724313+08:00"
+    created: "2023-03-01T12:20:37.071340817+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2879,7 +2903,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220817
-    created: "2023-03-01T12:10:13.526980178+08:00"
+    created: "2023-03-01T12:20:37.059074384+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2916,7 +2940,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220727
-    created: "2023-03-01T12:10:13.513200686+08:00"
+    created: "2023-03-01T12:20:37.045687667+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2953,7 +2977,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220610
-    created: "2023-03-01T12:10:13.500153909+08:00"
+    created: "2023-03-01T12:20:37.029837199+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -2990,7 +3014,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220610
-    created: "2023-03-01T12:10:13.488707237+08:00"
+    created: "2023-03-01T12:20:37.017788782+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3027,7 +3051,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220610
-    created: "2023-03-01T12:10:13.474186142+08:00"
+    created: "2023-03-01T12:20:37.005655623+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3064,7 +3088,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220602
-    created: "2023-03-01T12:10:13.46008185+08:00"
+    created: "2023-03-01T12:20:36.992745567+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3101,7 +3125,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220520
-    created: "2023-03-01T12:10:13.45034588+08:00"
+    created: "2023-03-01T12:20:36.981837106+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3138,7 +3162,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.2022042401
-    created: "2023-03-01T12:10:13.440065295+08:00"
+    created: "2023-03-01T12:20:36.970176108+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3175,7 +3199,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220423
-    created: "2023-03-01T12:10:13.428814498+08:00"
+    created: "2023-03-01T12:20:36.959523107+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3212,7 +3236,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220423
-    created: "2023-03-01T12:10:13.417206252+08:00"
+    created: "2023-03-01T12:20:36.949368357+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3249,7 +3273,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220423
-    created: "2023-03-01T12:10:13.405728669+08:00"
+    created: "2023-03-01T12:20:36.936282057+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3286,7 +3310,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220423
-    created: "2023-03-01T12:10:13.394098328+08:00"
+    created: "2023-03-01T12:20:36.92465172+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3323,7 +3347,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220423
-    created: "2023-03-01T12:10:13.38135024+08:00"
+    created: "2023-03-01T12:20:36.914153112+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3360,7 +3384,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220423
-    created: "2023-03-01T12:10:13.371219788+08:00"
+    created: "2023-03-01T12:20:36.90503196+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3397,7 +3421,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 15.0.20220423
-    created: "2023-03-01T12:10:13.358777419+08:00"
+    created: "2023-03-01T12:20:36.893730018+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3434,7 +3458,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20211011
-    created: "2023-03-01T12:10:13.349612273+08:00"
+    created: "2023-03-01T12:20:36.882654669+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3471,7 +3495,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210928
-    created: "2023-03-01T12:10:13.339978786+08:00"
+    created: "2023-03-01T12:20:36.867956468+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3508,7 +3532,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210816
-    created: "2023-03-01T12:10:13.328977933+08:00"
+    created: "2023-03-01T12:20:36.856943457+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3541,7 +3565,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210816
-    created: "2023-03-01T12:10:13.324119649+08:00"
+    created: "2023-03-01T12:20:36.850215112+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3574,7 +3598,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210816
-    created: "2023-03-01T12:10:13.317628958+08:00"
+    created: "2023-03-01T12:20:36.844458332+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3607,7 +3631,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210812
-    created: "2023-03-01T12:10:13.311364131+08:00"
+    created: "2023-03-01T12:20:36.838912161+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3640,7 +3664,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210812
-    created: "2023-03-01T12:10:13.305855133+08:00"
+    created: "2023-03-01T12:20:36.832173709+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3673,7 +3697,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2023-03-01T12:10:13.298916929+08:00"
+    created: "2023-03-01T12:20:36.825037048+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3706,7 +3730,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2023-03-01T12:10:13.291279445+08:00"
+    created: "2023-03-01T12:20:36.81990437+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3739,7 +3763,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2023-03-01T12:10:13.283053725+08:00"
+    created: "2023-03-01T12:20:36.813445315+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3772,7 +3796,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2023-03-01T12:10:13.275274068+08:00"
+    created: "2023-03-01T12:20:36.807488408+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3805,7 +3829,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2023-03-01T12:10:13.269158357+08:00"
+    created: "2023-03-01T12:20:36.801130323+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3838,7 +3862,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210811
-    created: "2023-03-01T12:10:13.26228359+08:00"
+    created: "2023-03-01T12:20:36.794605355+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3871,7 +3895,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210810
-    created: "2023-03-01T12:10:13.256748124+08:00"
+    created: "2023-03-01T12:20:36.788749369+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3904,7 +3928,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210810
-    created: "2023-03-01T12:10:13.250474476+08:00"
+    created: "2023-03-01T12:20:36.780530296+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3937,7 +3961,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210809
-    created: "2023-03-01T12:10:13.244867578+08:00"
+    created: "2023-03-01T12:20:36.772782555+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -3970,7 +3994,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: 14.0.20210809
-    created: "2023-03-01T12:10:13.239881296+08:00"
+    created: "2023-03-01T12:20:36.767266467+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4004,7 +4028,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20230106"
-    created: "2023-03-01T12:10:14.260783851+08:00"
+    created: "2023-03-01T12:20:37.825184935+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4043,7 +4067,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20230106"
-    created: "2023-03-01T12:10:14.250599318+08:00"
+    created: "2023-03-01T12:20:37.812876107+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4082,7 +4106,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20230106"
-    created: "2023-03-01T12:10:14.237828739+08:00"
+    created: "2023-03-01T12:20:37.798477243+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4121,7 +4145,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20230106"
-    created: "2023-03-01T12:10:14.226613554+08:00"
+    created: "2023-03-01T12:20:37.786676174+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4160,7 +4184,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20230106"
-    created: "2023-03-01T12:10:14.214850942+08:00"
+    created: "2023-03-01T12:20:37.773222579+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4197,7 +4221,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20221112"
-    created: "2023-03-01T12:10:14.203827107+08:00"
+    created: "2023-03-01T12:20:37.761215107+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4234,7 +4258,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20221107"
-    created: "2023-03-01T12:10:14.191028852+08:00"
+    created: "2023-03-01T12:20:37.748877529+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4271,7 +4295,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20221028"
-    created: "2023-03-01T12:10:14.178494251+08:00"
+    created: "2023-03-01T12:20:37.73599234+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4308,7 +4332,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20221012"
-    created: "2023-03-01T12:10:14.166877943+08:00"
+    created: "2023-03-01T12:20:37.723584419+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4345,7 +4369,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20220819"
-    created: "2023-03-01T12:10:14.156295548+08:00"
+    created: "2023-03-01T12:20:37.708905928+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4382,7 +4406,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20220819"
-    created: "2023-03-01T12:10:14.144547517+08:00"
+    created: "2023-03-01T12:20:37.696891914+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4419,7 +4443,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20220727"
-    created: "2023-03-01T12:10:14.131812808+08:00"
+    created: "2023-03-01T12:20:37.684503314+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4456,7 +4480,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20220620"
-    created: "2023-03-01T12:10:14.119382276+08:00"
+    created: "2023-03-01T12:20:37.669271921+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4493,7 +4517,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "2022050601"
-    created: "2023-03-01T12:10:14.108240566+08:00"
+    created: "2023-03-01T12:20:37.65759463+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4530,7 +4554,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20220506"
-    created: "2023-03-01T12:10:14.094613357+08:00"
+    created: "2023-03-01T12:20:37.644419632+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4567,7 +4591,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20220408"
-    created: "2023-03-01T12:10:14.081367728+08:00"
+    created: "2023-03-01T12:20:37.632241595+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4604,7 +4628,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20220402"
-    created: "2023-03-01T12:10:14.063621073+08:00"
+    created: "2023-03-01T12:20:37.62073594+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4641,7 +4665,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20220402"
-    created: "2023-03-01T12:10:14.053702738+08:00"
+    created: "2023-03-01T12:20:37.607961079+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4678,7 +4702,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20220402"
-    created: "2023-03-01T12:10:14.037546542+08:00"
+    created: "2023-03-01T12:20:37.596270217+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4715,7 +4739,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20220402"
-    created: "2023-03-01T12:10:14.022359835+08:00"
+    created: "2023-03-01T12:20:37.582783162+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4752,7 +4776,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20220402"
-    created: "2023-03-01T12:10:14.009142314+08:00"
+    created: "2023-03-01T12:20:37.56869063+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4789,7 +4813,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20211011"
-    created: "2023-03-01T12:10:13.995701395+08:00"
+    created: "2023-03-01T12:20:37.556621895+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4826,7 +4850,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20211011"
-    created: "2023-03-01T12:10:13.982866777+08:00"
+    created: "2023-03-01T12:20:37.545212853+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4863,7 +4887,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20211011"
-    created: "2023-03-01T12:10:13.971064337+08:00"
+    created: "2023-03-01T12:20:37.535349193+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4900,7 +4924,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20211011"
-    created: "2023-03-01T12:10:13.959592088+08:00"
+    created: "2023-03-01T12:20:37.523320105+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4937,7 +4961,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20211011"
-    created: "2023-03-01T12:10:13.948113727+08:00"
+    created: "2023-03-01T12:20:37.511451612+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -4974,7 +4998,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210922"
-    created: "2023-03-01T12:10:13.936925772+08:00"
+    created: "2023-03-01T12:20:37.500292091+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -5011,7 +5035,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210922"
-    created: "2023-03-01T12:10:13.923957641+08:00"
+    created: "2023-03-01T12:20:37.490871806+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -5048,7 +5072,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210922"
-    created: "2023-03-01T12:10:13.911383986+08:00"
+    created: "2023-03-01T12:20:37.479284058+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -5085,7 +5109,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210922"
-    created: "2023-03-01T12:10:13.900080099+08:00"
+    created: "2023-03-01T12:20:37.468360116+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -5118,7 +5142,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2023-03-01T12:10:13.89394493+08:00"
+    created: "2023-03-01T12:20:37.463244191+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -5151,7 +5175,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2023-03-01T12:10:13.885038824+08:00"
+    created: "2023-03-01T12:20:37.45608605+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -5184,7 +5208,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2023-03-01T12:10:13.878886737+08:00"
+    created: "2023-03-01T12:20:37.449655568+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -5217,7 +5241,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2023-03-01T12:10:13.873440916+08:00"
+    created: "2023-03-01T12:20:37.444431324+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -5250,7 +5274,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2023-03-01T12:10:13.866589746+08:00"
+    created: "2023-03-01T12:20:37.437659754+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -5283,7 +5307,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2023-03-01T12:10:13.860483925+08:00"
+    created: "2023-03-01T12:20:37.432113294+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -5316,7 +5340,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2023-03-01T12:10:13.853179862+08:00"
+    created: "2023-03-01T12:20:37.426531551+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -5349,7 +5373,7 @@ entries:
       category: CRM
     apiVersion: v2
     appVersion: "20210819"
-    created: "2023-03-01T12:10:13.848004704+08:00"
+    created: "2023-03-01T12:20:37.420010463+08:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -5383,7 +5407,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: "13.3"
-    created: "2023-03-01T12:10:14.2773494+08:00"
+    created: "2023-03-01T12:20:37.839760619+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5414,7 +5438,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: "13.3"
-    created: "2023-03-01T12:10:14.272587776+08:00"
+    created: "2023-03-01T12:20:37.836600177+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5445,7 +5469,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 13.3.0
-    created: "2023-03-01T12:10:14.269089532+08:00"
+    created: "2023-03-01T12:20:37.833084432+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5476,7 +5500,7 @@ entries:
       category: Database
     apiVersion: v2
     appVersion: 13.3.0
-    created: "2023-03-01T12:10:14.265265303+08:00"
+    created: "2023-03-01T12:20:37.828757125+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5508,7 +5532,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.287283178+08:00"
+    created: "2023-03-01T12:20:37.848159099+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5537,7 +5561,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.284734244+08:00"
+    created: "2023-03-01T12:20:37.846383385+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5566,7 +5590,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.282402901+08:00"
+    created: "2023-03-01T12:20:37.844566487+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5595,7 +5619,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.280306998+08:00"
+    created: "2023-03-01T12:20:37.842638738+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5625,7 +5649,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.314844354+08:00"
+    created: "2023-03-01T12:20:37.870826432+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5654,7 +5678,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.312492864+08:00"
+    created: "2023-03-01T12:20:37.868634406+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5683,7 +5707,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220307
-    created: "2023-03-01T12:10:14.310360996+08:00"
+    created: "2023-03-01T12:20:37.866748666+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5712,7 +5736,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220307
-    created: "2023-03-01T12:10:14.308244502+08:00"
+    created: "2023-03-01T12:20:37.863785234+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5741,7 +5765,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220307
-    created: "2023-03-01T12:10:14.305855725+08:00"
+    created: "2023-03-01T12:20:37.861876434+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5770,7 +5794,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.302238412+08:00"
+    created: "2023-03-01T12:20:37.859604619+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5799,7 +5823,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.300276124+08:00"
+    created: "2023-03-01T12:20:37.857911693+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5828,7 +5852,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.297463493+08:00"
+    created: "2023-03-01T12:20:37.856142907+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5857,7 +5881,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.294938848+08:00"
+    created: "2023-03-01T12:20:37.854450687+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5886,7 +5910,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.29277906+08:00"
+    created: "2023-03-01T12:20:37.851495933+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5915,7 +5939,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.28953775+08:00"
+    created: "2023-03-01T12:20:37.849789435+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5945,7 +5969,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.359060907+08:00"
+    created: "2023-03-01T12:20:37.905342078+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -5974,7 +5998,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.355910034+08:00"
+    created: "2023-03-01T12:20:37.901790651+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6003,7 +6027,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.351824429+08:00"
+    created: "2023-03-01T12:20:37.899855193+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6032,7 +6056,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.349653427+08:00"
+    created: "2023-03-01T12:20:37.897986122+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6061,7 +6085,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.347319427+08:00"
+    created: "2023-03-01T12:20:37.896304765+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6090,7 +6114,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.344798572+08:00"
+    created: "2023-03-01T12:20:37.893852287+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6119,7 +6143,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.342578319+08:00"
+    created: "2023-03-01T12:20:37.892166466+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6148,7 +6172,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.340164246+08:00"
+    created: "2023-03-01T12:20:37.889330276+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6177,7 +6201,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.338088131+08:00"
+    created: "2023-03-01T12:20:37.887075596+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6206,7 +6230,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.334139607+08:00"
+    created: "2023-03-01T12:20:37.885068444+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6235,7 +6259,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.33155165+08:00"
+    created: "2023-03-01T12:20:37.883367404+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6264,7 +6288,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.329421947+08:00"
+    created: "2023-03-01T12:20:37.881544214+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6293,7 +6317,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.326635506+08:00"
+    created: "2023-03-01T12:20:37.879787331+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6322,7 +6346,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.323828322+08:00"
+    created: "2023-03-01T12:20:37.876597635+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6351,7 +6375,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.319577705+08:00"
+    created: "2023-03-01T12:20:37.874821397+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6380,7 +6404,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.317153485+08:00"
+    created: "2023-03-01T12:20:37.872770154+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6410,7 +6434,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.369032879+08:00"
+    created: "2023-03-01T12:20:37.91386554+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6439,7 +6463,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.366602505+08:00"
+    created: "2023-03-01T12:20:37.911997717+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6468,7 +6492,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.364273537+08:00"
+    created: "2023-03-01T12:20:37.909550469+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6497,7 +6521,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.361846469+08:00"
+    created: "2023-03-01T12:20:37.907660991+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6527,7 +6551,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.381625279+08:00"
+    created: "2023-03-01T12:20:37.926794424+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6556,7 +6580,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.379428509+08:00"
+    created: "2023-03-01T12:20:37.924974009+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6585,7 +6609,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.377591393+08:00"
+    created: "2023-03-01T12:20:37.923099953+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6614,7 +6638,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.37581098+08:00"
+    created: "2023-03-01T12:20:37.921304682+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6643,7 +6667,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.372884396+08:00"
+    created: "2023-03-01T12:20:37.918920514+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6672,7 +6696,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.370934813+08:00"
+    created: "2023-03-01T12:20:37.915588669+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6702,7 +6726,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.414399042+08:00"
+    created: "2023-03-01T12:20:37.953028593+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6731,7 +6755,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.411522374+08:00"
+    created: "2023-03-01T12:20:37.950689399+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6760,7 +6784,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.40869786+08:00"
+    created: "2023-03-01T12:20:37.948835211+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6789,7 +6813,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.405866117+08:00"
+    created: "2023-03-01T12:20:37.946929339+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6818,7 +6842,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.402237839+08:00"
+    created: "2023-03-01T12:20:37.94510434+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6847,7 +6871,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.399950611+08:00"
+    created: "2023-03-01T12:20:37.941800071+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6876,7 +6900,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.397619205+08:00"
+    created: "2023-03-01T12:20:37.939588309+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6905,7 +6929,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.395373783+08:00"
+    created: "2023-03-01T12:20:37.93773055+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6934,7 +6958,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.393494779+08:00"
+    created: "2023-03-01T12:20:37.935368944+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6963,7 +6987,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.388489714+08:00"
+    created: "2023-03-01T12:20:37.933440393+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -6992,7 +7016,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.385377296+08:00"
+    created: "2023-03-01T12:20:37.930874105+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7021,7 +7045,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.383407134+08:00"
+    created: "2023-03-01T12:20:37.928825047+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7051,7 +7075,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.430064333+08:00"
+    created: "2023-03-01T12:20:37.965335137+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7080,7 +7104,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.427183392+08:00"
+    created: "2023-03-01T12:20:37.963505103+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7109,7 +7133,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.424918707+08:00"
+    created: "2023-03-01T12:20:37.961642822+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7138,7 +7162,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.422664033+08:00"
+    created: "2023-03-01T12:20:37.959450229+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7167,7 +7191,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.419105722+08:00"
+    created: "2023-03-01T12:20:37.957778348+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7196,7 +7220,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.416806237+08:00"
+    created: "2023-03-01T12:20:37.954923735+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7226,7 +7250,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.444669763+08:00"
+    created: "2023-03-01T12:20:37.977689145+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7255,7 +7279,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.442226174+08:00"
+    created: "2023-03-01T12:20:37.975782002+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7284,7 +7308,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.439709396+08:00"
+    created: "2023-03-01T12:20:37.973983904+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7313,7 +7337,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.437523915+08:00"
+    created: "2023-03-01T12:20:37.97230336+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7342,7 +7366,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.434340599+08:00"
+    created: "2023-03-01T12:20:37.970497274+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7371,7 +7395,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.432273351+08:00"
+    created: "2023-03-01T12:20:37.967022495+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7401,7 +7425,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.456929528+08:00"
+    created: "2023-03-01T12:20:37.986286546+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7430,7 +7454,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.454255258+08:00"
+    created: "2023-03-01T12:20:37.98421129+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7459,7 +7483,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.450327983+08:00"
+    created: "2023-03-01T12:20:37.981317304+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7488,7 +7512,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.447376296+08:00"
+    created: "2023-03-01T12:20:37.979500161+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7518,7 +7542,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.464808938+08:00"
+    created: "2023-03-01T12:20:37.991512683+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7547,7 +7571,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.462077416+08:00"
+    created: "2023-03-01T12:20:37.989794833+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7576,7 +7600,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.459382486+08:00"
+    created: "2023-03-01T12:20:37.988088196+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7606,7 +7630,7 @@ entries:
       category: SpringBoot
     apiVersion: v1
     appVersion: "20230109"
-    created: "2023-03-01T12:10:14.491224609+08:00"
+    created: "2023-03-01T12:20:38.015850498+08:00"
     description: Springboot developer
     digest: bd8d876b14a86f8577b9f4e7520e1cd4176d61e9b05e389460077836171254d7
     home: https://www.incosten.com/
@@ -7631,7 +7655,7 @@ entries:
       category: SpringBoot
     apiVersion: v1
     appVersion: "20230109"
-    created: "2023-03-01T12:10:14.478412828+08:00"
+    created: "2023-03-01T12:20:38.003883303+08:00"
     description: Springboot developer
     digest: 1ae56e759ed3fe1e234a84c3d2709fefafa2d022cc55479ced067140169623ca
     home: https://www.incosten.com/
@@ -7657,7 +7681,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.519639229+08:00"
+    created: "2023-03-01T12:20:38.035714152+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7686,7 +7710,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.517542061+08:00"
+    created: "2023-03-01T12:20:38.033458151+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7715,7 +7739,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.512895249+08:00"
+    created: "2023-03-01T12:20:38.0314234+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7744,7 +7768,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.510349449+08:00"
+    created: "2023-03-01T12:20:38.029615082+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7773,7 +7797,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.50828478+08:00"
+    created: "2023-03-01T12:20:38.027768902+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7802,7 +7826,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.506059947+08:00"
+    created: "2023-03-01T12:20:38.025820646+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7831,7 +7855,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.503605203+08:00"
+    created: "2023-03-01T12:20:38.024100116+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7860,7 +7884,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.500594959+08:00"
+    created: "2023-03-01T12:20:38.021293821+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7889,7 +7913,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.496979923+08:00"
+    created: "2023-03-01T12:20:38.019373495+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7918,7 +7942,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.49413767+08:00"
+    created: "2023-03-01T12:20:38.017509172+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7948,7 +7972,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.536700651+08:00"
+    created: "2023-03-01T12:20:38.052449167+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -7977,7 +8001,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:14.534429471+08:00"
+    created: "2023-03-01T12:20:38.050321064+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8006,7 +8030,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.532479374+08:00"
+    created: "2023-03-01T12:20:38.047993894+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8035,7 +8059,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.53041493+08:00"
+    created: "2023-03-01T12:20:38.045101554+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8064,7 +8088,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.52723286+08:00"
+    created: "2023-03-01T12:20:38.043004308+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8093,7 +8117,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.525293864+08:00"
+    created: "2023-03-01T12:20:38.041277062+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8122,7 +8146,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.523679466+08:00"
+    created: "2023-03-01T12:20:38.039704049+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8151,7 +8175,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:14.521547335+08:00"
+    created: "2023-03-01T12:20:38.038098832+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8181,7 +8205,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220430
-    created: "2023-03-01T12:10:16.322397222+08:00"
+    created: "2023-03-01T12:20:40.017114194+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8290,7 +8314,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:16.282219816+08:00"
+    created: "2023-03-01T12:20:39.967952447+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8399,7 +8423,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:16.243508017+08:00"
+    created: "2023-03-01T12:20:39.917979463+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8508,7 +8532,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:16.179923555+08:00"
+    created: "2023-03-01T12:20:39.866402015+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8617,7 +8641,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:16.128766472+08:00"
+    created: "2023-03-01T12:20:39.814453435+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8726,7 +8750,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:16.085341789+08:00"
+    created: "2023-03-01T12:20:39.743152671+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8835,7 +8859,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:16.048310373+08:00"
+    created: "2023-03-01T12:20:39.691581803+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -8944,7 +8968,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:16.004829785+08:00"
+    created: "2023-03-01T12:20:39.639478198+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -9057,7 +9081,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.957000677+08:00"
+    created: "2023-03-01T12:20:39.586658313+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -9166,7 +9190,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.906390434+08:00"
+    created: "2023-03-01T12:20:39.532090049+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -9259,7 +9283,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.868745921+08:00"
+    created: "2023-03-01T12:20:39.488235535+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -9316,7 +9340,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.853296596+08:00"
+    created: "2023-03-01T12:20:39.46821577+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -9409,7 +9433,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.818896358+08:00"
+    created: "2023-03-01T12:20:39.424204315+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -9502,7 +9526,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.779156882+08:00"
+    created: "2023-03-01T12:20:39.381992026+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -9595,7 +9619,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.739365339+08:00"
+    created: "2023-03-01T12:20:39.342522439+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -9688,7 +9712,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.700390865+08:00"
+    created: "2023-03-01T12:20:39.301660889+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -9781,7 +9805,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.660107335+08:00"
+    created: "2023-03-01T12:20:39.26267533+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -9874,7 +9898,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.620728918+08:00"
+    created: "2023-03-01T12:20:39.223777655+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -9963,7 +9987,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.58830337+08:00"
+    created: "2023-03-01T12:20:39.18208268+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -10052,7 +10076,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.553340867+08:00"
+    created: "2023-03-01T12:20:39.143245816+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -10141,7 +10165,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:15.517349031+08:00"
+    created: "2023-03-01T12:20:39.104442557+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -10230,7 +10254,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.480521525+08:00"
+    created: "2023-03-01T12:20:39.064003979+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -10319,7 +10343,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.448921237+08:00"
+    created: "2023-03-01T12:20:39.025827708+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -10408,7 +10432,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.41334115+08:00"
+    created: "2023-03-01T12:20:38.987899419+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -10497,7 +10521,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.361424691+08:00"
+    created: "2023-03-01T12:20:38.952090339+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -10582,7 +10606,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.329125511+08:00"
+    created: "2023-03-01T12:20:38.916895105+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -10667,7 +10691,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.289347929+08:00"
+    created: "2023-03-01T12:20:38.864083349+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -10752,7 +10776,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.257257765+08:00"
+    created: "2023-03-01T12:20:38.825673516+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -10837,7 +10861,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.211737461+08:00"
+    created: "2023-03-01T12:20:38.77951227+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -10918,7 +10942,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.182806625+08:00"
+    created: "2023-03-01T12:20:38.743574292+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -10999,7 +11023,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.153662147+08:00"
+    created: "2023-03-01T12:20:38.705802648+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11080,7 +11104,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.127717648+08:00"
+    created: "2023-03-01T12:20:38.667721167+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11157,7 +11181,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.103495296+08:00"
+    created: "2023-03-01T12:20:38.635044279+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11234,7 +11258,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.079514063+08:00"
+    created: "2023-03-01T12:20:38.603727998+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11311,7 +11335,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220211
-    created: "2023-03-01T12:10:15.031700976+08:00"
+    created: "2023-03-01T12:20:38.566329745+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11388,7 +11412,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:15.006864348+08:00"
+    created: "2023-03-01T12:20:38.533655115+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11465,7 +11489,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.98231073+08:00"
+    created: "2023-03-01T12:20:38.503808477+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11542,7 +11566,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.948843366+08:00"
+    created: "2023-03-01T12:20:38.471873659+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11619,7 +11643,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.907306468+08:00"
+    created: "2023-03-01T12:20:38.44089937+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11696,7 +11720,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.880603337+08:00"
+    created: "2023-03-01T12:20:38.404261306+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11773,7 +11797,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.852792427+08:00"
+    created: "2023-03-01T12:20:38.373806743+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11846,7 +11870,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.817555678+08:00"
+    created: "2023-03-01T12:20:38.345401122+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11919,7 +11943,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.792979145+08:00"
+    created: "2023-03-01T12:20:38.317397751+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -11988,7 +12012,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.771451662+08:00"
+    created: "2023-03-01T12:20:38.292419646+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12037,7 +12061,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.756794732+08:00"
+    created: "2023-03-01T12:20:38.275778113+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12086,7 +12110,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.742924079+08:00"
+    created: "2023-03-01T12:20:38.258922518+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12131,7 +12155,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.730163364+08:00"
+    created: "2023-03-01T12:20:38.245126363+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12176,7 +12200,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.717428274+08:00"
+    created: "2023-03-01T12:20:38.232348713+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12221,7 +12245,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.695753705+08:00"
+    created: "2023-03-01T12:20:38.213377183+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12266,7 +12290,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.663514085+08:00"
+    created: "2023-03-01T12:20:38.196814929+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12311,7 +12335,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.646975122+08:00"
+    created: "2023-03-01T12:20:38.178063233+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12356,7 +12380,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.631123672+08:00"
+    created: "2023-03-01T12:20:38.158429161+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12401,7 +12425,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.619683787+08:00"
+    created: "2023-03-01T12:20:38.138195518+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12446,7 +12470,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.607423131+08:00"
+    created: "2023-03-01T12:20:38.121887908+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12491,7 +12515,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.59526853+08:00"
+    created: "2023-03-01T12:20:38.106176636+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12536,7 +12560,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.581046529+08:00"
+    created: "2023-03-01T12:20:38.091365852+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12577,7 +12601,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.569657912+08:00"
+    created: "2023-03-01T12:20:38.079780528+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12618,7 +12642,7 @@ entries:
       category: BFP
     apiVersion: v2
     appVersion: 2.0.20220114
-    created: "2023-03-01T12:10:14.551429984+08:00"
+    created: "2023-03-01T12:20:38.066485939+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12660,7 +12684,7 @@ entries:
       category: BFP CAS
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:16.383401409+08:00"
+    created: "2023-03-01T12:20:40.080107585+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12693,7 +12717,7 @@ entries:
       category: BFP CAS
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:16.377726183+08:00"
+    created: "2023-03-01T12:20:40.075124451+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12750,7 +12774,7 @@ entries:
       category: BFP CAS
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:16.357701014+08:00"
+    created: "2023-03-01T12:20:40.054351601+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12807,7 +12831,7 @@ entries:
       category: BFP CAS
     apiVersion: v2
     appVersion: 2.0.20220308
-    created: "2023-03-01T12:10:16.341710743+08:00"
+    created: "2023-03-01T12:20:40.035981081+08:00"
     dependencies:
     - name: common
       repository: https://ferren.github.io/inair-helm-charts/
@@ -12860,4 +12884,4 @@ entries:
     urls:
     - https://ferren.github.io/inair-helm-charts/packages/yzbfp-cas-0.4.9.tgz
     version: 0.4.9
-generated: "2023-03-01T12:10:12.914165943+08:00"
+generated: "2023-03-01T12:20:36.459029538+08:00"

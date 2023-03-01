@@ -483,7 +483,8 @@ persistence:
   accessMode: ReadWriteMany
   ## @param persistence.size Persistent Volume size
   ##
-  size: 5Gi
+  size: 2Gi
+  uploadFileSize: 5Gi
   ## @param persistence.dataSource Custom PVC data source
   ##
   dataSource: {}
