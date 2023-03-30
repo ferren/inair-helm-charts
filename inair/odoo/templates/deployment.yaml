@@ -229,6 +229,9 @@ spec:
             httpGet:
               path: {{ .Values.livenessProbe.path }}
               port: http
+              httpHeaders:
+                - name: X-Disable-Tracking
+                  value: 1
           {{- end }}
           {{- if .Values.customReadinessProbe }}
           readinessProbe: {{- include "common.tplvalues.render" (dict "value" .Values.customReadinessProbe "context" $) | nindent 12 }}
@@ -237,6 +240,9 @@ spec:
             httpGet:
               path: {{ .Values.readinessProbe.path }}
               port: http
+              httpHeaders:
+                - name: X-Disable-Tracking
+                  value: 1
           {{- end }}
           {{- if .Values.customStartupProbe }}
           startupProbe: {{- include "common.tplvalues.render" (dict "value" .Values.customStartupProbe "context" $) | nindent 12 }}
@@ -245,6 +251,9 @@ spec:
             httpGet:
               path: {{ .Values.startupProbe.path }}
               port: http
+              httpHeaders:
+                - name: X-Disable-Tracking
+                  value: 1
           {{- end }}
           {{- end }}
           {{- if .Values.resources }}
