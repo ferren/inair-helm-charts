@@ -93,7 +93,8 @@ args: [
   "--spring.redis.host=$(REDIS_HOST)",
   "--spring.redis.password=$(REDIS_PASSWORD)",
   "--external-api.xdf=http://yzbfp-handtenpay/XDF",
-  "--server.port=9001"
+  "--server.port=9001",
+  "--fileTempDir=/tmp"
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
 ## e.g:
