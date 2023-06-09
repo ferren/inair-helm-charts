@@ -1,7 +1,7 @@
 annotations:
   category: HICT
 apiVersion: v1
-appVersion: 1.0.20230228
+appVersion: 1.0.20230609
 dependencies:
   - condition: redis.enabled
     name: redis
@@ -28,4 +28,4 @@ name: hict-gss
 sources:
   - https://onthesky.coding.net/p/hictchankoufuwuxitong/d/hict-deployment/git
   - http://www.lifewiz.cn/
-version: 1.0.2
+version: 1.0.3
