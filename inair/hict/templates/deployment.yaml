@@ -167,6 +167,20 @@ spec:
               value: {{ .Values.ldap.managerDn }}
             - name: LDAP_MANAGER_PWD
               value: {{ .Values.ldap.managerPwd }}
+            - name: WX_WEAPP_APPID
+              value: {{ .Values.weixin.weappAppid }}
+            - name: WX_WEAPP_SECRET
+              value: {{ .Values.weixin.weappSecret }}
+            - name: TENCENT_CLOUND_SECRET_ID
+              value: {{ .Values.tencentclound.secretId }}
+            - name: TENCENT_CLOUND_SECRET_KEY
+              value: {{ .Values.tencentclound.secretKey }}
+            - name: TENCENT_CLOUND_SMS_APPID
+              value: {{ .Values.tencentclound.smsAppId }}
+            - name: TENCENT_CLOUND_SMS_SIGN_NAME
+              value: {{ .Values.tencentclound.smsSignName }}
+            - name: TENCENT_CLOUND_SMS_TEMPLATEID
+              value: {{ .Values.tencentclound.smsTemplateId }}
           ports:
             - name: http
               containerPort: {{ coalesce .Values.containerPorts.http .Values.containerPort }}

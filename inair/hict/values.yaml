@@ -115,6 +115,13 @@ args: [
   "--app.security.ldap.userSearchBase=$(LDAP_USER_SEARCH_BASE)",
   "--app.security.ldap.managerDn=$(LDAP_MANAGER_DN)",
   "--app.security.ldap.managerPassword=$(LDAP_MANAGER_PWD)",
+  "--weixin.weapp.appid=$(WX_WEAPP_APPID)",
+  "--weixin.weapp.secret=$(WX_WEAPP_SECRET)",
+  "--tencentclound.secretId=$(TENCENT_CLOUND_SECRET_ID)",
+  "--tencentclound.secretKey=$(TENCENT_CLOUND_SECRET_KEY)",
+  "--tencentclound.sms.appId=$(TENCENT_CLOUND_SMS_APPID)",
+  "--tencentclound.sms.signName=$(TENCENT_CLOUND_SMS_SIGN_NAME)",
+  "--tencentclound.sms.templateId=$(TENCENT_CLOUND_SMS_TEMPLATEID)",
   "--xcode.emd.path=classpath:/emd/",
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
@@ -165,12 +172,23 @@ ngen:
   wsTcmsUri: http://127.0.0.1:8005/ngen/dummy_ws
 
 ldap:
-  url: ldap://
-  userSearchFilter: (sAMAccountName={0})
-  userDnPatterns: CN={0},OU=Users,OU=NGEN,DC=ngen,DC=local
-  userSearchBase: OU=Users,OU=NGEN,DC=ngen,DC=local
-  managerDn: CN=Administrator,CN=Users,DC=ngen,DC=local
-  managerPwd: 1234
+  url: "ldap://"
+  userSearchFilter: "sAMAccountName={0}"
+  userDnPatterns: "sAMAccountName={0}"
+  userSearchBase: "ou=EMAIL_USER,ou=HICT_User,dc=hictu,dc=do"
+  managerDn: "cn=gssusr,ou=IT,dc=hictu,dc=do"
+  managerPwd: "abcd"
+
+weixin:
+  weappAppid: "wx05da8ea49dcf7554"
+  weappSecret: "a6ae8e5beb0dd7c05f736c8c4bf8f82c"
+
+tencentclound:
+  secretId: "abcd"
+  secretKey: "abcd"
+  smsAppId: "abcd"
+  smsSignName: "abcd"
+  smsTemplateId: "abcd"
 
 updateStrategy:
   type: RollingUpdate
