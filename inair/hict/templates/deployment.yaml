@@ -176,11 +176,13 @@ spec:
             - name: TENCENT_CLOUND_SECRET_KEY
               value: {{ .Values.tencentclound.secretKey }}
             - name: TENCENT_CLOUND_SMS_APPID
-              value: {{ .Values.tencentclound.smsAppId }}
+              value: {{ .Values.tencentclound.smsAppId | quote }}
             - name: TENCENT_CLOUND_SMS_SIGN_NAME
               value: {{ .Values.tencentclound.smsSignName }}
             - name: TENCENT_CLOUND_SMS_TEMPLATEID
-              value: {{ .Values.tencentclound.smsTemplateId }}
+              value: {{ .Values.tencentclound.smsTemplateId | quote }}
+            - name: GSS_IGATE_HOST
+              value: {{ .Values.igate.host }}
           ports:
             - name: http
               containerPort: {{ coalesce .Values.containerPorts.http .Values.containerPort }}

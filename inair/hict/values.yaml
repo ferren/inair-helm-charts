@@ -123,6 +123,7 @@ args: [
   "--tencentclound.sms.signName=$(TENCENT_CLOUND_SMS_SIGN_NAME)",
   "--tencentclound.sms.templateId=$(TENCENT_CLOUND_SMS_TEMPLATEID)",
   "--xcode.emd.path=classpath:/emd/",
+  "--gss.igate.host=$(GSS_IGATE_HOST)",
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
 ## e.g:
@@ -189,6 +190,9 @@ tencentclound:
   smsAppId: "abcd"
   smsSignName: "abcd"
   smsTemplateId: "abcd"
+
+igate:
+  host: "http://hict-igate-prod.hict-igate-uat"
 
 updateStrategy:
   type: RollingUpdate
