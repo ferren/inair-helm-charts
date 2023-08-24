@@ -1,7 +1,7 @@
 apiVersion: {{ template "common.capabilities.deployment.apiVersion" . }}
 kind: Deployment
 metadata:
-  name: {{ template "yzbfp.fullname" . }}
+  name: {{ template "common.names.fullname" . }}
   namespace: {{ .Release.Namespace | quote }}
   labels: {{- include "common.labels.standard" . | nindent 4 }}
     {{- if .Values.commonLabels }}
@@ -90,7 +90,7 @@ spec:
               mountPath: /app
         {{- end }}
       containers:
-        - name: {{ template "yzbfp.fullname" . }}
+        - name: {{ template "common.names.fullname" . }}
           {{- if .Values.containerSecurityContext.enabled }}
           securityContext:
             runAsUser: {{ .Values.containerSecurityContext.runAsUser }}
@@ -178,7 +178,7 @@ spec:
         - name: pudao-gateway-data
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ .Values.persistence.existingClaim | default (include "yzbfp.fullname" .) }}
+            claimName: {{ .Values.persistence.existingClaim | default (include "common.names.fullname" .) }}
           {{- else }}
           emptyDir: {}
           {{- end }}
