@@ -1,7 +1,7 @@
 annotations:
   category: CRM
 apiVersion: v2
-appVersion: 16.0.20231023
+appVersion: 16.0.20231024
 dependencies:
   - condition: postgresql.enabled
     name: postgresql
@@ -33,4 +33,4 @@ name: odoo
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 2.2.6
+version: 2.2.7
