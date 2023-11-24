@@ -1,66 +1,66 @@
 dependencies:
 - name: common
-  repository: https://ferren.github.io/inair-helm-charts/
-  version: 1.8.0
+  repository: https://charts.bitnami.com/bitnami
+  version: 2.13.3
 - name: nacos
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.1.5
 - name: redis
   repository: https://charts.bitnami.com/bitnami
-  version: 17.16.0
+  version: 18.4.0
 - name: mongodb
   repository: https://charts.bitnami.com/bitnami
-  version: 13.17.0
+  version: 13.18.5
 - name: nginx
   repository: https://charts.bitnami.com/bitnami
-  version: 15.2.0
+  version: 15.4.3
 - name: service-base
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
+  version: 0.4.0
 - name: service-apimanage
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
+  version: 0.4.0
 - name: service-customer
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.4.2
+  version: 0.4.3
 - name: service-repay
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
+  version: 0.4.0
 - name: service-risk
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
+  version: 0.4.0
 - name: risk-bairong
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
+  version: 0.4.0
 - name: service-channel
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.4.0
+  version: 0.4.1
 - name: web-admin
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.4.0
+  version: 0.4.1
 - name: web-open
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
+  version: 0.4.0
 - name: gentleman-sign
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.3.9
+  version: 0.4.0
 - name: handtenpay
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.4.8
+  version: 0.4.9
 - name: app-trade
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.4.0
+  version: 0.4.1
 - name: service-system
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.4.3
+  version: 0.4.4
 - name: service-bfp
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.4.3
+  version: 0.4.4
 - name: service-worker
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.4.3
+  version: 0.4.4
 - name: cas-web
   repository: https://ferren.github.io/inair-helm-charts/
-  version: 0.4.3
-digest: sha256:3bce1b2de1d131eab7ffc3799c8b7baf6c9c92287cb16a3fb6b5aa8b8e6971d2
-generated: "2023-08-24T13:55:18.148592766+08:00"
+  version: 0.4.4
+digest: sha256:33932a99ca67b7338406507b2766a9c4cdcd6196452c7bdca82f5a9296a70772
+generated: "2023-11-24T10:30:23.155007372+08:00"

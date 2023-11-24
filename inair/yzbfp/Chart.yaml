@@ -4,8 +4,10 @@ apiVersion: v2
 appVersion: 2.0.2023082203
 dependencies:
   - name: common
-    repository: https://ferren.github.io/inair-helm-charts/
-    version: 1.x.x
+    repository: https://charts.bitnami.com/bitnami
+    tags:
+      - bitnami-common
+    version: 2.x.x
   - condition: nacos.enabled
     name: nacos
     repository: https://ferren.github.io/inair-helm-charts/
@@ -13,7 +15,7 @@ dependencies:
   - condition: redis.enabled
     name: redis
     repository: https://charts.bitnami.com/bitnami
-    version: 17.x.x
+    version: 18.x.x
   - condition: mongodb.enabled
     name: mongodb
     repository: https://charts.bitnami.com/bitnami
@@ -103,4 +105,4 @@ name: yzbfp
 sources:
   - https://codeup.aliyun.com/61bd3e98fa282c88e103b306/java/bfp-admin2.0-dev
   - https://www.incosten.com/
-version: 0.6.0
+version: 0.6.1
