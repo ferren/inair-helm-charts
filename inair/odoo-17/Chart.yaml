@@ -6,14 +6,14 @@ appVersion: 17.0.20231213
 dependencies:
   - condition: postgresql.enabled
     name: postgresql
-    repository: oci://registry-1.docker.io/bitnamicharts
+    repository: https://charts.bitnami.com/bitnami
     version: 13.x.x
   - condition: redis.enabled
     name: redis
     repository: https://charts.bitnami.com/bitnami
     version: 18.x.x
   - name: common
-    repository: oci://registry-1.docker.io/bitnamicharts
+    repository: https://charts.bitnami.com/bitnami
     tags:
       - bitnami-common
     version: 2.x.x
@@ -30,7 +30,7 @@ keywords:
 maintainers:
   - email: ferrenliu@163.com
     name: FerrenLiu
-name: odoo
+name: odoo-17
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
