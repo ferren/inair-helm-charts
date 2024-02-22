@@ -503,6 +503,21 @@ ingress:
   ##
   secrets: []
 
+  igate:
+    enabled: false
+    certManager: false
+    selfSigned: false
+    pathType: ImplementationSpecific
+    apiVersion: ""
+    hostname: hict.local
+    path: /
+    annotations: {}
+    tls: false
+    extraHosts: []
+    extraPaths: []
+    extraTls: []
+    secrets: []
+
 ## @section Persistence Parameters
 
 ## Persistence Parameters
