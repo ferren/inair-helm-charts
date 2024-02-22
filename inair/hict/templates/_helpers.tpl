@@ -12,6 +12,33 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 */}}
+{{- define "hict.fullname.igate" -}}
+{{- printf "%s-igate" (include "common.names.fullname" .) -}}
+{{- end -}}
+
+{{/* vim: set filetype=mustache: */}}
+{{/*
+Kubernetes standard labels
+*/}}
+{{- define "hict.labels.standard.igate" -}}
+app.kubernetes.io/name: {{ include "hict.fullname.igate" . }}
+helm.sh/chart: {{ include "common.names.chart" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end -}}
+
+{{/*
+Labels to use on deploy.spec.selector.matchLabels and svc.spec.selector
+*/}}
+{{- define "hict.labels.matchLabels.igate" -}}
+app.kubernetes.io/name: {{ include "hict.fullname.igate" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end -}}
+
+{{/*
+Create a default fully qualified app name.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+*/}}
 {{- define "hict.redis.fullname" -}}
 {{- include "common.names.dependency.fullname" (dict "chartName" "redis" "chartValues" .Values.redis "context" $) -}}
 {{- end -}}
