@@ -137,6 +137,8 @@ spec:
                 secretKeyRef:
                   name: {{ include "hict.redisSecretName" . }}
                   key: {{ include "hict.redisSecretPasswordKey" . }}
+            - name: REDIS_DB
+              value: {{ .Values.redis.db | quote }}
             - name: ROOT_FILE_PATH
               value: {{ .Values.filePath.root }}
             - name: S_FILE_PATH

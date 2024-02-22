@@ -658,3 +658,5 @@ redis:
     ## @param auth.usePasswordFiles Mount credentials as files instead of using an environment variable
     ##
     usePasswordFiles: false
+  db: 1
+  igatedb: 2
