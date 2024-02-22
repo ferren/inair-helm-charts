@@ -68,7 +68,7 @@ spec:
         - name: jar-retrieve
           image: registry.cn-shenzhen.aliyuncs.com/inair/utils:scp-shell-20230228
           imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
-          command: {{- include "common.tplvalues.render" (dict "value" .Values.retrieveJarCommand "context" $) | nindent 12 }}
+          command: {{- include "common.tplvalues.render" (dict "value" .Values.retrieveJarIGateCommand "context" $) | nindent 12 }}
           securityContext:
             runAsUser: 0
           volumeMounts:

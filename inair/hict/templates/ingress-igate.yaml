@@ -1,0 +1,60 @@
+{{- if .Values.ingress.igate.enabled }}
+apiVersion: {{ include "common.capabilities.ingress.apiVersion" . }}
+kind: Ingress
+metadata:
+  name: {{ template "hict.fullname.igate" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels: {{- include "hict.labels.standard.igate" . | nindent 4 }}
+    {{- if .Values.commonLabels }}
+    {{- include "common.tplvalues.render" ( dict "value" .Values.commonLabels "context" $ ) | nindent 4 }}
+    {{- end }}
+  annotations:
+    {{- if .Values.ingress.igate.annotations }}
+    {{- include "common.tplvalues.render" ( dict "value" .Values.ingress.igate.annotations "context" $) | nindent 4 }}
+    {{- end }}
+    {{- if .Values.commonAnnotations }}
+    {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
+    {{- end }}
+spec:
+  {{- if and .Values.ingress.igate.ingressClassName (eq "true" (include "common.ingress.supportsIngressClassname" .)) }}
+  ingressClassName: {{ .Values.ingress.igate.ingressClassName | quote }}
+  {{- end }}
+  rules:
+    {{- if .Values.ingress.igate.hostname }}
+    - host: {{ .Values.ingress.igate.hostname }}
+      http:
+        paths:
+          {{- if .Values.ingress.igate.extraPaths }}
+          {{- toYaml .Values.ingress.igate.extraPaths | nindent 10 }}
+          {{- end }}
+          - path: {{ .Values.ingress.igate.path }}
+            {{- if eq "true" (include "common.ingress.supportsPathType" .) }}
+            pathType: {{ .Values.ingress.igate.pathType }}
+            {{- end }}
+            backend: {{- include "common.ingress.backend" (dict "serviceName" (include "hict.fullname.igate" .) "servicePort" "http" "context" $)  | nindent 14 }}
+    {{- end }}
+    {{- range .Values.ingress.igate.extraHosts }}
+    - host: {{ .name | quote }}
+      http:
+        paths:
+          - path: {{ default "/" .path }}
+            {{- if eq "true" (include "common.ingress.supportsPathType" $) }}
+            pathType: {{ default "ImplementationSpecific" .pathType }}
+            {{- end }}
+            backend: {{- include "common.ingress.backend" (dict "serviceName" (include "hict.fullname.igate" $) "servicePort" "http" "context" $) | nindent 14 }}
+    {{- end }}
+    {{- if .Values.ingress.igate.extraRules }}
+    {{- include "common.tplvalues.render" (dict "value" .Values.ingress.igate.extraRules "context" $) | nindent 4 }}
+    {{- end }}
+  {{- if or (and .Values.ingress.igate.tls (or (include "common.ingress.certManagerRequest" ( dict "annotations" .Values.ingress.igate.annotations )) .Values.ingress.igate.selfSigned)) .Values.ingress.igate.extraTls }}
+  tls:
+    {{- if and .Values.ingress.igate.tls (or (include "common.ingress.certManagerRequest" ( dict "annotations" .Values.ingress.igate.annotations )) .Values.ingress.igate.selfSigned) }}
+    - hosts:
+        - {{ .Values.ingress.igate.hostname | quote }}
+      secretName: {{ printf "%s-tls" .Values.ingress.igate.hostname | trunc 63 | trimSuffix "-" }}
+    {{- end }}
+    {{- if .Values.ingress.igate.extraTls }}
+    {{- include "common.tplvalues.render" (dict "value" .Values.ingress.igate.extraTls "context" $) | nindent 4 }}
+    {{- end }}
+  {{- end }}
+{{- end }}
