@@ -623,6 +623,17 @@ externalDatabase:
   existingSecretPasswordKey: ""
   existingSecretPostgresPasswordKey: ""
 
+  additional:
+    host: ""
+    port: 15024
+    user: hictsa
+    password: ""
+    database: XEPDB1
+    create: true
+    existingSecret: ""
+    existingSecretPasswordKey: ""
+    existingSecretPostgresPasswordKey: ""
+
 ## Redis chart configuration
 ## ref: https://github.com/bitnami/charts/blob/master/bitnami/redis/values.yaml
 ##

@@ -65,10 +65,24 @@ Return the Oracle hostname
 {{- end -}}
 
 {{/*
+Return the Oracle hostname Additional
+*/}}
+{{- define "hict.databaseHostAdditional" -}}
+{{- ternary (include "hict.postgresql.fullname" .) .Values.externalDatabase.additional.host .Values.postgresql.enabled | quote -}}
+{{- end -}}
+
+{{/*
 Return the Postgresql port
 */}}
 {{- define "hict.databasePort" -}}
 {{- ternary "5432" .Values.externalDatabase.port .Values.postgresql.enabled | quote -}}
+{{- end -}}
+
+{{/*
+Return the DB port Additional
+*/}}
+{{- define "hict.databasePortAdditional" -}}
+{{- ternary "5432" .Values.externalDatabase.additional.port .Values.postgresql.enabled | quote -}}
 {{- end -}}
 
 {{/*
@@ -91,6 +105,25 @@ Return the Postgresql database name
 {{- end -}}
 
 {{/*
+Return the database name Additional
+*/}}
+{{- define "hict.databaseNameAdditional" -}}
+{{- if .Values.postgresql.enabled }}
+    {{- if .Values.global.postgresql }}
+        {{- if .Values.global.postgresql.auth }}
+            {{- coalesce .Values.global.postgresql.auth.database .Values.postgresql.auth.database -}}
+        {{- else -}}
+            {{- .Values.postgresql.auth.database -}}
+        {{- end -}}
+    {{- else -}}
+        {{- .Values.postgresql.auth.database -}}
+    {{- end -}}
+{{- else -}}
+    {{- .Values.externalDatabase.additional.database -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
 Return the Postgresql user
 */}}
 {{- define "hict.databaseUser" -}}
@@ -106,6 +139,25 @@ Return the Postgresql user
     {{- end -}}
 {{- else -}}
     {{- .Values.externalDatabase.user -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Return the database user Additional
+*/}}
+{{- define "hict.databaseUserAdditional" -}}
+{{- if .Values.postgresql.enabled }}
+    {{- if .Values.global.postgresql }}
+        {{- if .Values.global.postgresql.auth }}
+            {{- coalesce .Values.global.postgresql.auth.username .Values.postgresql.auth.username -}}
+        {{- else -}}
+            {{- .Values.postgresql.auth.username -}}
+        {{- end -}}
+    {{- else -}}
+        {{- .Values.postgresql.auth.username -}}
+    {{- end -}}
+{{- else -}}
+    {{- .Values.externalDatabase.additional.user -}}
 {{- end -}}
 {{- end -}}
 
@@ -147,6 +199,25 @@ Add environment variables to configure database values
         {{- end -}}
     {{- else -}}
         {{- print "password" -}}
+    {{- end -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Add environment variables to configure database values
+*/}}
+{{- define "hict.databaseSecretAdditionalPasswordKey" -}}
+{{- if .Values.postgresql.enabled -}}
+    {{- print "password" -}}
+{{- else -}}
+    {{- if .Values.externalDatabase.additional.existingSecret -}}
+        {{- if .Values.externalDatabase.additional.existingSecretPasswordKey -}}
+            {{- printf "%s" .Values.externalDatabase.additional.existingSecretPasswordKey -}}
+        {{- else -}}
+            {{- print "additional_password" -}}
+        {{- end -}}
+    {{- else -}}
+        {{- print "additional_password" -}}
     {{- end -}}
 {{- end -}}
 {{- end -}}

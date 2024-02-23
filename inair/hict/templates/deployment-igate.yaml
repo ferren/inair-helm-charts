@@ -130,6 +130,19 @@ spec:
                 secretKeyRef:
                   name: {{ include "hict.databaseSecretName" . }}
                   key: {{ include "hict.databaseSecretPasswordKey" . }}
+            - name: ORACLE_ANOTHER_HOST
+              value: {{ template "hict.databaseHostAdditional" . }}
+            - name: ORACLE_ANOTHER_PORT
+              value: {{ template "hict.databasePortAdditional" . }}
+            - name: ORACLE_ANOTHER_DB
+              value: {{ template "hict.databaseNameAdditional" . }}
+            - name: ORACLE_ANOTHER_USER
+              value: {{ template "hict.databaseUserAdditional" . }}
+            - name: ORACLE_ANOTHER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "hict.databaseSecretName" . }}
+                  key: {{ include "hict.databaseSecretAdditionalPasswordKey" . }}
             - name: REDIS_HOST
               value: {{ template "hict.redisHost" . }}
             - name: REDIS_PASSWORD
