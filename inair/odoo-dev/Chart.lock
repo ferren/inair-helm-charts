@@ -1,15 +1,15 @@
 dependencies:
 - name: postgresql
   repository: https://charts.bitnami.com/bitnami
-  version: 12.11.2
+  version: 13.4.4
 - name: redis
   repository: https://charts.bitnami.com/bitnami
-  version: 18.0.4
+  version: 18.17.0
 - name: common
   repository: https://charts.bitnami.com/bitnami
-  version: 2.11.1
+  version: 2.16.1
 - name: galaxy-pudao-gateway
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.4.3
-digest: sha256:7b7ecc437c52aa4fee8e4392c907304a171341eb4cd5879a5b6ad5231f74eca6
-generated: "2023-09-18T01:09:53.079819071+08:00"
+digest: sha256:e084221011bfd79858a0bed94e01c3569bb64c3bf0c3e3d9b4cb85e87892009c
+generated: "2024-03-01T14:54:12.182472223+08:00"
