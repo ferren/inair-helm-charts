@@ -2,16 +2,16 @@ annotations:
   category: CRM
   licenses: Apache-2.0
 apiVersion: v2
-appVersion: 17.0.20240323
+appVersion: 17.0.20240407
 dependencies:
   - condition: postgresql.enabled
     name: postgresql
     repository: https://charts.bitnami.com/bitnami
-    version: 13.x.x
+    version: 15.x.x
   - condition: redis.enabled
     name: redis
     repository: https://charts.bitnami.com/bitnami
-    version: 18.x.x
+    version: 19.x.x
   - name: common
     repository: https://charts.bitnami.com/bitnami
     tags:
@@ -34,4 +34,4 @@ name: odoo-17
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 3.0.5
+version: 3.0.6
