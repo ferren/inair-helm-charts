@@ -5,11 +5,11 @@ dependencies:
 - name: redis
   repository: https://charts.bitnami.com/bitnami
   version: 19.1.2
-- name: common
-  repository: https://charts.bitnami.com/bitnami
-  version: 2.19.1
 - name: galaxy-pudao-gateway
   repository: https://ferren.github.io/inair-helm-charts/
   version: 0.4.3
-digest: sha256:c9aef2cfcad53bf4619122dc928b17cd219fa4f8eb3944199a60afa2e4d3e874
-generated: "2024-04-23T17:31:30.063371674+08:00"
+- name: common
+  repository: https://charts.bitnami.com/bitnami
+  version: 2.19.1
+digest: sha256:6af721a3680a8983849edee1d72046a883c0ea8b0ffc70e99f21dd9a13f62464
+generated: "2024-04-23T18:38:18.616725347+08:00"

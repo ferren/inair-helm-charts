@@ -11,15 +11,15 @@ dependencies:
     name: redis
     repository: https://charts.bitnami.com/bitnami
     version: 19.x.x
+  - condition: galaxy-pudao-gateway.enabled
+    name: galaxy-pudao-gateway
+    repository: https://ferren.github.io/inair-helm-charts/
+    version: 0.x.x
   - name: common
     repository: https://charts.bitnami.com/bitnami
     tags:
       - bitnami-common
     version: 2.x.x
-  - condition: galaxy-pudao-gateway.enabled
-    name: galaxy-pudao-gateway
-    repository: https://ferren.github.io/inair-helm-charts/
-    version: 0.x.x
 description: A suite of web based open source business apps.
 engine: gotpl
 home: https://github.com/ferren/inair-helm-charts/tree/master/inair/odoo
@@ -37,4 +37,4 @@ name: odoo-dev
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 2.1.2
+version: 2.1.3
