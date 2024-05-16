@@ -2,7 +2,7 @@ annotations:
   category: CRM
   licenses: Apache-2.0
 apiVersion: v2
-appVersion: 17.0.20240515
+appVersion: 17.0.20240516
 dependencies:
   - condition: postgresql.enabled
     name: postgresql
@@ -34,4 +34,4 @@ name: odoo-17
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 3.0.8
+version: 3.0.9
