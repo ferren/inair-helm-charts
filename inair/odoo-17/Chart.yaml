@@ -1,8 +1,11 @@
 annotations:
   category: CRM
   licenses: Apache-2.0
+  images: |
+    - name: galaxy-odoo
+      image: registry.cn-hangzhou.aliyuncs.com/yzbfp/galaxy-odoo:17.0.20241009
 apiVersion: v2
-appVersion: 17.0.20240808
+appVersion: 17.0.20241009
 dependencies:
   - condition: postgresql.enabled
     name: postgresql
@@ -11,7 +14,7 @@ dependencies:
   - condition: redis.enabled
     name: redis
     repository: https://charts.bitnami.com/bitnami
-    version: 19.x.x
+    version: 20.x.x
   - name: common
     repository: https://charts.bitnami.com/bitnami
     tags:
@@ -34,4 +37,4 @@ name: odoo-17
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 3.1.2
+version: 3.1.3
