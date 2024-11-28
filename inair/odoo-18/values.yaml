@@ -81,7 +81,7 @@ diagnosticMode:
 image:
   registry: registry.cn-hangzhou.aliyuncs.com
   repository: yzbfp/galaxy-odoo
-  tag: 18.0.20241128
+  tag: 18.0.2024112801
   digest: ""
   ## Specify a imagePullPolicy
   ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -239,7 +239,7 @@ podSecurityContext:
   fsGroupChangePolicy: Always
   sysctls: []
   supplementalGroups: []
-  fsGroup: 0
+  fsGroup: 102
 ## Configure Container Security Context (only main container)
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-container
 ## @param containerSecurityContext.enabled Enabled containers' Security Context
@@ -257,9 +257,9 @@ podSecurityContext:
 containerSecurityContext:
   enabled: true
   seLinuxOptions: {}
-  runAsUser: 0
-  runAsGroup: 0
-  runAsNonRoot: false
+  runAsUser: 101
+  runAsGroup: 102
+  runAsNonRoot: true
   privileged: false
   readOnlyRootFilesystem: false
   allowPrivilegeEscalation: false
