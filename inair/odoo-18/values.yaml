@@ -235,7 +235,7 @@ resources:
 ## @param podSecurityContext.fsGroup Set Odoo pod's Security Context fsGroup
 ##
 podSecurityContext:
-  enabled: true
+  enabled: false
   fsGroupChangePolicy: Always
   sysctls: []
   supplementalGroups: []
@@ -258,8 +258,8 @@ containerSecurityContext:
   enabled: true
   seLinuxOptions: {}
   runAsUser: 101
-  runAsGroup: 102
-  runAsNonRoot: true
+  # runAsGroup: 102
+  # runAsNonRoot: true
   privileged: false
   readOnlyRootFilesystem: false
   allowPrivilegeEscalation: false
