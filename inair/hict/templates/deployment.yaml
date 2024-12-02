@@ -198,6 +198,8 @@ spec:
               value: {{ .Values.tencentclound.smsTemplateId | quote }}
             - name: GSS_IGATE_HOST
               value: {{ .Values.igate.host }}
+            - name: GSS_JOB_ENABLE
+              value: false
           ports:
             - name: http
               containerPort: {{ coalesce .Values.containerPorts.http .Values.containerPort }}

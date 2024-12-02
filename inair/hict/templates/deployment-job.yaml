@@ -111,8 +111,8 @@ spec:
           {{- end }}
           {{- if .Values.diagnosticMode.enabled }}
           args: {{- include "common.tplvalues.render" (dict "value" .Values.diagnosticMode.args "context" $) | nindent 12 }}
-          {{- else if .Values.jobArgs }}
-          args: {{- include "common.tplvalues.render" (dict "value" .Values.jobArgs "context" $) | nindent 12 }}
+          {{- else if .Values.args }}
+          args: {{- include "common.tplvalues.render" (dict "value" .Values.args "context" $) | nindent 12 }}
           {{- end }}
           env:
             - name: ORACLE_HOST
@@ -196,6 +196,8 @@ spec:
               value: {{ .Values.tencentclound.smsTemplateId | quote }}
             - name: GSS_IGATE_HOST
               value: {{ .Values.igate.host }}
+            - name: GSS_JOB_ENABLE
+              value: true
           ports:
             - name: http
               containerPort: {{ coalesce .Values.containerPorts.http .Values.containerPort }}
