@@ -16,6 +16,14 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{- printf "%s-igate" (include "common.names.fullname" .) -}}
 {{- end -}}
 
+{{/*
+Create a default fully qualified app name.
+We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
+*/}}
+{{- define "hict.fullname.job" -}}
+{{- printf "%s-job" (include "common.names.fullname" .) -}}
+{{- end -}}
+
 {{/* vim: set filetype=mustache: */}}
 {{/*
 Kubernetes standard labels
@@ -27,11 +35,30 @@ app.kubernetes.io/instance: {{ .Release.Name }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end -}}
 
+{{/* vim: set filetype=mustache: */}}
+{{/*
+Kubernetes standard labels
+*/}}
+{{- define "hict.labels.standard.job" -}}
+app.kubernetes.io/name: {{ include "hict.fullname.job" . }}
+helm.sh/chart: {{ include "common.names.chart" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end -}}
+
 {{/*
 Labels to use on deploy.spec.selector.matchLabels and svc.spec.selector
 */}}
 {{- define "hict.labels.matchLabels.igate" -}}
 app.kubernetes.io/name: {{ include "hict.fullname.igate" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end -}}
+
+{{/*
+Labels to use on deploy.spec.selector.matchLabels and svc.spec.selector
+*/}}
+{{- define "hict.labels.matchLabels.job" -}}
+app.kubernetes.io/name: {{ include "hict.fullname.job" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
 
