@@ -5,7 +5,7 @@ annotations:
     - name: galaxy-odoo
       image: registry.cn-hangzhou.aliyuncs.com/yzbfp/galaxy-odoo:18.0.20241129
 apiVersion: v2
-appVersion: 18.0.20241129
+appVersion: 18.0.20241208
 dependencies:
   - condition: postgresql.enabled
     name: postgresql
@@ -37,4 +37,4 @@ name: odoo-18
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 5.0.8
+version: 5.0.9
