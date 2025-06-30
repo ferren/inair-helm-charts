@@ -196,6 +196,8 @@ spec:
               value: {{ .Values.tencentclound.smsTemplateId | quote }}
             - name: GSS_IGATE_HOST
               value: {{ .Values.igate.host }}
+            - name: GSS_IGATE_SERVICE_SECRETKEY
+              value: {{ .Values.igate.serviceSecretKey | quote }}
             - name: GSS_JOB_ENABLE
               value: "1"
           ports:

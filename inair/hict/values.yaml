@@ -125,6 +125,7 @@ args: [
   "--xcode.emd.path=classpath:/emd/",
   "--gss.igate.host=$(GSS_IGATE_HOST)",
   "--gss.jobserver.enable=$(GSS_JOB_ENABLE)",
+  "--gss.igate.service.secretkey=$(GSS_IGATE_SERVICE_SECRETKEY)",
 ]
 ## @param extraEnvVars Array with extra environment variables to add to the Odoo container
 ## e.g:
@@ -194,6 +195,7 @@ tencentclound:
 
 igate:
   host: "http://hict-igate-prod.hict-igate-uat"
+  serviceSecretKey: "0bf85610d925433383250edf018c8724"
 
 updateStrategy:
   type: RollingUpdate
