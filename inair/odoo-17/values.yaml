@@ -67,9 +67,9 @@ diagnosticMode:
 ## @param image.debug Enable image debug mode
 ##
 image:
-  registry: registry.cn-hangzhou.aliyuncs.com
-  repository: yzbfp/galaxy-odoo
-  tag: 17.0.20241009
+  registry: registry.cn-shenzhen.aliyuncs.com
+  repository: inair/inair-odoo
+  tag: 17.0.20251008
   digest: ""
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
