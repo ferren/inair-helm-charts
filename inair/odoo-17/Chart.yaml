@@ -10,11 +10,11 @@ dependencies:
   - condition: postgresql.enabled
     name: postgresql
     repository: https://charts.bitnami.com/bitnami
-    version: 15.x.x
+    version: 16.x.x
   - condition: redis.enabled
     name: redis
     repository: https://charts.bitnami.com/bitnami
-    version: 20.x.x
+    version: 23.x.x
   - name: common
     repository: https://charts.bitnami.com/bitnami
     tags:
@@ -37,4 +37,4 @@ name: odoo-17
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 3.1.5
+version: 3.1.6
