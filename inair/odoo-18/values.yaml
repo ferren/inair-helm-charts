@@ -79,9 +79,9 @@ diagnosticMode:
 ## @param image.debug Enable image debug mode
 ##
 image:
-  registry: registry.cn-hangzhou.aliyuncs.com
-  repository: yzbfp/galaxy-odoo
-  tag: 18.0.20241208
+  registry: registry.cn-shenzhen.aliyuncs.com
+  repository: inair/inair-odoo
+  tag: 18.0.20251027
   digest: ""
   ## Specify a imagePullPolicy
   ## ref: https://kubernetes.io/docs/user-guide/images/#pre-pulling-images
