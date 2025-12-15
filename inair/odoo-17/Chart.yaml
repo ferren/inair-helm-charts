@@ -3,9 +3,9 @@ annotations:
   licenses: Apache-2.0
   images: |
     - name: galaxy-odoo
-      image: registry.cn-shenzhen.aliyuncs.com/inair/inair-odoo:17.0.20251008
+      image: registry.cn-shenzhen.aliyuncs.com/inair/inair-odoo:17.0.20251215
 apiVersion: v2
-appVersion: 17.0.20251008
+appVersion: 17.0.20251215
 dependencies:
   - condition: postgresql.enabled
     name: postgresql
@@ -37,4 +37,4 @@ name: odoo-17
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 3.1.6
+version: 3.1.8
