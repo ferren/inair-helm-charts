@@ -18,7 +18,8 @@ global:
   ## imagePullSecrets:
   ##   - myRegistryKeySecretName
   ##
-  imagePullSecrets: []
+  imagePullSecrets:
+    - inair-image-ps
   defaultStorageClass: ""
   storageClass: ""
   ## Allow subcharts (redis/postgresql) to use mirrored/non-standard images
