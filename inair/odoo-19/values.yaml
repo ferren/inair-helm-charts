@@ -21,6 +21,11 @@ global:
   imagePullSecrets: []
   defaultStorageClass: ""
   storageClass: ""
+  ## Allow subcharts (redis/postgresql) to use mirrored/non-standard images
+  ## without failing Bitnami's image verification check
+  ##
+  security:
+    allowInsecureImages: true
   ## Compatibility adaptations for Kubernetes platforms
   ##
   compatibility:
