@@ -9,14 +9,14 @@ appVersion: 19.0.20261010
 dependencies:
   - condition: postgresql.enabled
     name: postgresql
-    repository: https://charts.bitnami.com/bitnami
-    version: 17.x.x
+    repository: oci://registry-1.docker.io/bitnamicharts
+    version: 18.x.x
   - condition: redis.enabled
     name: redis
-    repository: https://charts.bitnami.com/bitnami
-    version: 23.x.x
+    repository: oci://registry-1.docker.io/bitnamicharts
+    version: 28.x.x
   - name: common
-    repository: https://charts.bitnami.com/bitnami
+    repository: oci://registry-1.docker.io/bitnamicharts
     tags:
       - bitnami-common
     version: 2.x.x
@@ -37,4 +37,4 @@ name: odoo-19
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 6.1.8
+version: 7.0.0

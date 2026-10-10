@@ -748,17 +748,17 @@ postgresql:
   image:
     registry: registry.cn-shenzhen.aliyuncs.com
     repository: inair/postgresql
-    tag: 17.6.0-debian-12-r4
+    tag: 18.6.0
   volumePermissions:
     image:
       registry: registry.cn-shenzhen.aliyuncs.com
       repository: inair/os-shell
-      tag: 12-debian-12-r51
+      tag: "5"
   metrics:
     image:
       registry: registry.cn-shenzhen.aliyuncs.com
       repository: inair/postgres-exporter
-      tag: 0.17.1-debian-12-r16
+      tag: 0.20.1
   auth:
     username: bn_odoo
     password: ""
@@ -802,32 +802,32 @@ redis:
   image:
     registry: registry.cn-shenzhen.aliyuncs.com
     repository: inair/redis
-    tag: 8.2.1-debian-12-r0
+    tag: 8.10.2
   volumePermissions:
     image:
       registry: registry.cn-shenzhen.aliyuncs.com
       repository: inair/os-shell
-      tag: 12-debian-12-r51
+      tag: "5"
   sysctl:
     image:
       registry: registry.cn-shenzhen.aliyuncs.com
       repository: inair/os-shell
-      tag: 12-debian-12-r51
+      tag: "5"
   metrics:
     image:
       registry: registry.cn-shenzhen.aliyuncs.com
       repository: inair/redis-exporter
-      tag: 1.76.0-debian-12-r0
+      tag: 1.92.1
   sentinel:
     image:
       registry: registry.cn-shenzhen.aliyuncs.com
       repository: inair/redis-sentinel
-      tag: 8.2.1-debian-12-r0
+      tag: 8.10.2
   kubectl:
     image:
       registry: registry.cn-shenzhen.aliyuncs.com
       repository: inair/kubectl
-      tag: 1.33.4-debian-12-r0
+      tag: 1.37.1
   ## @param architecture Redis&reg; architecture. Allowed values: `standalone` or `replication`
   ##
   architecture: standalone
