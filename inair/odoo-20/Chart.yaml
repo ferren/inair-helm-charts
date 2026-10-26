@@ -5,7 +5,7 @@ annotations:
     - name: inair-odoo
       image: registry.cn-shenzhen.aliyuncs.com/inair/inair-odoo:20.0.20261020
 apiVersion: v2
-appVersion: 20.0.20261020
+appVersion: 20.0.20261026
 dependencies:
   - condition: postgresql.enabled
     name: postgresql
@@ -37,4 +37,4 @@ name: odoo-20
 sources:
   - https://codeup.aliyun.com/inair/odoo-docker.git
   - https://www.odoo.com/
-version: 8.0.0
+version: 8.0.1
